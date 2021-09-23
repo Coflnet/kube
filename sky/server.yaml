@@ -37,7 +37,7 @@ spec:
                 key: connection_live
                 name: secret
           - name: redisCon
-            value: redis-service
+            value: redis-legacy
           - name: MODE
             value: light
           - name: FRONTEND_PROD

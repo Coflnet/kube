@@ -37,7 +37,7 @@ spec:
                 key: token_secret
                 name: secret
           - name: redisCon
-            value: redis-service
+            value: redis-legacy
           - name: apiKey
             valueFrom:
               secretKeyRef:
