@@ -49,6 +49,8 @@ spec:
               configMapKeyRef:
                 name: config
                 key: jaeger_agent_host
+          - name: JAEGER_SERVICE_NAME
+            value: light-client
         resources:
           requests:
             memory: "500Mi"
