@@ -20,7 +20,7 @@ spec:
         - name: regcred
       containers:
       - name: commands
-        image: registry.flou.dev/sky-commands:0d05e141-8efc-4903-b0e0-8c238e5c253a
+        image: registry.flou.dev/sky-commands:4cb51d80-65c1-4ac0-be0f-e5a9597219b9
         ports:
           - containerPort: 8008
           - containerPort: 80
