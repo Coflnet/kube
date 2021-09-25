@@ -59,7 +59,7 @@ spec:
       app:  updater-metrics-service
   endpoints:
   - port: metrics
-    interval: 25s
+    interval: 2s
     path: /metrics
 ---
 apiVersion: monitoring.coreos.com/v1
