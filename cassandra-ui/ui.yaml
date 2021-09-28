@@ -29,5 +29,5 @@ spec:
         - name: CASSANDRA_USERNAME
           value: "cassandra"
         - name: CASSANDRA_PASSWORD
-          value: "Ds28melByL"
+          value: ""
           
