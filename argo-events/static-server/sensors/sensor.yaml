@@ -55,7 +55,7 @@ spec:
                       - name: app_repo
                         value: git://github.com/Coflnet/StaticS3
                       - name: container_image
-                        value: registry.flou21.de/static-server
+                        value: registry.flou.dev/static-server
                       - name: container_tag
                         value: "{{workflow.uid}}"
                       - name: sub_path 
@@ -79,13 +79,13 @@ spec:
                       - name: git_user
                         value: "Flou21"
                       - name: repo_url
-                        value: "github.com/Coflnet/k8s.git"
+                        value: "github.com/Coflnet/kube.git"
                       - name: git_secret_name
                         value: github-secret
                       - name: git_secret_key
                         value: password
                       - name: image_name
-                        value: registry.flou21.de\/static-server
+                        value: registry.flou.dev\/static-server
                       - name: k8s_file
                         value: ./minio/static-server.yaml
                       - name: message
