@@ -496,7 +496,7 @@ persistence:
 volumePermissions:
   ## @param volumePermissions.enabled Enable init container that changes the owner and group of the persistent volume
   ##
-  enabled: false
+  enabled: true
   ## @param volumePermissions.image.registry Init container volume
   ## @param volumePermissions.image.repository Init container volume
   ## @param volumePermissions.image.tag Init container volume
