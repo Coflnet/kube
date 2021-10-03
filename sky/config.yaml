@@ -12,6 +12,7 @@ data:
   reload_config_on_change: "false"
   kafka_host: kafka-helm.kafka.svc.cluster.local
   redis_host: redis-service
+  payment_host: payment.payment.svc.cluster.local
 
   # kafka topics
   topic_missing_auction-raw: sky-canceledauction-raw

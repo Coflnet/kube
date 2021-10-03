@@ -36,6 +36,11 @@ spec:
               configMapKeyRef:
                 key: redis_host
                 name: config
+          - name: PAYMENTS_HOST
+            valueFrom: 
+              configMapKeyRef:
+                key: payment_host
+                name: config
           - name: DBConnection
             valueFrom:
               secretKeyRef:
