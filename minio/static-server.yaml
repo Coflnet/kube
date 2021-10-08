@@ -16,7 +16,7 @@ spec:
         - name: regcred
       containers:
       - name: static-server
-        image: registry.flou.dev/static-server:4000ec4a-bc2d-4543-8fb8-6358b8ed899e
+        image: registry.flou.dev/static-server:4c4c0c85-1b99-4fa8-ae9d-5125451eb71e
         env: 
           - name: ACCESS_KEY
             valueFrom: 
