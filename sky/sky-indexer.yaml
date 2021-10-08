@@ -1,0 +1,103 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sky-indexer
+  namespace: sky
+  labels:
+    app: sky-indexer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sky-indexer
+  template:
+    metadata:
+      labels:
+        app: sky-indexer
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+      - name: indexer
+        image: registry.flou.dev/sky-indexer:4cd25b7f-0012-4a29-82d5-f14bc58c70de
+        ports:
+          - containerPort: 8008
+        livenessProbe:
+          httpGet:
+            path: /status
+            port: 8008
+          initialDelaySeconds: 1800
+          periodSeconds: 10
+          failureThreshold: 12
+          timeoutSeconds: 20
+        env:
+
+
+          - name: DBConnection
+            valueFrom:
+              secretKeyRef:
+                key: connection_live
+                name: secret
+          - name: SKYCOMMANDS_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: commands_host
+          - name: REDIS_HOST 
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: redis_host
+          - name: JAEGER_AGENT_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: jaeger_agent_host
+          - name: KAFKA_HOST
+            valueFrom: 
+              configMapKeyRef:
+                name: config
+                key: kafka_host
+          - name: TOPICS__NEW_AUCTION
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: topic_new_auction
+          - name: TOPICS__FLIP
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: topic_flip
+
+        resources:
+          requests:
+            memory: "1000Mi"
+            cpu: "1500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sky-indexer-service
+  namespace: sky
+spec:
+  selector:
+    app: sky-indexer
+  ports:
+    - port: 8008
+      targetPort: 8008
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sky-indexer-metrics-service
+  namespace: sky
+  labels:
+    app: sky-indexer-metrics-service
+spec:
+  selector:
+    app: sky-indexer
+  ports:
+  - port: 80
+    targetPort: 80
+    name: metrics
+    protocol: TCP

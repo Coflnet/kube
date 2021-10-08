@@ -51,3 +51,6 @@ spec:
     sky-updater: 
       port: "12000"
       endpoint: /sky-updater
+    sky-indexer: 
+      port: "12000"
+      endpoint: /sky-indexer
