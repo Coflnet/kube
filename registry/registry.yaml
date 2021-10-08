@@ -46,7 +46,7 @@ spec:
       volumes:
         - name: vol
           persistentVolumeClaim:
-            claimName: registry-claim
+            claimName: registry-claim-new
         - name: auth-secret-volume
           secret:
             secretName: auth-secret
