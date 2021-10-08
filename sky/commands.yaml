@@ -80,6 +80,8 @@ spec:
                 key: kafka_host
           - name: SUBSCRIPTION_HOST
             value: subscriptions
+          - name: INDEXER_HOST
+            value: sky-indexer
         resources:
           requests:
             memory: "500Mi"
