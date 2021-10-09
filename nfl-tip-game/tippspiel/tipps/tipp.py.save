@@ -1,0 +1,7 @@
+from django.db import models
+
+#class Tipp(models.Model):
+
+class Tipp(models.Model):
+  linke_seite = 
+  rechte_seite = Models.

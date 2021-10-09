@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head> Scrape/anlegen </head>
+<body>
+{{ spiele }}
+<br><br><br><br>
+
+
+{% for sa in saison %}
+{{ sa.name }}
+    {% for w in sa.weeks %}
+    {{ w.name }}
+
+
+
+
+
+
+    {% endfor %}
+{% endfor %}
+
+</body>
+<footer>Ecki's Tippspiel</footer>
+<script>
+console.log("python ist a ned schön");
+</script>

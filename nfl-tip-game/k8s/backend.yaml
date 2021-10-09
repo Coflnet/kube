@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nfl-tip-game
+  namespace: nfl-tip-game
+  labels:
+    app: nfl-tip-game
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nfl-tip-game
+  template:
+    metadata:
+      labels:
+        app: nfl-tip-game
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+      - name: nfl-tip-game
+        image: registry.flou.dev/nfl-tip-game:776bff4b-d326-492c-b2f9-7da4d5fb0b78
+        ports:
+          - containerPort: 8000
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "50m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nfl-tip-game
+  namespace: nfl-tip-game
+spec:
+  selector:
+    app: nfl-tip-game
+  ports:
+    - port: 8000
+      targetPort: 8000
+      name: api

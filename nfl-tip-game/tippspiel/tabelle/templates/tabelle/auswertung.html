@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auswertung</title>
+    <style>
+      .normal {
+        background-color: #d1d1d1;
+        padding: 4px 11px;
+        font-family: Arial;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .gray {
+        background-color: #d1d1d1;
+        padding: 4px 11px;
+        font-family: Arial;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .green {
+        background-color: #00dd00;
+        padding: 4px 11px;
+        font-family: Arial;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .green_font {
+        background-color: #d1d1d1;
+        color: #008800;
+        padding: 4px 11px;
+        font-family: Arial;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .red_font {
+        background-color: #d1d1d1;
+        color: #dd0000;
+        padding: 4px 11px;
+        font-family: Arial;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .red {
+        background-color: #dd0000;
+        padding: 4px 11px;
+        font-family: Arial;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+
+<table>
+    <h1>Tabelle</h1>
+{% for ausw in auswertungen_spieler %}
+  <tr>
+      <td class="gray">
+          {{ ausw.spieler.first_name }} {{ ausw.spieler.last_name }}
+      </td>
+      <td class="gray">
+          {{ ausw.punkte }}
+      </td>
+  </tr>
+
+
+{% endfor %}
+</table>
+
+{% for ausw in auswertungen_spieler %}
+
+    <h1>Ergebnisse für {{ ausw.spieler.first_name }} {{ ausw.spieler.last_name }}</h1>
+    <table>
+        <tr>
+            <td>
+                <h4></h4>
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+            <td>
+                <h4></h4>
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+            <td>
+                Punkte
+            </td>
+            <td>
+                {{ s.punkte }}
+            </td>
+        </tr>
+        {% for s in ausw.auswertungen %}
+        <tr>
+            <td class="{{ s.tipp_m1 }}">
+                <img style="width: 40px;" src="{{ media }}{{ s.spiel.mannschaft1_fk.logo }}">
+            </td>
+            <td class="{{ s.mannschaft1_color }}">
+                {{ s.spiel.mannschaft1_fk.name }}
+            </td>
+            <td class="{{ s.mannschaft1_color }}">
+                {{ s.spiel.mannschaft1_punkte }}
+            </td>
+            <td class="{{ s.mannschaft2_color }}">
+                {{ s.spiel.mannschaft2_punkte }}
+            </td>
+            <td class="{{ s.mannschaft2_color }}">
+                {{ s.spiel.mannschaft2_fk.name }}
+            </td>
+            <td class="{{ s.tipp_m2 }}">
+                <img style="width: 40px;" src="{{ media }}{{ s.spiel.mannschaft2_fk.logo }}">
+            </td>
+            <td>
+
+            </td>
+            <!--<td class="{{ s.tipp_richtig }}">
+                {{ s.tipp.itipp }}
+            </td>-->
+            <td>=></td>
+            <td class="{{ s.tipp_richtig }}">
+                {{ s.punkte }}
+            </td>
+        </tr>
+        {% endfor %}
+        <tr><td><bold></bold></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="green">{{ ausw.punkte }}</td></tr>
+    </table>
+{% endfor %}
+<br><br><br>
+</body>
+</html>

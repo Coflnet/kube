@@ -1,0 +1,1 @@
+media_url = "http://michaelhaslbeck.ddns.net/media/"
