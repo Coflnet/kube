@@ -213,3 +213,14 @@ spec:
             name: payment-eventsource-eventsource-svc
             port:
               number: 12000
+
+  - host: argo-events.flou.dev
+    http:
+      paths:
+      - path: /nfl-tip-game
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: nfl-tip-game-eventsource-eventsource-svc
+            port:
+              number: 12000
