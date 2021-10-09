@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
       - name: nfl-tip-game
-        image: registry.flou.dev/nfl-tip-game:776bff4b-d326-492c-b2f9-7da4d5fb0b78
+        image: registry.flou.dev/nfl-tip-game:7cee9777-5209-4bb8-bcaf-a9ed554623f9
         ports:
           - containerPort: 8000
         resources:
