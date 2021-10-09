@@ -57,7 +57,7 @@ spec:
                       - name: container_tag
                         value: "{{workflow.uid}}"
                       - name: sub_path 
-                        value: .
+                        value: "nfl-tip-game"
                       - name: git_user
                         value: "Flou21"
                       - name: git_secret_name
