@@ -31,6 +31,8 @@ spec:
             value: stage-frontend 
           - name: UPDATER_HOST
             value: updater
+          - name: MCCONNECT_HOST
+            value: mc-connect
           - name: REDIS_HOST
             valueFrom: 
               configMapKeyRef:
