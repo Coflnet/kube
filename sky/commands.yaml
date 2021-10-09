@@ -81,7 +81,7 @@ spec:
           - name: SUBSCRIPTION_HOST
             value: subscriptions
           - name: INDEXER_HOST
-            value: sky-indexer
+            value: sky-indexer-service
         resources:
           requests:
             memory: "500Mi"
@@ -97,9 +97,17 @@ spec:
       steps:
       - setWeight: 5
       - pause:
-          duration: 10m
+          duration: 1h
+      - setWeight: 10
+      - pause:
+          duration: 2h
       - setWeight: 20
-      - pause: {}
+      - pause:
+          duration: 3h
+      - setWeight: 50
+      - pause:
+          duration: 6h
+      - setWeight: 100
 ---
 apiVersion: v1
 kind: Service

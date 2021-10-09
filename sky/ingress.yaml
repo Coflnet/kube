@@ -44,14 +44,14 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: sky-commands-main-service
+            name: sky-commands-canary-service
             port:
               number: 8008
       - path: /api
         pathType: ImplementationSpecific
         backend:
           service:
-            name: sky-commands-main-service
+            name: sky-commands-canary-service
             port:
               number: 80
   - host: sky-preview.coflnet.com
