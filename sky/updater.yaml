@@ -79,6 +79,11 @@ spec:
             configMapKeyRef:
               name: config
               key: topic_bazaar-raw
+        - name: TOPICS__AH_SUMARY
+          valueFrom: 
+            configMapKeyRef:
+              name: config
+              key: topic_ah_summary
         - name: KAFKA_HOST
           valueFrom:
             configMapKeyRef:
