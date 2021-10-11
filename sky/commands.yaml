@@ -88,9 +88,6 @@ spec:
           requests:
             memory: "500Mi"
             cpu: "50m"
-          limits:
-            memory: "700Mi"
-            cpu: "500m"
   strategy:
     canary: 
       maxUnavailable: 1
