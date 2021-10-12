@@ -58,6 +58,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: topic_flip
+          - name: TOPICS__AH_SUMARY
+            valueFrom: 
+              configMapKeyRef:
+                name: config
+                key: topic_ah_summary
         resources:
           requests:
             memory: "1000Mi"
