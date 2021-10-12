@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
       - name: sky-indexer
-        image: registry.flou.dev/sky-indexer:3c878665-add4-4248-b8ef-412472b32df6
+        image: registry.flou.dev/sky-indexer:b156d09a-94be-4f44-960c-af9396e86638
         ports:
           - containerPort: 80
         env:
