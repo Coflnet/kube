@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
       - name: sky-indexer
-        image: registry.flou.dev/sky-indexer:b3327543-d419-494f-b0ef-2838eeccc9b0
+        image: registry.flou.dev/sky-indexer:9806e55b-ea5b-407d-bc2b-128ccb5ecf84
         ports:
           - containerPort: 80
         env:
@@ -58,6 +58,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: topic_flip
+          - name: TOPICS__AH_SUMARY
+            valueFrom: 
+              configMapKeyRef:
+                name: config
+                key: topic_ah_summary
         resources:
           requests:
             memory: "1000Mi"
