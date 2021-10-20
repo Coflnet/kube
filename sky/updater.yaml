@@ -29,7 +29,7 @@ spec:
             secretKeyRef:
               key: token_secret
               name: secret
-        - name: redisCon
+        - name: REDIS_HOST
           valueFrom:
             configMapKeyRef: 
               name: config
