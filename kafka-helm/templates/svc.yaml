@@ -7,6 +7,7 @@ metadata:
     {{- if .Values.commonLabels }}
     {{- include "common.tplvalues.render" ( dict "value" .Values.commonLabels "context" $ ) | nindent 4 }}
     {{- end }}
+    mirror.linkerd.io/exported: "true"
   {{- if or .Values.service.annotations .Values.commonAnnotations }}
   annotations:
     {{- if .Values.service.annotations }}
