@@ -27,6 +27,8 @@ spec:
         {{- if .Values.provisioning.podAnnotations }}
         {{- include "common.tplvalues.render" (dict "value" .Values.provisioning.podAnnotations "context" $) | nindent 8 }}
         {{- end }}
+        linkerd.io/inject: disabled
+
     spec:
       {{- include "kafka.imagePullSecrets" . | nindent 6 }}
       {{- if .Values.provisioning.schedulerName }}
