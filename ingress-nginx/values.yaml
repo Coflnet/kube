@@ -565,7 +565,7 @@ controller:
   metrics:
     port: 10254
     # if this port is changed, change healthz-port: in extraArgs: accordingly
-    enabled: false
+    enabled: true
 
     service:
       annotations: {}
@@ -587,7 +587,7 @@ controller:
       # nodePort: ""
 
     serviceMonitor:
-      enabled: false
+      enabled: true
       additionalLabels: {}
       # The label to use to retrieve the job name from.
       # jobLabel: "app.kubernetes.io/name"
@@ -599,7 +599,8 @@ controller:
       #   any: true
       scrapeInterval: 30s
       # honorLabels: true
-      targetLabels: []
+      targetLabels: 
+      - release: prometheus
       metricRelabelings: []
 
     prometheusRule:
