@@ -551,6 +551,8 @@ grafana.ini:
   smtp:
     host: mail.coflnet.com:587
     user: ci@coflnet.com
+    from_address: ci@coflnet.com
+    from_name: CI Coflnet
     password: wityphil26
     enabled: true
 ## grafana Authentication can be enabled with the following values on grafana.ini
