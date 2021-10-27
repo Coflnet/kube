@@ -271,8 +271,8 @@ extraContainerVolumes: []
 ##
 persistence:
   type: pvc
-  enabled: false
-  # storageClassName: default
+  enabled: true
+  storageClassName: longhorn
   accessModes:
     - ReadWriteOnce
   size: 10Gi
@@ -280,7 +280,7 @@ persistence:
   finalizers:
     - kubernetes.io/pvc-protection
   # selectorLabels: {}
-  # subPath: ""
+  subPath: "data"
   # existingClaim:
 
   ## If persistence is not enabled, this allows to mount the
