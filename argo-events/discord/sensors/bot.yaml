@@ -8,7 +8,7 @@ spec:
     serviceAccountName: argo-events-sa
   dependencies:
   - name: discord-bot-node
-    eventSourceName: discord-bot-ndoe-eventsource
+    eventSourceName: discord-bot-node-eventsource
     eventName: discord-bot-node
     filters: 
       data:
