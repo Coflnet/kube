@@ -27,17 +27,17 @@ spec:
             valueFrom:
               configMapKeyRef:
                 name: config
-                key: channel_id_bugreport
+                key: live_channel_id_bugreport
           - name: CHANNEL_ID_SUGGESTIONS
             valueFrom:
               configMapKeyRef:
                 name: config
-                key: channel_id_suggestion
+                key: live_channel_id_suggestion
           - name: CHANNEL_ID_SUPPORT
             valueFrom:
               configMapKeyRef:
                 name: config
-                key: channel_id_support
+                key: live_channel_id_support
 
         resources:
           limits:
