@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: discord-bot-node
+  namespace: discord
+spec:
+  selector:
+    matchLabels:
+      app: discord-bot-node
+  template:
+    metadata:
+      labels:
+        app: discord-bot-node
+    spec:
+      containers:
+      - name: discord-bot-node
+        image: registry.flou.dev/discord-bot-node:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"

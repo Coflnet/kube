@@ -235,3 +235,14 @@ spec:
             name: kafka-sim-eventsource-eventsource-svc
             port:
               number: 12000
+
+  - host: argo-events.flou.dev
+    http:
+      paths:
+      - path: /discord-bot-node
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: discord-bot-node-eventsource-eventsource-svc
+            port:
+              number: 12000
