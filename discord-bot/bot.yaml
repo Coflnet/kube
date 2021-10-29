@@ -16,7 +16,7 @@ spec:
         - name: regcred
       containers:
       - name: discord-bot-node
-        image: registry.flou.dev/discord-bot-node:1b2d3021-2ed8-430d-a1ff-91b1eab14a02
+        image: registry.flou.dev/discord-bot-node:63e9d0b5-b857-4478-9799-499fe8cae5b4
         resources:
           limits:
             memory: "128Mi"
