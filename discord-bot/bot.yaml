@@ -17,6 +17,12 @@ spec:
       containers:
       - name: discord-bot-node
         image: registry.flou.dev/discord-bot-node:63e9d0b5-b857-4478-9799-499fe8cae5b4
+        env:
+          - name: TOKEN
+            valueFrom:
+              secretRef:
+                name: secret
+                key: token
         resources:
           limits:
             memory: "128Mi"
