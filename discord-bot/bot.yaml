@@ -16,7 +16,7 @@ spec:
         - name: regcred
       containers:
       - name: discord-bot-node
-        image: registry.flou.dev/discord-bot-node:61e05c6b-abc7-4c28-9139-d7204bec6a1c
+        image: registry.flou.dev/discord-bot-node:91eaf883-57d6-416f-b3bf-886e3b49ad93
         env:
           - name: TOKEN
             valueFrom:
