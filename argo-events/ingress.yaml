@@ -246,3 +246,10 @@ spec:
             name: discord-bot-node-eventsource-eventsource-svc
             port:
               number: 12000
+      - path: /discord-bot-ekwav
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: discord-bot-ekwav-eventsource-eventsource-svc
+            port:
+              number: 12000
