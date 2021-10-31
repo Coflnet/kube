@@ -59,7 +59,7 @@ spec:
                     arguments:
                       parameters:
                       - name: app_repo
-                        value: git://github.com//discord-me.git
+                        value: git://github.com/Ekwav/discord-me.git
                       - name: container_image
                         value: registry.flou.dev/discord-bot-ekwav
                       - name: container_tag
