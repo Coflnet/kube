@@ -87,7 +87,7 @@ spec:
         resources:
           requests:
             memory: "500Mi"
-            cpu: "50m"
+            cpu: "500m"
   strategy:
     canary: 
       maxUnavailable: 1
