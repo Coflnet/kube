@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  namespace: namespace
+  labels:
+    app: deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment
+  template:
+    metadata:
+      labels:
+        app: deployment
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+      - name: deplyoment
+        image: nginx
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "200m"
