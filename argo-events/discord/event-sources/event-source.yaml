@@ -13,3 +13,7 @@ spec:
       port: "12000"
       endpoint: /discord-bot-node
       method: POST
+    discord-bot-ekwav:
+      port: "12000"
+      endpoint: /discord-bot-ekwav
+      method: POST
