@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
       - name: filter
-        image: registry.flou.dev/sky-filter:59f794d7-65c4-4787-b418-c66f4375bf25
+        image: registry.flou.dev/sky-filter:972a28b1-b9ce-42bc-9b41-7eaa7906eec4
         ports:
         - containerPort: 80
           name: web
