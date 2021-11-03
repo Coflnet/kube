@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Sensor
 metadata:
-  name: sky-craft-webhook
+  name: sky-craft
   namespace: argo-events
 spec:
   template:
@@ -15,7 +15,7 @@ spec:
       - path: body.ref
         type: string
         value:
-          - refs/heads/master
+          - refs/heads/main
   triggers:
   - template:
       name: trigger
