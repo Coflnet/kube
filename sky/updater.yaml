@@ -13,6 +13,16 @@ spec:
   selector:
     matchLabels:
       app: updater
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: cpu
+            operator: In
+            values:
+            - "true"
   template:
     metadata:
       labels:
