@@ -18,16 +18,16 @@ spec:
       labels:
         app: updater
     spec:
-      affinity:
-        nodeAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 1
-            preference:
-              matchExpressions:
-              - key: cpu
-                operator: In
-                values:
-                - "true"
+      # affinity:
+      #   nodeAffinity:
+      #     preferredDuringSchedulingIgnoredDuringExecution:
+      #     - weight: 1
+      #       preference:
+      #         matchExpressions:
+      #         - key: cpu
+      #           operator: In
+      #           values:
+      #           - "true"
       imagePullSecrets:
         - name: regcred
       containers:
