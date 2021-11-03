@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sky-craft
+spec:
+  selector:
+    matchLabels:
+      app: sky-craft
+  template:
+    metadata:
+      labels:
+        app: sky-craft
+    spec:
+      containers:
+      - name: sky-craft
+        image: registry.flou.dev/sky-craft:latest
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "300m"

@@ -54,3 +54,6 @@ spec:
     sky-indexer: 
       port: "12000"
       endpoint: /sky-indexer
+    sky-craft: 
+      port: "12000"
+      endpoint: /sky-craft
