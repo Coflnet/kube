@@ -11,6 +11,8 @@ spec:
       labels:
         app: sky-craft
     spec:
+      imagePullSecrets:
+        - name: regcred
       containers:
       - name: sky-craft
         image: registry.flou.dev/sky-craft:latest
