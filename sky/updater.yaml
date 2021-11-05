@@ -34,6 +34,8 @@ spec:
       - name: updater
         image: registry.flou.dev/sky-updater:be7bdca9-b941-456e-9250-51391a2c3d81
         env:
+        - name: SLOWDOWN_MS
+          value: "150"
         - name: TOKEN_SECRET
           valueFrom:
             secretKeyRef:
