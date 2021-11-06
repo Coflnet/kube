@@ -16,6 +16,8 @@ spec:
       containers:
       - name: sky-craft
         image: registry.flou.dev/sky-craft:33b5ff3a-304d-4f23-a272-232fed481511
+        ports:
+          - containerPort: 8000
         resources:
           requests:
             memory: "512Mi"
