@@ -34,7 +34,7 @@ spec:
           - name: MCCONNECT_HOST
             value: mc-connect
           - name: CRAFTS_HOST
-            value: "sky-craft:8000"
+            value: sky-craft-service
           - name: REDIS_HOST
             valueFrom: 
               configMapKeyRef:
