@@ -31,7 +31,7 @@ spec:
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 600
+          - weight: 1
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
@@ -44,7 +44,7 @@ spec:
         - name: regcred
       containers:
       - name: updater
-        image: registry.flou.dev/sky-updater:be7bdca9-b941-456e-9250-51391a2c3d81
+        image: registry.flou.dev/sky-updater:cbb2fca0-9109-407b-bd9a-461043468e15
         env:
         - name: SLOWDOWN_MS
           value: "150"

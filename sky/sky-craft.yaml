@@ -16,7 +16,21 @@ spec:
       containers:
       - name: sky-craft
         image: registry.flou.dev/sky-craft:33b5ff3a-304d-4f23-a272-232fed481511
+        ports:
+          - containerPort: 8000
         resources:
           requests:
             memory: "512Mi"
             cpu: "300m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sky-craft-service
+  namespace: sky
+spec:
+  selector:
+    app: sky-craft
+  ports:
+    - port: 80
+      targetPort: 8000
