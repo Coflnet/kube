@@ -28,6 +28,18 @@ spec:
       #           operator: In
       #           values:
       #           - "true"
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - updater
+              topologyKey: kubernetes.io/hostname
       imagePullSecrets:
         - name: regcred
       containers:
