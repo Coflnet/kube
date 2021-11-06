@@ -35,6 +35,8 @@ spec:
             value: mc-connect
           - name: CRAFTS_HOST
             value: sky-craft-service
+          - name: PROFILE_HOST
+            value: player
           - name: REDIS_HOST
             valueFrom: 
               configMapKeyRef:
