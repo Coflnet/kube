@@ -57,3 +57,6 @@ spec:
     sky-craft: 
       port: "12000"
       endpoint: /sky-craft
+    sky-player: 
+      port: "12000"
+      endpoint: /sky-player

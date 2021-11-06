@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: player
+  namespace: sky
+spec:
+  selector:
+    matchLabels:
+      app: player
+  template:
+    metadata:
+      labels:
+        app: player
+    spec:
+      containers:
+      - name: player
+        image: registry.flou.dev/sky-player:latest
+        env:
+          - name: REDIS_HOST
+            value: player-redis
+          - name: KAFKA_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: kafka_host
+          - name: JAEGER_AGENT_HOST
+            valueFrom: 
+              configMapKeyRef:
+                name: config
+                key: jaeger_agent_host
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "300m"
+---
+Kubernetes apiVersion: v1
+kind: Service
+metadata:
+  name: player
+  namespace: sky
+spec:
+  selector:
+    app: player
+  ports:
+  - port: 8000
+    targetPort: 8000
+
