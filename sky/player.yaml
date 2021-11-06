@@ -16,7 +16,7 @@ spec:
         - name: regcred
       containers:
       - name: player
-        image: registry.flou.dev/sky-player:ce203a4b-44e5-4236-9892-e82dc6184309
+        image: registry.flou.dev/sky-player:571c27af-edae-4037-9e13-1905f9edaa8c
         env:
           - name: REDIS_HOST
             value: player-redis
