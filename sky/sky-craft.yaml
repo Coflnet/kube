@@ -22,3 +22,15 @@ spec:
           requests:
             memory: "512Mi"
             cpu: "300m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sky-craft-service
+  namespace: sky
+spec:
+  selector:
+    app: sky-craft
+  ports:
+    - port: 80
+      targetPort: 8000
