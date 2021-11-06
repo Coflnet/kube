@@ -33,6 +33,8 @@ spec:
             value: updater
           - name: MCCONNECT_HOST
             value: mc-connect
+          - name: CRAFTS_HOST
+            value: sky-craft
           - name: REDIS_HOST
             valueFrom: 
               configMapKeyRef:
