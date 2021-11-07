@@ -15,7 +15,7 @@ spec:
         - name: regcred
       containers:
       - name: sky-craft
-        image: registry.flou.dev/sky-craft:3bfcc4cc-da3e-4178-ba32-0e645977cf44
+        image: registry.flou.dev/sky-craft:c01f621e-a512-43b1-8338-ca0469b9aac1
         ports:
           - containerPort: 8000
         resources:
