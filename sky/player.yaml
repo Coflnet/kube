@@ -17,6 +17,8 @@ spec:
       containers:
       - name: player
         image: registry.flou.dev/sky-player:571c27af-edae-4037-9e13-1905f9edaa8c
+        ports:
+          - containerPort: 8000
         env:
           - name: REDIS_HOST
             value: player-redis
