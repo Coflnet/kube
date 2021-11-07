@@ -67,7 +67,7 @@ spec:
                     arguments:
                       parameters:
                       - name: app_repo
-                        value: git://github.com/Coflnet/SkyCrafts.git
+                        value: git://github.com/Coflnet/SkyProfiles.git
                       - name: branch
                         value: main
                       - name: container_image
