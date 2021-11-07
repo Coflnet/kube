@@ -37,7 +37,7 @@ spec:
             name: sky-commands-main-service
             port:
               number: 80
-      - path: /api/profile
+      - path: /api/profiles
         pathType: ImplementationSpecific
         backend:
           service:
