@@ -30,6 +30,13 @@ spec:
   - host: sky.coflnet.com
     http:
       paths:
+      - path: /api/profile
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: player
+            port:
+              number: 8000
       - path: /api
         pathType: ImplementationSpecific
         backend:
@@ -37,13 +44,6 @@ spec:
             name: sky-commands-main-service
             port:
               number: 80
-      - path: /api/profiles
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: player
-            port:
-              number: 8000
   - host: sky-commands.coflnet.com
     http:
       paths:
