@@ -60,7 +60,7 @@ rbac:
 
 podSecurityPolicy:
   privileged: true
-  allowPrivilegeEscalation: false
+  allowPrivilegeEscalation: true
   volumes:
     - 'secret'
     - 'configMap'
@@ -79,7 +79,7 @@ podSecurityPolicy:
     rule: 'RunAsAny'
   fsGroup:
     rule: 'RunAsAny'
-  readOnlyRootFilesystem: true
+  readOnlyRootFilesystem: false
   requiredDropCapabilities:
     - ALL
 
