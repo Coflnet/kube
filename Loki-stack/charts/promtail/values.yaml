@@ -59,7 +59,7 @@ rbac:
   pspEnabled: true
 
 podSecurityPolicy:
-  privileged: false
+  privileged: true
   allowPrivilegeEscalation: false
   volumes:
     - 'secret'
