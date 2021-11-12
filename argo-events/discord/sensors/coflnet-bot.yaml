@@ -15,7 +15,7 @@ spec:
       - path: body.ref
         type: string
         value:
-          - refs/heads/release
+          - refs/heads/main
   triggers:
   - template:
       name: trigger
