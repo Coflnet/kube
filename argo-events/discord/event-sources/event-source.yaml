@@ -13,3 +13,7 @@ spec:
       port: "12000"
       endpoint: /discord-bot-node
       method: POST
+    coflnet-bot:
+      port: "12000"
+      endpoint: /coflnet-bot
+      method: POST
