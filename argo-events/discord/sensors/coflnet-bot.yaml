@@ -8,7 +8,7 @@ spec:
     serviceAccountName: argo-events-sa
   dependencies:
   - name: coflnet-bot
-    eventSourceName: coflnet-bot-eventsource
+    eventSourceName: discord-bot-node-eventsource
     eventName: coflnet-bot
     filters: 
       data:
