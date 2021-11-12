@@ -16,7 +16,7 @@ spec:
         - name: regcred
       containers:
       - name: coflnet-bot
-        image: registry.flou.dev/coflnet-bot:df845035-f01a-40b8-bcac-a999dd397e2e
+        image: registry.flou.dev/coflnet-bot:83e41e79-1cb5-4456-a229-44e445505de4
         env:
         - name: DISCORD_BOT_TOKEN
           valueFrom:
