@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
       - name: stage-frontend
-        image: registry.flou.dev/sky-stage-frontend:3e52c4b3-0c0c-4519-bb92-64fb2f6a8836
+        image: registry.flou.dev/sky-stage-frontend:36155a2b-4f44-467c-a8d9-0159e175f1d6
         ports:
         - containerPort: 80
           name: web
