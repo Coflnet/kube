@@ -6,3 +6,12 @@ metadata:
 data:
   jaeger_service_name: payment
   jaeger_agent_host: jaeger-agent.observability.svc.cluster.local
+
+  products: |
+    [
+      {
+        "slug": "kevin2",
+        "title": "Kevin2",
+        "cost": 420.69
+      }
+    ]

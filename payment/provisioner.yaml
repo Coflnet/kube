@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: product-provisioner
+  namespace: payment
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    spec:
+      containers:
+      - name: product-provisioner
+        image: registry.flou.dev:latest
+        volumeMounts:
+        - name: products.json
+          mountPath: /app
+      volumes:
+      - name: config-volume
+        configMap:
+          name: config
+      restartPolicy: Never
