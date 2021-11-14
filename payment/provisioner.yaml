@@ -7,6 +7,8 @@ spec:
   ttlSecondsAfterFinished: 100
   template:
     spec:
+      imagePullSecrets:
+        - name: regcred
       containers:
       - name: product-provisioner
         image: registry.flou.dev/product-provisioner:a7c4024c-246f-4f21-a30c-64ae160d0a24
