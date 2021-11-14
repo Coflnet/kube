@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
       - name: product-provisioner
-        image: registry.flou.dev/product-provisioner:latest
+        image: registry.flou.dev/product-provisioner:a7c4024c-246f-4f21-a30c-64ae160d0a24
         volumeMounts:
         - name: config-volume
           mountPath: /app
@@ -37,7 +37,7 @@ spec:
 #     spec:
 #       containers:
 #       - name: product-provisioner
-#         image: registry.flou.dev/product-provisioner:latest
+        image: registry.flou.dev/product-provisioner:a7c4024c-246f-4f21-a30c-64ae160d0a24
 #       restartPolicy: Never
 
       #   volumeMounts:
