@@ -8,7 +8,7 @@ spec:
     serviceAccountName: argo-events-sa
   dependencies:
   - name: product-provisioner 
-    eventSourceName: product-provisioner-eventsource
+    eventSourceName: payment-eventsource
     eventName: product-provisioner
     filters: 
       data:
