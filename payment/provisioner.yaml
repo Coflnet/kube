@@ -9,12 +9,12 @@ spec:
     spec:
       containers:
       - name: product-provisioner
-        image: registry.flou.dev:latest
+        image: registry.flou.dev/product-provisioner:latest
         volumeMounts:
         - name: config-volume
           mountPath: /app
       volumes:
-      - name: config-volume
-        configMap:
-          name: config
+        - name: config-volume
+          configMap:
+            name: config
       restartPolicy: Never
