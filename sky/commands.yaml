@@ -37,6 +37,8 @@ spec:
             value: sky-craft-service
           - name: PROFILE_HOST
             value: player
+          - name: TOPICS__LOW_PRICED
+            value: sky-low-priced
           - name: REDIS_HOST
             valueFrom: 
               configMapKeyRef:

@@ -56,6 +56,8 @@ spec:
             configMapKeyRef:
               name: config
               key: topic_new_auction
+        - name: TOPICS__LOW_PRICED
+          value: sky-low-priced
         livenessProbe:
           httpGet:
             path: /status
