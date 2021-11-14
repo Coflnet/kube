@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: product-provisioner
+  name: provisioner
   namespace: payment
 spec:
   ttlSecondsAfterFinished: 100
@@ -13,8 +13,40 @@ spec:
         volumeMounts:
         - name: config-volume
           mountPath: /app
-      volumes:
-        - name: config-volume
-          configMap:
-            name: config
       restartPolicy: Never
+      volumes:
+      - name: config-volume
+        configMap:
+          name: config
+          items:
+          - key: products.json
+            path: products.json
+
+
+
+
+
+# apiVersion: batch/v1
+# kind: Job
+# metadata:
+#   name: product-provisioner
+#   namespace: payment
+# spec:
+#   ttlSecondsAfterFinished: 100
+#   template:
+#     spec:
+#       containers:
+#       - name: product-provisioner
+#         image: registry.flou.dev/product-provisioner:latest
+#       restartPolicy: Never
+
+      #   volumeMounts:
+      #   - name: config-volume
+      #     mountPath: /app
+      #   volumes:
+      #   - name: config-volume
+      #   configMap:
+      #     name: config
+      #     items:
+      #       - key: products.json
+      #         path: products.json
