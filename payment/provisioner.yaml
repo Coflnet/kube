@@ -1,25 +1,25 @@
-apiVersion: batch/v1
 kind: Job
 metadata:
+  labels:
+    app.kubernetes.io/instance: payment
   name: provisioner
   namespace: payment
 spec:
-  ttlSecondsAfterFinished: 100
   template:
     spec:
-      imagePullSecrets:
-        - name: regcred
       containers:
-      - name: product-provisioner
-        image: registry.flou.dev/product-provisioner:a7c4024c-246f-4f21-a30c-64ae160d0a24
+      - image: registry.flou.dev/product-provisioner:a7c4024c-246f-4f21-a30c-64ae160d0a24
+        name: product-provisioner
         volumeMounts:
-        - name: config-volume
-          mountPath: /app
+        - mountPath: /app
+          name: config-volume
       restartPolicy: Never
+      terminationGracePeriodSeconds: 30
       volumes:
-      - name: config-volume
-        configMap:
-          name: config
+      - configMap:
           items:
           - key: products.json
             path: products.json
+          name: config
+        name: config-volume
+  ttlSecondsAfterFinished: 100
