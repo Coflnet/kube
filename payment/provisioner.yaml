@@ -11,7 +11,7 @@ spec:
       imagePullSecrets:
         - name: regcred
       containers:
-      - image: registry.flou.dev/product-provisioner:a7c4024c-246f-4f21-a30c-64ae160d0a24
+        image: registry.flou.dev/product-provisioner:abf01fdf-ca04-4c86-b384-778de146032f
         name: product-provisioner
         volumeMounts:
         - mountPath: /app
