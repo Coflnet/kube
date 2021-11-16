@@ -8,6 +8,8 @@ metadata:
 spec:
   template:
     spec:
+      imagePullSecrets:
+        - name: regcred
       containers:
       - image: registry.flou.dev/product-provisioner:a7c4024c-246f-4f21-a30c-64ae160d0a24
         name: product-provisioner
