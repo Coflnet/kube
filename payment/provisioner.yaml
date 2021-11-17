@@ -29,4 +29,3 @@ spec:
             path: products.json
           name: config
         name: config-volume
-  ttlSecondsAfterFinished: 100
