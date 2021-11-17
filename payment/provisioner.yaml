@@ -2,7 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   labels:
-    app.kubernetes.io/instance: payment
+    app: provisioner
   name: provisioner
   namespace: payment
 spec:
@@ -11,11 +11,15 @@ spec:
       imagePullSecrets:
         - name: regcred
       containers:
+      - name: product-provisioner
         image: registry.flou.dev/product-provisioner:abf01fdf-ca04-4c86-b384-778de146032f
-        name: product-provisioner
         volumeMounts:
-        - mountPath: /app
+        - mountPath: /app/products.json
           name: config-volume
+          subPath: products.json
+        env:
+          - name: "payment_host"
+            value: "payment"
       restartPolicy: Never
       terminationGracePeriodSeconds: 30
       volumes:
