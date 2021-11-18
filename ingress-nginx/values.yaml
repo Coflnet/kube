@@ -197,7 +197,7 @@ controller:
   tolerations: 
   - key: "us"
     operator: "Equal"
-    value: true
+    value: "true"
     effect: "NoSchedule"
 
   ## Affinity and anti-affinity
