@@ -64,6 +64,16 @@ spec:
             configMapKeyRef:
               name: config
               key: topic_new_auction
+        - name: TOPICS__AH_SUMARY
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: topic_ah_summary
+        - name: TOPICS__LOW_PRICED
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: topic_low_priced
         - name: KAFKA_HOST
           valueFrom:
             configMapKeyRef:
