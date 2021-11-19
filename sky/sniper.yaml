@@ -78,6 +78,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: sniper
+  namespace: sky
 spec:
   selector:
     app: sniper
