@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homepage
+  namespace: homepage
+  labels:
+    app: homepage
+spec:
+  selector:
+    matchLabels:
+      app: homepage
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: homepage
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+      - name: homepage
+        image: registry.flou.dev/homepage-homepage:c988a807-e9d8-42e1-8cb3-473e9455bf0a
+        ports:
+        - containerPort: 80
+          name: web
+        resources:
+          requests:
+            cpu: 2m
+            memory: 10Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: homepage
+  namespace: homepage
+spec:
+  selector:
+    app: homepage
+  ports:
+  - port: 80
+    targetPort: 80

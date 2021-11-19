@@ -37,6 +37,16 @@ spec:
   - host: argo-events.flou.dev
     http:
       paths:
+      - path: /homepage
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: homepage-eventsource-eventsource-svc
+            port:
+              number: 12000
+  - host: argo-events.flou.dev
+    http:
+      paths:
       - path: /damlo
         pathType: ImplementationSpecific
         backend:
