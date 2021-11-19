@@ -14,7 +14,7 @@ data:
   redis_host: redis-service
   payment_host: payment.payment.svc.cluster.local
   commands_host: sky-commands-main-service.sky.svc.cluster.local
-  minio_host: minio.minio.svc.cluster.local
+  minio_host: minio.minio.svc.cluster.local:9000
   minio_key: 82nq6rUqwtWutpTzSZVMiu4R
 
   # kafka topics
