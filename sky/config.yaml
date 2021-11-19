@@ -33,5 +33,6 @@ data:
   topic_bazaar: sky-bazaar
   topic_flip: sky-topic-flip
   topic_ah_summary: sky-ah-summary
+  topic_low_priced: sky-low-priced
 
   mariadb_version: "10.5.5"
