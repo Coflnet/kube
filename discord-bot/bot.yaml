@@ -52,3 +52,6 @@ metadata:
 spec:
   selector:
     app: discord-bot-node
+  ports:
+  - port: 80
+    targetPort: 80
