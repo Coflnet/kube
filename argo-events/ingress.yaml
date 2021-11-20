@@ -298,3 +298,14 @@ spec:
             name: discord-bot-node-eventsource-eventsource-svc
             port:
               number: 12000
+
+  - host: argo-events.flou.dev
+    http:
+      paths:
+      - path: /pr-env
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: pr-env-eventsource-eventsource-svc
+            port:
+              number: 12000
