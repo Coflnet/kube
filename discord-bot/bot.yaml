@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: discord-bot-node
   namespace: discord
@@ -7,6 +7,7 @@ spec:
   selector:
     matchLabels:
       app: discord-bot-node
+  serviceName: discord-bot-node
   template:
     metadata:
       labels:
@@ -43,3 +44,11 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "100m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: discord-bot-node
+spec:
+  selector:
+    app: discord-bot-node
