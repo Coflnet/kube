@@ -65,7 +65,7 @@ spec:
                 key: topic_ah_summary
         resources:
           requests:
-            memory: "1500Mi"
+            memory: "1000Mi"
             cpu: "1500m"
 ---
 apiVersion: v1
