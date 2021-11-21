@@ -1,0 +1,97 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sniper
+  namespace: sky
+  labels:
+    app: sniper
+spec:
+  replicas: 1
+  serviceName: sniper
+  updateStrategy: 
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: sniper
+  template:
+    metadata:
+      labels:
+        app: sniper
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+      - name: sniper
+        image: registry.flou.dev/sky-sniper:6ae2da13-427d-4105-ac47-fa80b06a58b7
+        env:
+        - name: MINIO_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: minio_host
+        - name: MINIO_SECRET
+          valueFrom:
+            secretKeyRef:
+              key: minio_secret
+              name: secret
+        - name: MINIO_KEY
+          valueFrom:
+            configMapKeyRef: 
+              name: config
+              key: minio_key
+        - name: JAEGER_AGENT_HOST
+          valueFrom: 
+            configMapKeyRef:
+              name: config
+              key: jaeger_agent_host
+        - name: DOTNET_HOSTBUILDER__RELOADCONFIGONCHANGE
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: reload_config_on_change
+        - name: TOPICS__FLIP
+          valueFrom: 
+            configMapKeyRef:
+              name: config
+              key: topic_flip
+        - name: TOPICS__SOLD_AUCTION
+          valueFrom: 
+            configMapKeyRef:
+              name: config
+              key: topic_sold_auction
+        - name: TOPICS__NEW_AUCTION
+          valueFrom: 
+            configMapKeyRef:
+              name: config
+              key: topic_new_auction
+        - name: TOPICS__AH_SUMARY
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: topic_ah_summary
+        - name: TOPICS__LOW_PRICED
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: topic_low_priced
+        - name: KAFKA_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: kafka_host
+        resources:
+          requests:
+            memory: "3000Mi"
+            cpu: "750m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sniper
+  namespace: sky
+spec:
+  selector:
+    app: sniper
+  ports:
+  - port: 8000
+    targetPort: 8000
