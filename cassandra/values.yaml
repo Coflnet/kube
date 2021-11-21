@@ -298,8 +298,8 @@ resources:
   limits: {}
   ## Examples:
   requests:
-     cpu: 1500m
-     memory: 8Gi
+     cpu: 1000m
+     memory: 6Gi
        # requests: {}
 ## Configure extra options for Cassandra containers' liveness and readiness probes
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes
