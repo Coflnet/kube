@@ -6,6 +6,11 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
 spec:
+  defaultBackend:
+    service: sky-commands-main-service
+      name: 
+      port:
+        number: 8008
   rules:
   - host: sky.coflnet.com
     http:
