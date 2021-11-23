@@ -7,8 +7,8 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   defaultBackend:
-    service: sky-commands-main-service
-      name: 
+    service: 
+      name: sky-commands-main-service
       port:
         number: 8008
   rules:
