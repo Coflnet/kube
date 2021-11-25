@@ -22,7 +22,7 @@ spec:
         - name: regcred
       containers:
       - name: sniper
-        image: registry.flou.dev/sky-sniper:3d75e10f-8b54-4074-869d-45c6099ec728
+        image: registry.flou.dev/sky-sniper:ce77d28f-ca46-45bc-8aea-778802e20af2
         env:
         - name: MINIO_HOST
           valueFrom:
