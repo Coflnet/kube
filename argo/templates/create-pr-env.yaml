@@ -11,17 +11,12 @@ spec:
       parameters:
         - name: pull_request_new_state
         - name: pull_request_number
-        - name: git_repository
         - name: git_username
         - name: git_password_secret_name
         - name: git_password_secret_key
-        - name: k8s_namespace
         - name: container_image
+        - name: container_tag
         - name: container_port
-        - name: request_memory
-        - name: request_cpu
-        - name: base_domain
-
     container:
       image: registry.flou21.de/pr-env:latest
       imagePullPolicy: Always
@@ -34,25 +29,18 @@ spec:
           value: "{{inputs.parameters.pull_request_new_state}}"
         - name: PULL_REQUEST_NUMBER
           value: "{{inputs.parameters.pull_request_number}}"
-        - name: GIT_REPOSITORY
-          value: "{{inputs.parameters.git_repository}}"
         - name: GIT_USERNAME
           value: "{{inputs.parameters.git_username}}"
-        - name: GIT_PASSWORD
+        - name: GIT_TOKEN
           valueFrom: 
             secretKeyRef:
               name: "{{inputs.parameters.git_password_secret_name}}"
               key: "{{inputs.parameters.git_password_secret_key}}"
-
-        - name: K8S_NAMESPACE
-          value: "{{inputs.parameters.k8s_namespace}}"
         - name: CONTAINER_IMAGE
-          value: "{{inputs.parameters.container_image}}"
+          value: "{{inputs.parameters.container_image}}:{{inputs.parameters.container_tag}}"
         - name: CONTAINER_PORT
           value: "{{inputs.parameters.container_port}}"
-        - name: REQUEST_MEMORY
-          value: "{{inputs.parameters.request_memory}}"
-        - name: REQUEST_CPU
-          value: "{{inputs.parameters.request_cpu}}"
-        - name: BASE_DOMAIN
-          value: "{{inputs.parameters.base_domain}}"
+        - name: K8S_NAMESPACE
+          value: "sky"
+        - name: CONTAINER_PORT
+          value: "80"
