@@ -24,6 +24,11 @@ spec:
       - name: sniper
         image: registry.flou.dev/sky-sniper:35d9695d-f772-4bc3-91c8-f6273be85318
         env:
+        - name: DBConnection
+          valueFrom:
+            secretKeyRef:
+              key: connection_read_secondary
+              name: secret
         - name: MINIO_HOST
           valueFrom:
             configMapKeyRef:
