@@ -50,34 +50,35 @@ spec:
               serviceAccountName: argo
               templates:
 
-              - name: build
-                templateRef:
-                  name: build-container-image
-                  template: build-kaniko-git
-                arguments:
-                  parameters:
-                  - name: app_repo
-                    value: ""
-                  - name: branch
-                    value: ""
-                  - name: container_image
-                    value: registry.flou.dev/pr-env
-                  - name: container_tag
-                    value: "{{workflow.uid}}"
-                  - name: sub_path 
-                    value: .
-                  - name: git_user
-                    value: "Flou21"
-                  - name: git_secret_name
-                    value: github-secret
-                  - name: git_secret_key
-                    value: password
 
 
               - name: execute
                 dag:
                   tasks:
                   - name: build
+                    templateRef:
+                      name: build-container-image
+                      template: build-kaniko-git
+                    arguments:
+                      parameters:
+                      - name: app_repo
+                        value: ""
+                      - name: branch
+                        value: ""
+                      - name: container_image
+                        value: registry.flou.dev/pr-env
+                      - name: container_tag
+                        value: "{{workflow.uid}}"
+                      - name: sub_path 
+                        value: .
+                      - name: git_user
+                        value: "Flou21"
+                      - name: git_secret_name
+                        value: github-secret
+                      - name: git_secret_key
+                        value: password
+
+                  - name: deploy
                     templateRef:
                       name: create-pr-env
                       template: create-pr-env
