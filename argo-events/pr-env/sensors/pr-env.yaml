@@ -50,7 +50,7 @@ spec:
               serviceAccountName: argo
               entrypoint: build
               templates:
-              - name: execute
+              - name: build
                 dag:
                   tasks:
                   - name: build
