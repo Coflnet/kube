@@ -96,3 +96,5 @@ spec:
                         value: registry.flou.dev/pr-env
                       - name: container_tag
                         value: "{{workflow.uid}}"
+                      - name: container_port
+                        value: "80"
