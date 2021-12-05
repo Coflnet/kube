@@ -48,10 +48,8 @@ spec:
               imagePullSecrets:
                 - name: regcred
               serviceAccountName: argo
+              entrypoint: build
               templates:
-
-
-
               - name: execute
                 dag:
                   tasks:
