@@ -41,7 +41,7 @@ spec:
               key: kafka_host
         - name: TOPICS__LOW_PRICED
           value: sky-low-priced
-        - name: FLIP_EVENT
+        - name: TOPICS__FLIP_EVENT
           value: sky-flip-event
         livenessProbe:
           httpGet:
