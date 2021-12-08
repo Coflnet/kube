@@ -63,3 +63,7 @@ spec:
     sky-sniper: 
       port: "12000"
       endpoint: /sky-sniper
+    sky-tracker: 
+      port: "12000"
+      endpoint: /sky-tracker
+      method: POST

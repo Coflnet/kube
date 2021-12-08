@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tracker
+  namespace: sky
+  labels:
+    app: tracker
+spec:
+  selector:
+    matchLabels:
+      app: tracker
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: tracker
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+      - name: tracker
+        image: registry.flou.dev/sky-tracker:6e06d9b4-767d-4eaa-a806-31adbb717dff
+        ports:
+        - containerPort: 80
+          name: web
+        env: 
+        - name: DB_CONNECTION
+          valueFrom:
+            secretKeyRef:
+              name: secret 
+              key: connection_tracker_database
+        - name: JAEGER_AGENT_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: jaeger_agent_host
+        - name: KAFKA_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: kafka_host
+        - name: TOPICS__LOW_PRICED
+          value: sky-low-priced
+        - name: FLIP_EVENT
+          value: sky-flip-event
+        livenessProbe:
+          httpGet:
+            path: /status
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 15
+          failureThreshold: 3
+          timeoutSeconds: 5
+        resources:
+          requests:
+            cpu: 150m
+            memory: 200Mi
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: tracker
+#  namespace: sky
+#spec:
+#  selector:
+#    app: tracker
+#  ports:
+#  - port: 80
+#    targetPort: 80
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: tracker-metrics-service
+#  namespace: sky
+#  labels:
+#    app: tracker-metrics-service
+#spec:
+#  selector:
+#    app: tracker
+#  ports:
+#  - port: 80
+#    targetPort: 80
+#    name: metrics
+#    protocol: TCP

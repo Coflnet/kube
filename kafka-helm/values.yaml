@@ -1233,6 +1233,12 @@ provisioning:
   ##     flush.messages: 1
   ##
   topics: 
+  - name: sky-flip-event
+    partitions: 12
+    replicationFactor: 1
+    config:
+      flush.messages: 1
+      compression.type: "gzip"
   - name: sky-canceledauction-raw
     partitions: 12
     replicationFactor: 1
