@@ -43,14 +43,6 @@ spec:
           value: sky-low-priced
         - name: TOPICS__FLIP_EVENT
           value: sky-flip-event
-        livenessProbe:
-          httpGet:
-            path: /status
-            port: 80
-          initialDelaySeconds: 10
-          periodSeconds: 15
-          failureThreshold: 3
-          timeoutSeconds: 5
         resources:
           requests:
             cpu: 150m
