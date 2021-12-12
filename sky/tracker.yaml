@@ -21,7 +21,7 @@ spec:
       - name: tracker
         image: registry.flou.dev/sky-tracker:4ab822d6-fa69-4944-895b-2fabbaea0adb
         ports:
-        - containerPort: 80
+        - containerPort: 8000
           name: web
         env: 
         - name: DB_CONNECTION
