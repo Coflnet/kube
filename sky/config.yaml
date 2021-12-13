@@ -34,5 +34,5 @@ data:
   topic_flip: sky-topic-flip
   topic_ah_summary: sky-ah-summary
   topic_low_priced: sky-low-priced
-
+  topic_update_settings: sky-update-settings
   mariadb_version: "10.5.5"
