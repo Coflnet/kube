@@ -67,9 +67,9 @@ spec:
                     arguments:
                       parameters:
                       - name: app_repo
-                        value: git://github.com/Coflnet/SkySettings
+                        value: git://github.com/Coflnet/SkyCommands
                       - name: branch
-                        value: master
+                        value: main
                       - name: container_image
                         value: registry.flou.dev/sky-settings
                       - name: container_tag
