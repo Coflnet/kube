@@ -22,7 +22,7 @@ spec:
         - name: regcred
       containers:
       - name: settings
-        image: registry.flou.dev/sky-settings:fc0cac88-de88-4304-9bfa-661c12f69274
+        image: registry.flou.dev/sky-settings:94342bd8-4c22-4055-883b-01f03bb5d7d4
         ports:
           - containerPort: 8000
         env:
