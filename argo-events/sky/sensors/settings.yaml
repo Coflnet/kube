@@ -67,7 +67,7 @@ spec:
                     arguments:
                       parameters:
                       - name: app_repo
-                        value: git://github.com/Coflnet/SkyCommands
+                        value: git://github.com/Coflnet/SkySettings
                       - name: branch
                         value: main
                       - name: container_image
