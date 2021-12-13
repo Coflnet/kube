@@ -81,6 +81,8 @@ spec:
               configMapKeyRef:
                 name: config
                 key: topic_flip
+          - name: TOPICS__FLIP_EVENT
+            value: sky-flip-event
           - name: KAFKA_HOST
             valueFrom:
               configMapKeyRef:
