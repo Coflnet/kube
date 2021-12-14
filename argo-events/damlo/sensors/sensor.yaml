@@ -6,6 +6,21 @@ metadata:
 spec:
   template:
     serviceAccountName: argo-events-sa
+    affinity:
+      nodeAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 1
+          preference:
+            matchExpressions:
+            - key: cisensor
+              operator: In
+              values:
+              - true
+    tolerations:
+    - key: ci-sensor
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
   dependencies:
   - name: damlo
     eventSourceName: damlo-eventsource

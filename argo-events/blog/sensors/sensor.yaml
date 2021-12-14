@@ -6,20 +6,21 @@ metadata:
 spec:
   template:
     serviceAccountName: argo-events-sa
-    tolerations:
-    - key: "ci-sensor"
-      operator: "Equal"
-      value: true
-      effect: "NoSchedule"
     affinity:
-      preferredDuringSchedulingIgnoredDuringExecution:
-      - weight: 1
-        preference:
-          matchExpressions:
-          - key: ci-sensor
-            operator: In
-            values:
-            - true
+      nodeAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 1
+          preference:
+            matchExpressions:
+            - key: cisensor
+              operator: In
+              values:
+              - true
+    tolerations:
+    - key: ci-sensor
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
   dependencies:
   - name: blog
     eventSourceName: blog-eventsource
