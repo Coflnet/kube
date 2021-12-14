@@ -9,7 +9,7 @@ spec:
     tolerations:
     - key: "ci-sensor"
       operator: "Equal"
-      value: "true"
+      value: true
       effect: "NoSchedule"
     affinity:
       preferredDuringSchedulingIgnoredDuringExecution:
@@ -19,7 +19,7 @@ spec:
           - key: ci-sensor
             operator: In
             values:
-            - "true"
+            - true
   dependencies:
   - name: blog
     eventSourceName: blog-eventsource
