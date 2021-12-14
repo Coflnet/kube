@@ -15,7 +15,7 @@ spec:
             - key: cisensor
               operator: In
               values:
-              - true
+              - "true"
     tolerations:
     - key: ci-sensor
       operator: "Equal"
