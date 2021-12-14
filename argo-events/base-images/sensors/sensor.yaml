@@ -16,17 +16,6 @@ spec:
               operator: In
               values:
               - "true"
-      podAntiAffinity:
-        preferredDuringSchedulingIgnoredDuringExecution:
-        - weight: 1
-          podAffinityTerm:
-            labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - updater
-            topologyKey: kubernetes.io/hostname
     tolerations:
     - key: ci-sensor
       operator: "Equal"
