@@ -16,6 +16,18 @@ spec:
       labels:
         app: commands
     spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - commands
+              topologyKey: kubernetes.io/hostname
       imagePullSecrets:
         - name: regcred
       containers:
