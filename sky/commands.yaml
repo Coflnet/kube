@@ -94,8 +94,8 @@ spec:
             value: sky-indexer-service
         resources:
           requests:
-            memory: "500Mi"
-            cpu: "500m"
+            memory: "1500Mi"
+            cpu: "1000m"
   strategy:
     canary: 
       maxUnavailable: 1
