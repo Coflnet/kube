@@ -100,6 +100,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: kafka_host
+          - name: RATE_LIMITER_REDIS_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: redis_host_sky
           - name: SUBSCRIPTION_HOST
             value: subscriptions
           - name: INDEXER_HOST
