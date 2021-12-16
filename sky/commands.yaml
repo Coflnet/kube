@@ -110,8 +110,11 @@ spec:
           - name: INDEXER_HOST
             value: sky-indexer-service
         resources:
+          limits:
+            memory: "2000Mi"
+            cpu: "4000m"
           requests:
-            memory: "1500Mi"
+            memory: "2000Mi"
             cpu: "500m"
   strategy:
     canary: 
