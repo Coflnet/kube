@@ -45,6 +45,8 @@ spec:
             value: updater
           - name: MCCONNECT_HOST
             value: mc-connect
+          - name: FLIPTRACKER_HOST
+            value: tracker
           - name: CRAFTS_HOST
             value: sky-craft-service
           - name: PROFILE_HOST
