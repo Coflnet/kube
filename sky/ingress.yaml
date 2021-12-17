@@ -66,6 +66,13 @@ spec:
             name: sky-commands-canary-service
             port:
               number: 80
+      - path: /modsocket
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: sky-mod-main-service
+            port:
+              number: 8000
   - host: sky-preview.coflnet.com
     http:
       paths:
