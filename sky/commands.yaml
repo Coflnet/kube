@@ -111,7 +111,7 @@ spec:
             value: sky-indexer-service
         resources:
           limits:
-            memory: "2000Mi"
+            memory: "4000Mi"
             cpu: "800m"
           requests:
             memory: "2000Mi"
