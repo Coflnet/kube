@@ -109,6 +109,12 @@ spec:
             value: subscriptions
           - name: INDEXER_HOST
             value: sky-indexer-service
+        readinessProbe:
+          httpGet:
+            path: /metrics
+            port: 80
+          initialDelaySeconds: 20
+          periodSeconds: 3
         resources:
           limits:
             memory: "4000Mi"
