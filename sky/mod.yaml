@@ -38,6 +38,8 @@ spec:
         env:
           - name: SKYCOMMANDS_HOST
             value: "sky-commands-main-service:8008"
+          - name: UPDATER_HOST
+            value: "updater:8000"
           - name: TOPICS__LOW_PRICED
             value: sky-low-priced
           - name: REDIS_HOST
