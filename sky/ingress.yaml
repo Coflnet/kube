@@ -72,7 +72,7 @@ spec:
           service:
             name: sky-mod-main-service
             port:
-              number: 8000
+              number: 8008
   - host: sky-preview.coflnet.com
     http:
       paths:

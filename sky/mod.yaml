@@ -34,7 +34,7 @@ spec:
       - name: mod
         image: registry.flou.dev/sky-mod:ed7c315b-71b7-441c-b838-ee36cf3dc937
         ports:
-          - containerPort: 8000
+          - containerPort: 8008
         env:
           - name: SKYCOMMANDS_HOST
             value: sky-commands-main-service
@@ -138,8 +138,8 @@ spec:
   selector:
     app: mod
   ports:
-  - port: 8000
-    targetPort: 8000
+  - port: 8008
+    targetPort: 8008
     name: api
 ---
 apiVersion: v1
@@ -150,8 +150,8 @@ spec:
   selector:
     app: mod
   ports:
-  - port: 8000
-    targetPort: 8000
+  - port: 8008
+    targetPort: 8008
     name: api
 ---
 apiVersion: v1
@@ -165,7 +165,7 @@ spec:
   selector:
     app: mod
   ports:
-  - port: 8000
-    targetPort: 8000
+  - port: 8008
+    targetPort: 8008
     name: metrics
     protocol: TCP
