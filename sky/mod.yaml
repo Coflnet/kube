@@ -42,6 +42,8 @@ spec:
             value: tracker
           - name: UPDATER_HOST
             value: "updater:8000"
+          - name: MCCONNECT_HOST
+            value: mc-connect
           - name: TOPICS__LOW_PRICED
             value: sky-low-priced
           - name: REDIS_HOST
