@@ -35,7 +35,7 @@ spec:
         image: registry.flou.dev/sky-commands:53871dc9-959f-4582-bf0a-71cdf905737e
         ports:
           - containerPort: 8008
-          - containerPort: 80
+          - containerPort: 8000
         env:
           - name: FRONTEND_PROD
             value: stage-frontend
@@ -114,7 +114,7 @@ spec:
         readinessProbe:
           httpGet:
             path: /metrics
-            port: 80
+            port: 8000
           initialDelaySeconds: 20
           periodSeconds: 3
         resources:
@@ -155,7 +155,7 @@ spec:
     app: commands
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 8000
     name: api
   - port: 8008
     targetPort: 8008
@@ -170,7 +170,7 @@ spec:
     app: commands
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 8000
     name: api
   - port: 8008
     targetPort: 8008
@@ -188,6 +188,6 @@ spec:
     app: commands
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 8000
     name: metrics
     protocol: TCP
