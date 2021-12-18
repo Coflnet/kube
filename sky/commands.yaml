@@ -117,7 +117,7 @@ spec:
           periodSeconds: 3
         resources:
           limits:
-            memory: "4000Mi"
+            memory: "2000Mi"
             cpu: "800m"
           requests:
             memory: "2000Mi"
