@@ -32,7 +32,7 @@ spec:
         - name: regcred
       containers:
       - name: commands
-        image: registry.flou.dev/sky-commands:23ef81f1-540a-474e-9d43-abf3019736ba
+        image: registry.flou.dev/sky-commands:eed8b90f-9b5a-453c-81e0-c05a8cda4e3c
         ports:
           - containerPort: 8008
           - containerPort: 8000
@@ -54,7 +54,7 @@ spec:
           - name: TOPICS__LOW_PRICED
             value: sky-low-priced
           - name: COMPlus_ThreadPool_ForceMinWorkerThreads
-            value: "250"
+            value: "750"
           - name: REDIS_HOST
             valueFrom: 
               configMapKeyRef:
