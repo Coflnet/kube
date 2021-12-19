@@ -193,3 +193,13 @@ spec:
     targetPort: 8000
     name: metrics
     protocol: TCP
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: commands-pdb
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: commands
