@@ -11,7 +11,7 @@ data:
   jaeger_sampling_host: http://jaeger-agent.observability.svc.cluster.local:5778/sampling
   reload_config_on_change: "false"
   kafka_host: kafka-helm.kafka.svc.cluster.local
-  redis_host: redis-service
+  redis_host: redis-service,syncTimeout=1000
   #redis_host: redis-cluster.redis.svc.cluster.local:6379,password=6o2SIpWTpK
   redis_host_sky: redis-service
   payment_host: payment.payment.svc.cluster.local
