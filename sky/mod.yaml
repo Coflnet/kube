@@ -32,7 +32,7 @@ spec:
         - name: regcred
       containers:
       - name: mod
-        image: registry.flou.dev/sky-mod:22e5e29b-d458-46b3-801b-65987f37003b
+        image: registry.flou.dev/sky-mod:8f8ae85c-0991-4103-a8c8-f88f18c880e3
         ports:
           - containerPort: 8008
         env:
@@ -42,6 +42,8 @@ spec:
             value: tracker
           - name: UPDATER_HOST
             value: "updater:8000"
+          - name: MCCONNECT_HOST
+            value: mc-connect
           - name: TOPICS__LOW_PRICED
             value: sky-low-priced
           - name: REDIS_HOST
