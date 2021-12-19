@@ -97,16 +97,8 @@ spec:
                 key: reload_config_on_change
         resources:
           requests:
-            memory: "3000Mi"
-            cpu: "3000m"
-              #   volumeMounts:
-              #     - mountPath: /data
-              #       name: indexer-mount-migration
-              #       subPath: data
-              # volumes:
-              #   - name: indexer-mount-migration
-              #     persistentVolumeClaim:
-              #       claimName: indexer-claim-migration
+            memory: "1000Mi"
+            cpu: "1000m"
 ---
 apiVersion: v1
 kind: Service
