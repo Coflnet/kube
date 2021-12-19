@@ -30,5 +30,5 @@ spec:
               key: mongo_host
         resources:
           limits:
-            memory: "10Mi"
+            memory: "15Mi"
             cpu: "10m"
