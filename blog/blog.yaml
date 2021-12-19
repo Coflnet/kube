@@ -22,10 +22,6 @@ spec:
         image: registry.flou.dev/coflnet-blog:ede41150-b79f-4a68-97d5-0b8f9db89e92
         ports:
           - containerPort: 80
-        resources:
-          requests:
-            memory: "25Mi"
-            cpu: "10m"
         livenessProbe:
           httpGet:
             path: /
