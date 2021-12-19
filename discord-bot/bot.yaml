@@ -41,9 +41,9 @@ spec:
                 key: live_channel_id_support
 
         resources:
-          limits:
-            memory: "128Mi"
-            cpu: "100m"
+          requests:
+            memory: "50Mi"
+            cpu: "10m"
 ---
 apiVersion: v1
 kind: Service
