@@ -61,7 +61,7 @@ spec:
                 key: paypal_secret
         resources:
           requests:
-            cpu: 100m
+            cpu: 10m
             memory: 100Mi
 ---
 apiVersion: v1
