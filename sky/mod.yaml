@@ -115,11 +115,11 @@ spec:
           periodSeconds: 3
         resources:
           limits:
-            memory: "4000Mi"
-            cpu: "800m"
+            memory: "1000Mi"
+            cpu: "200m"
           requests:
-            memory: "2000Mi"
-            cpu: "800m"
+            memory: "1000Mi"
+            cpu: "200m"
   strategy:
     canary: 
       maxUnavailable: 1
