@@ -16,7 +16,7 @@ spec:
         - name: regcred
       containers:
       - name: player
-        image: registry.flou.dev/sky-player:198afa66-baab-4cf1-8225-74d7c72f9e96
+        image: registry.flou.dev/sky-player:cd4d18ca-57f4-41a2-b262-873c7e32801a
         ports:
           - containerPort: 8000
         env:
