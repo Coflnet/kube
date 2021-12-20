@@ -73,6 +73,13 @@ spec:
             name: sky-commands-canary-service
             port:
               number: 80
+      - path: /swagger
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: sky-commands-canary-service
+            port:
+              number: 80
       - path: /modsocket
         pathType: ImplementationSpecific
         backend:
