@@ -101,3 +101,7 @@ spec:
       port: "12000"
       endpoint: /sky-tracker
       method: POST
+    sky-player-name:
+      port: "12000"
+      endpoint: /sky-player-name
+      method: POST

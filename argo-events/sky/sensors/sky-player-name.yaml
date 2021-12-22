@@ -1,0 +1,141 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: sky-player-name-webhook
+  namespace: argo-events
+spec:
+  template:
+    serviceAccountName: argo-events-sa
+    affinity:
+      nodeAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 100
+          preference:
+            matchExpressions:
+            - key: cisensor
+              operator: In
+              values:
+              - "true"
+    tolerations:
+    - key: ci-sensor
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
+  dependencies:
+  - name: sky-player-name
+    eventSourceName: sky-eventsource
+    eventName: sky-player-name
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  triggers:
+  - template:
+      name: trigger
+      argoWorkflow:
+        group: argoproj.io
+        version: v1alpha1
+        resource: workflows
+        operation: submit
+        source:
+          resource:
+            apiVersion: argoproj.io/v1alpha1
+            kind: Workflow
+            metadata:
+              namespace: argo
+              generateName: build-sky-player-name-
+            spec:
+              entrypoint: build
+              serviceAccountName: argo
+              retryStrategy:
+                    limit: 10
+                    retryPolicy: "Always"
+                    backoff:
+                      duration: "1"
+                      factor: 2
+                      maxDuration: "30m"
+              imagePullSecrets:
+                - name: regcred
+              volumes:
+              - name: kaniko-secret
+                secret:
+                  secretName: regcred
+                  items:
+                    - key: .dockerconfigjson
+                      path: config.json
+              - name: secret
+                secret:
+                  secretName: secret
+              - name: sky-argo-secret
+                secret:
+                  secretName: sky-argo-secret
+              templates:
+              - name: build
+                dag:
+                  tasks:
+                  - name: build
+                    templateRef:
+                      name: build-container-image
+                      template: build-kaniko-git
+                    arguments:
+                      parameters:
+                      - name: app_repo
+                        value: git://github.com/Coflnet/SkyPlayerName
+                      - name: branch
+                        value: main
+                      - name: container_image
+                        value: registry.flou.dev/sky-player-name
+                      - name: container_tag
+                        value: "{{workflow.uid}}"
+                      - name: sub_path 
+                        value: .
+                      - name: git_user
+                        value: "Flou21"
+                      - name: git_secret_name
+                        value: github-secret
+                      - name: git_secret_key
+                        value: password
+
+                  - name: promote
+                    templateRef:
+                      name: promote
+                      template: promote
+                    arguments:
+                      parameters:
+                      - name: tag
+                        value: "{{workflow.uid}}"
+                      - name: git_user
+                        value: "Flou21"
+                      - name: git_secret_name
+                        value: github-secret
+                      - name: git_secret_key
+                        value: password
+                      - name: repo_url
+                        value: "github.com/Coflnet/kube.git"
+                      - name: image_name
+                        value: registry.flou.dev\/sky-player-name
+                      - name: k8s_file
+                        value: ./sky/player-name.yaml
+                      - name: message
+                        value: "[CI] sky player-name - version bump {{workflow.uid}}"
+                    dependencies: [build]
+
+                  - name: argo-sync
+                    templateRef: 
+                      name: argo-sync
+                      template: argo-sync
+                    arguments:
+                      parameters:
+                        - name: app_name
+                          value: sky
+                        - name: argo_server_secret_name
+                          value : sky-argo-secret
+                        - name: argo_server_secret_key
+                          value: argo_server
+                        - name: argo_auth_token_secret_name
+                          value: sky-argo-secret
+                        - name: argo_auth_token_secret_key
+                          value: argo_auth_token
+                    dependencies: [promote]
