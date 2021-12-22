@@ -113,6 +113,11 @@ spec:
             value: subscriptions
           - name: INDEXER_HOST
             value: sky-indexer-service
+          - name: PLAYERNAME_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: sky_player_name_url
         readinessProbe:
           httpGet:
             path: /metrics
