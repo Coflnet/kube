@@ -22,7 +22,7 @@ spec:
         - name: regcred
       containers:
       - name: sniper
-        image: registry.flou.dev/sky-sniper:390e9ef3-159c-4132-a663-f281f0f9b687
+        image: registry.flou.dev/sky-sniper:06758d2c-99c2-4701-9405-53a2be5a1129
         env:
         - name: DBConnection
           valueFrom:
