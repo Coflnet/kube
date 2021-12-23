@@ -2239,10 +2239,10 @@ prometheus:
     resources: 
       requests:
         memory: 4Gi
-        cpu: 1000Mi
+        cpu: 1000m
       limits:
         memory: 4Gi
-        cpu: 2000Mi
+        cpu: 2000m
 
     ## Prometheus StorageSpec for persistent data
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/master/Documentation/user-guides/storage.md
