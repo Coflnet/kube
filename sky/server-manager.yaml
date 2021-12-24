@@ -36,7 +36,7 @@ spec:
               configMapKeyRef:
                 name: config
                 key: kafka_host
-          - name: KAKFA_TOPIC
+          - name: KAFKA_TOPIC
             valueFrom:
               configMapKeyRef:
                 name: config
