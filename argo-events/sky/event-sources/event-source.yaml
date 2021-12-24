@@ -105,3 +105,7 @@ spec:
       port: "12000"
       endpoint: /sky-player-name
       method: POST
+    sky-server-manager:
+      port: "12000"
+      endpoint: /sky-server-manager
+      method: POST

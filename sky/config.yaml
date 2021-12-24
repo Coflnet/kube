@@ -19,6 +19,7 @@ data:
   commands_host: sky-commands-main-service.sky.svc.cluster.local
   minio_host: minio.minio.svc.cluster.local:9000
   minio_key: 82nq6rUqwtWutpTzSZVMiu4R
+  mongo_host: mongodb://root:root@mongo-mongodb.mongo:27017
   sky_player_name_url: http://player-name:8000/
   # kafka topics
   topic_missing_auction-raw: sky-canceledauction-raw
@@ -38,4 +39,5 @@ data:
   topic_ah_summary: sky-ah-summary
   topic_low_priced: sky-low-priced
   topic_update_settings: sky-update-settings
+  topic_transaction: transactions
   mariadb_version: "10.5.5"

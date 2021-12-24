@@ -1347,6 +1347,12 @@ provisioning:
     config:
       flush.messages: 1
       compression.type: "gzip"
+  - name: transactions
+    partitions: 3
+    replicationFactor: 1
+    config:
+      flush.messages: 1
+      compression.type: "gzip"
 
 
 ## @section Zookeeper chart parameters
