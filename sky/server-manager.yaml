@@ -30,7 +30,7 @@ spec:
             valueFrom:
               configMapKeyRef:
                 name: config
-                key: mongon_host
+                key: mongo_host
           - name: KAFKA_HOST
             valueFrom:
               configMapKeyRef:
