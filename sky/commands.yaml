@@ -54,7 +54,7 @@ spec:
           - name: TOPICS__LOW_PRICED
             value: sky-low-priced
           - name: COMPlus_ThreadPool_ForceMinWorkerThreads
-            value: "750"
+            value: "450"
           - name: REDIS_HOST
             valueFrom: 
               configMapKeyRef:
