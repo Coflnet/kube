@@ -209,7 +209,7 @@ kind: PodDisruptionBudget
 metadata:
   name: commands-pdb
 spec:
-  minAvailable: 2
+  maxUnavailable: 1
   selector:
     matchLabels:
       app: commands
