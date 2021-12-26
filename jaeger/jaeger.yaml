@@ -12,7 +12,7 @@ spec:
         servers: cassandra.cassandra.svc.cluster.local
         keyspace: jaeger_v1
         username: "cassandra"
-        password: "RcIPgnim1b"
+        password: "g8y2crm372"
     cassandraCreateSchema: # <3>
       datacenter: "datacenter1"
       mode: "test"
