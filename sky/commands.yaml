@@ -37,6 +37,11 @@ spec:
           - containerPort: 8008
           - containerPort: 8000
         env:
+          - name: PAYMENTS_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: payment_host
           - name: FRONTEND_PROD
             value: stage-frontend
           - name: FRONTEND_STAGING
