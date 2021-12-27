@@ -46,9 +46,9 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: sky-commands-main-service
+            name: sky-api-main-service
             port:
-              number: 80
+              number: 8000
       - path: /swagger
         pathType: ImplementationSpecific
         backend:
@@ -77,9 +77,9 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: sky-commands-canary-service
+            name: sky-api-main-service
             port:
-              number: 80
+              number: 8000
       - path: /swagger
         pathType: ImplementationSpecific
         backend:
