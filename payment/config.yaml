@@ -10,8 +10,68 @@ data:
   products.json: |
     [
       {
-        "slug": "kevin2",
-        "title": "Kevin2",
-        "cost": 420.69
+          "slug": "premium",
+          "title": "Premium",
+          "description": "Premium plan granting various perks",
+          "cost": 1800,
+          "ownershipSeconds": 2592000,
+          "type": 4
+      },
+      {
+          "slug": "premium-quater",
+          "title": "3 months of Premium",
+          "cost": 5400,
+          "ownershipSeconds": 7776000,
+          "type": 4
+      },
+      {
+          "slug": "premium-half-year",
+          "title": "Half a year of Premium",
+          "cost": 10800,
+          "ownershipSeconds": 15552000,
+          "type": 4
+      },
+      {
+          "slug": "budget-premium",
+          "title": "3 months of Basic Plan",
+          "cost": 1800,
+          "ownershipSeconds": 7776000,
+          "type": 4
+      },
+      {
+          "slug": "sniper-small",
+          "title": "Small",
+          "cost": 212,
+          "ownershipSeconds": 3600
+      },
+      {
+          "slug": "sniper-medium",
+          "title": "Medium",
+          "cost": 322,
+          "ownershipSeconds": 3600
+      },
+      {
+          "slug": "sniper-big",
+          "title": "Big",
+          "cost": 360,
+          "ownershipSeconds": 3600
+      },
+      {
+          "slug": "sniper-ultra",
+          "title": "Ultra",
+          "cost": 634,
+          "ownershipSeconds": 3600
+      },
+      {
+          "slug": "sniper-cloud",
+          "title": "Cloud",
+          "cost": 1.342,
+          "ownershipSeconds": 3600
+      },
+      {
+          "slug": "referal",
+          "title": "Referral bonus",
+          "cost": 100,
+          "type": 4
       }
-    ]
+    ] 
