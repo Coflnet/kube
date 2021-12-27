@@ -109,3 +109,7 @@ spec:
       port: "12000"
       endpoint: /sky-server-manager
       method: POST
+    sky-api:
+      port: "12000"
+      endpoint: /sky-api
+      method: POST
