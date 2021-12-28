@@ -46,6 +46,11 @@ spec:
             value: mc-connect
           - name: TOPICS__LOW_PRICED
             value: sky-low-priced
+          - name: SKYFLIPPER_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: flipper_host
           - name: REDIS_HOST
             valueFrom: 
               configMapKeyRef:
