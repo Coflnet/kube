@@ -86,7 +86,7 @@ spec:
       endpoint: /product-provisioner
       method: POST
 
-    promoter:
+    static-sensor:
       port: "12000"
       endpoint: /promoter
       method: POST
