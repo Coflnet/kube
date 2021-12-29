@@ -134,7 +134,7 @@ spec:
                       - name: git_secret_key
                         value: password
                       - name: repo_url
-                        value: "github.com/Coflnet/kube.git"
+                        value: "https://github.com/Coflnet/kube"
                     dependencies: [build]
 
                   - name: argo-sync
