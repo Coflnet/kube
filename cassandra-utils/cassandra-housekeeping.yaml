@@ -9,14 +9,14 @@ spec:
     spec:
       template:
         spec:
+          successfulJobsHistoryLimit: 7
+          failedJobsHistoryLimit: 7
           imagePullSecrets:
             - name: regcred
           containers:
           - name: housekeeping
             image: registry.flou.dev/cassandra-housekeeping:c79445cf-6b31-4850-9191-31e0b0d007f4
             imagePullPolicy: IfNotPresent
-            successfulJobsHistoryLimit: 7
-            failedJobsHistoryLimit: 7
             env:
               - name: USERNAME
                 value: cassandra
