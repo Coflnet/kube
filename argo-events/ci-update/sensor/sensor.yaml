@@ -1,0 +1,484 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: ci-update-webhook
+  namespace: argo-events
+spec:
+  template:
+    serviceAccountName: argo-events-sa
+  dependencies:
+
+  # blog
+  - name: blog
+    eventSourceName: ci-eventsource
+    eventName: blog
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+
+  # cassandra-housekeeping
+  - name: cassandra-housekeeping
+    eventSourceName: ci-eventsource
+    eventName: cassandra-housekeeping
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+    
+  # damlo
+  - name: damlo
+    eventSourceName: ci-eventsource
+    eventName: damlo
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+
+  # discord
+  - name: /discord-bot-node
+    eventSourceName: ci-eventsource
+    eventName: /discord-bot-node
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/release
+  - name: coflnet-bot
+    eventSourceName: ci-eventsource
+    eventName: coflnet-bot
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+
+  # feedback
+  - name: feedback
+    eventSourceName: ci-eventsource
+    eventName: feedback
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+
+  # homepage
+  - name: homepage
+    eventSourceName: ci-eventsource
+    eventName: homepage
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+
+  # kafka-dedup
+  - name: kafka-dedup-dotnet
+    eventSourceName: ci-eventsource
+    eventName: kafka-dedup-dotnet
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+
+  # kafka-sim
+  - name: kafka-sim
+    eventSourceName: ci-eventsource
+    eventName: kafka-sim
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+
+  # mail-notification
+  - name: mail-notification
+    eventSourceName: ci-eventsource
+    eventName: mail-notification
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+
+  # nfl-tip-game
+  - name: nfl-tip-game
+    eventSourceName: ci-eventsource
+    eventName: nfl-tip-game
+
+  # payment
+  - name: payment
+    eventSourceName: ci-eventsource
+    eventName: payment
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: payment-provisioner
+    eventSourceName: ci-eventsource
+    eventName: payment-provisioner
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+
+  # sky
+  - name: sky
+    eventSourceName: ci-eventsource
+    eventName: sky
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-pull-request
+    eventSourceName: ci-eventsource
+    eventName: sky-pull-request
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: frontend
+    eventSourceName: ci-eventsource
+    eventName: frontend
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-core
+    eventSourceName: ci-eventsource
+    eventName: sky-core
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-commands
+    eventSourceName: ci-eventsource
+    eventName: sky-commands
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-mod
+    eventSourceName: ci-eventsource
+    eventName: sky-mod
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-subscriptions
+    eventSourceName: ci-eventsource
+    eventName: sky-subscriptions
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-flipper
+    eventSourceName: ci-eventsource
+    eventName: sky-flipper
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-mc-connect
+    eventSourceName: ci-eventsource
+    eventName: sky-mc-connect
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-fliter
+    eventSourceName: ci-eventsource
+    eventName: sky-filter
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-stage-frontend
+    eventSourceName: ci-eventsource
+    eventName: sky-stage-frontend
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-updater
+    eventSourceName: ci-eventsource
+    eventName: sky-updater
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-settings
+    eventSourceName: ci-eventsource
+    eventName: sky-settings
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-indexer
+    eventSourceName: ci-eventsource
+    eventName: sky-indexer
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-craft
+    eventSourceName: ci-eventsource
+    eventName: sky-craft
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-player
+    eventSourceName: ci-eventsource
+    eventName: sky-player
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-sniper
+    eventSourceName: ci-eventsource
+    eventName: sky-sniper
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-tracker
+    eventSourceName: ci-eventsource
+    eventName: sky-tracker
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-player-name
+    eventSourceName: ci-eventsource
+    eventName: sky-player-name
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  - name: sky-server-manager
+    eventSourceName: ci-eventsource
+    eventName: sky-server-manager
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+    
+  # songvoter
+  - name: songvoter
+    eventSourceName: ci-eventsource
+    eventName: songvoter
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+  
+  # static-server
+  - name: static-server
+    eventSourceName: ci-eventsource
+    eventName: static-server
+    filters: 
+      data:
+      - path: body.ref
+        type: string
+        value:
+          - refs/heads/main
+
+  triggers:
+  - template:
+      name: trigger
+      argoWorkflow:
+        group: argoproj.io
+        version: v1alpha1
+        resource: workflows
+        operation: submit
+        parameters:
+          - src:
+              dependencyName: git_url
+              dataKey: body.repository.git_url
+            dest: spec.templates.0.dag.tasks.0.arguments.parameters.0.value
+          - src:
+              dependencyName: branch
+              dataKey: body.repository.default_branch
+            dest: spec.templates.0.dag.tasks.0.arguments.parameters.1.value
+          - src:
+              dependencyName: build-image-name
+              dataKey: body.repository.name
+            dest: spec.templates.0.dag.tasks.0.arguments.parameters.2.value
+            operation: append
+          - src:
+              dependencyName: build-image-name
+              dataKey: body.repository.name
+            dest: spec.templates.0.dag.tasks.1.arguments.parameters.0.value
+            operation: append
+          - src:
+              dependencyName: build-image-name
+              dataKey: body.repository.name
+            dest: spec.templates.0.dag.tasks.1.arguments.parameters.1.value
+          - src:
+              dependencyName: build-image-name
+              dataKey: body.repository.name
+            dest: spec.templates.0.dag.tasks.1.arguments.parameters.2.value
+            operation: append
+            
+        source:
+          resource:
+            apiVersion: argoproj.io/v1alpha1
+            kind: Workflow
+            metadata:
+              namespace: argo
+              generateName: ci-update-
+            spec:
+              entrypoint: build
+              serviceAccountName: argo
+              retryStrategy:
+                    limit: 10
+                    retryPolicy: "Always"
+                    backoff:
+                      duration: "1"
+                      factor: 2
+                      maxDuration: "30m"
+              imagePullSecrets:
+                - name: regcred
+              volumes:
+              - name: kaniko-secret
+                secret:
+                  secretName: regcred
+                  items:
+                    - key: .dockerconfigjson
+                      path: config.json
+              - name: secret
+                secret:
+                  secretName: secret
+              - name: sky-argo-secret
+                secret:
+                  secretName: sky-argo-secret
+              templates:
+              - name: build
+                dag:
+                  tasks:
+                  - name: build
+                    templateRef:
+                      name: build-container-image
+                      template: build-kaniko-git
+                    arguments:
+                      parameters:
+                      - name: app_repo
+                        value: ""
+                      - name: branch
+                        value: ""
+                      - name: container_image
+                        value: "registry.flou.dev/"
+                      - name: container_tag
+                        value: "{{workflow.uid}}"
+                      - name: sub_path 
+                        value: .
+                      - name: git_user
+                        value: "Flou21"
+                      - name: git_secret_name
+                        value: github-secret
+                      - name: git_secret_key
+                        value: password
+
+                  - name: promote_v2
+                    templateRef:
+                      name: promote_v2
+                      template: promote_v2
+                    arguments:
+                      parameters:
+                      - name: image_name
+                        value: "registry.flou.dev/"
+                      - name: k8s_file
+                        value: ""
+                      - name: message
+                        value: "[CI] update - version bump "
+                      - name: tag
+                        value: "{{workflow.uid}}"
+                      - name: git_user
+                        value: "Flou21"
+                      - name: git_secret_name
+                        value: github-secret
+                      - name: git_secret_key
+                        value: password
+                      - name: repo_url
+                        value: "github.com/Coflnet/kube.git"
+                    dependencies: [build]
+
+                  - name: argo-sync
+                    templateRef: 
+                      name: argo-sync
+                      template: argo-sync
+                    arguments:
+                      parameters:
+                        - name: app_name
+                          value: sky
+                        - name: argo_server_secret_name
+                          value : sky-argo-secret
+                        - name: argo_server_secret_key
+                          value: argo_server
+                        - name: argo_auth_token_secret_name
+                          value: sky-argo-secret
+                        - name: argo_auth_token_secret_key
+                          value: argo_auth_token
+                    dependencies: [promote]

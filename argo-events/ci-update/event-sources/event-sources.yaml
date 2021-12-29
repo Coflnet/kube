@@ -18,6 +18,12 @@ spec:
       endpoint: /blog
       method: POST
 
+    # cassandra
+    cassandra-housekeeping:
+      port: "12000"
+      endpoint: /cassandra-housekeeping
+      method: POST
+
     # cypress-executor
     cypress-executor:
       port: "12000"
