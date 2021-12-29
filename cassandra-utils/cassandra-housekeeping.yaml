@@ -11,6 +11,6 @@ spec:
         spec:
           containers:
           - name: housekeeping
-            image: registry.flou.dev/cassandra-housekeeping:latest
+            image: registry.flou.dev/cassandra-housekeeping:64ebcdf1-b977-4af0-940f-93593b5960b3
             imagePullPolicy: IfNotPresent
           restartPolicy: Never
