@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cassandra-housekeeping
+  namespace: cassandra
+spec:
+  schedule: "0 */6 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: housekeeping
+            image: registry.flou.dev/cassandra-housekeeping:latest
+            imagePullPolicy: IfNotPresent
+          restartPolicy: Never
