@@ -359,6 +359,6 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: ci-update-static-eventsource-eventsource-svc
+            name: ci-eventsource-eventsource-svc
             port:
               number: 12000
