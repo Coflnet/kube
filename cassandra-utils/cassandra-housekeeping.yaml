@@ -13,4 +13,13 @@ spec:
           - name: housekeeping
             image: registry.flou.dev/cassandra-housekeeping:64ebcdf1-b977-4af0-940f-93593b5960b3
             imagePullPolicy: IfNotPresent
+            env:
+              - name: USERNAME
+                value: cassandra
+              - name: PASSWORD
+                value: ExmGETL45K
+              - name: KEYSPACE
+                value: jaeger_v1
+              - name: HOSTS
+                value: cassandra.cassandra
           restartPolicy: Never
