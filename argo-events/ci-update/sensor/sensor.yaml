@@ -113,10 +113,10 @@ spec:
                       - name: git_secret_key
                         value: password
 
-                  - name: promote_v2
+                  - name: promote-v2
                     templateRef:
-                      name: promote_v2
-                      template: promote_v2
+                      name: promote-v2
+                      template: promote-v2
                     arguments:
                       parameters:
                       - name: image_name
@@ -153,4 +153,4 @@ spec:
                           value: sky-argo-secret
                         - name: argo_auth_token_secret_key
                           value: argo_auth_token
-                    dependencies: [promote_v2]
+                    dependencies: [promote-v2]

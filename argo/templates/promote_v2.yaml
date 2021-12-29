@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
-  name: promote_v2
+  name: promote-v2
   namespace: argo
 spec:
   serviceAccountName: argo-events-sa
   templates:
-  - name: promote_v2
+  - name: promote-v2
     inputs:
       parameters:
       - name: tag
