@@ -351,3 +351,14 @@ spec:
             name: pr-env-eventsource-eventsource-svc
             port:
               number: 12000
+
+  - host: argo-events.flou.dev
+    http:
+      paths:
+      - path: /promoter
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: ci-update-static-eventsource-eventsource-svc
+            port:
+              number: 12000

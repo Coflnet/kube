@@ -1,0 +1,186 @@
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  name: ci-eventsource
+  namespace: argo-events
+spec:
+  template:
+    affinity:
+  service:
+    ports:
+      - port: 12000
+        targetPort: 12000
+
+  webhook:
+    # blog
+    blog:
+      port: "12000"
+      endpoint: /blog
+      method: POST
+
+    # cypress-executor
+    cypress-executor:
+      port: "12000"
+      endpoint: /cypress-executor
+      method: POST
+
+    # damlo
+    damlo:
+      port: "12000"
+      endpoint: /damlo
+      method: POST
+
+    # discord
+    discord-bot-node:
+      port: "12000"
+      endpoint: /discord-bot-node
+      method: POST
+    coflnet-bot:
+      port: "12000"
+      endpoint: /coflnet-bot
+      method: POST
+
+    # feedback
+    feedback-backend:
+      port: "12000"
+      endpoint: /feedback-backend
+      method: POST
+
+    # homepage
+    homepage:
+      port: "12000"
+      endpoint: /homepage
+      method: POST
+
+    # kafka-dedup
+    kafka-dedup-dotnet:
+      port: "12000"
+      endpoint: /kafka-dedup-dotnet
+      method: POST
+
+    # kafka-sim
+    kafka-sim:
+      port: "12000"
+      endpoint: /kafka-sim
+      method: POST
+
+    # mail-notification
+    mail-notification:
+      port: "12000"
+      endpoint: /mail-notification
+      method: POST
+
+    # nfl-tip-game
+    nfl-tip-game:
+      port: "12000"
+      endpoint: /nfl-tip-game
+      method: POST
+
+    # payment
+    payment:
+      port: "12000"
+      endpoint: /payment
+      method: POST
+    product-provisioner:
+      port: "12000"
+      endpoint: /product-provisioner
+      method: POST
+
+    promoter:
+      port: "12000"
+      endpoint: /promoter
+      method: POST
+
+
+    # pr-env
+    pr-env:
+      port: "12000"
+      endpoint: /pr-env
+      method: POST
+
+    # sky
+    sky:
+      port: "12000"
+      endpoint: /sky
+      method: POST
+    sky-pull-request:
+      port: "12000"
+      endpoint: /sky-pull-request
+      method: POST
+    frontend:
+      port: "12000"
+      endpoint: /sky-frontend
+      method: POST
+    sky-core: 
+      port: "12000"
+      endpoint: /sky-core
+      method: POST
+    sky-commands: 
+      port: "12000"
+      endpoint: /sky-commands
+      method: POST
+    sky-mod: 
+      port: "12000"
+      endpoint: /sky-mod
+      method: POST
+    sky-subscriptions: 
+      port: "12000"
+      endpoint: /sky-subscriptions
+      method: POST
+    sky-flipper: 
+      port: "12000"
+      endpoint: /sky-flipper
+      method: POST
+    sky-mc-connect: 
+      port: "12000"
+      endpoint: /sky-mc-connect
+      method: POST
+    sky-filter: 
+      port: "12000"
+      endpoint: /sky-filter
+      method: POST
+    sky-stage-frontend: 
+      port: "12000"
+      endpoint: /sky-stage-frontend
+    sky-updater: 
+      port: "12000"
+      endpoint: /sky-updater
+    sky-settings: 
+      port: "12000"
+      endpoint: /sky-settings
+    sky-indexer: 
+      port: "12000"
+      endpoint: /sky-indexer
+    sky-craft: 
+      port: "12000"
+      endpoint: /sky-craft
+    sky-player: 
+      port: "12000"
+      endpoint: /sky-player
+    sky-sniper: 
+      port: "12000"
+      endpoint: /sky-sniper
+    sky-tracker: 
+      port: "12000"
+      endpoint: /sky-tracker
+      method: POST
+    sky-player-name:
+      port: "12000"
+      endpoint: /sky-player-name
+      method: POST
+    sky-server-manager:
+      port: "12000"
+      endpoint: /sky-server-manager
+      method: POST
+
+    # songvoter 
+    songvoter:
+      port: "12000"
+      endpoint: /songvoter
+      method: POST
+
+    # static-server
+    static-server:
+      port: "12000"
+      endpoint: /static-server
+      method: POST
