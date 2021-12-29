@@ -28,23 +28,23 @@ spec:
         parameters:
           - src:
               dependencyName: git_url
-              dataKey: body.repository.git_url
+              dataTemplate: {{ .Input.body.repository.git_url }}
             dest: spec.templates.0.dag.tasks.0.arguments.parameters.0.value
           - src:
               dependencyName: branch
-              dataKey: body.repository.default_branch
+              dataTemplate: {{ .Input.body.repository.default_branch }}
             dest: spec.templates.0.dag.tasks.0.arguments.parameters.1.value
           - src:
               dependencyName: build-image-name
-              dataKey: body.repository.name
+              dataTemplate: {{ .Input.body.repository.name }}
             dest: spec.templates.0.dag.tasks.0.arguments.parameters.2.value
           - src:
               dependencyName: promote-image-name
-              dataKey: body.repository.name
+              dataTemplate: {{ .Input.body.repository.name }}
             dest: spec.templates.0.dag.tasks.1.arguments.parameters.0.value
           - src:
               dependencyName: promote-manifest-name
-              dataKey: body.repository.name
+              dataTemplate: {{ .Input.body.repository.name }}
             dest: spec.templates.0.dag.tasks.1.arguments.parameters.1.value
             
         source:
