@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
       - name: server-manager
-        image: registry.flou.dev/sky-server-manager:eec86c92-7eb9-4dc5-85e7-272e07c99bf4
+        image: registry.flou.dev/sky-server-manager:c5edc875-45b9-4173-bbff-a1aa12b4752c
         ports:
         - containerPort: 3000
           name: api
