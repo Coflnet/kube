@@ -23,6 +23,9 @@ data:
   minio_key: 82nq6rUqwtWutpTzSZVMiu4R
   mongo_host: mongodb://root:root@mongo-mongodb.mongo:27017
   sky_player_name_url: http://player-name:8000/
+
+  sniper_data_username: sniper-data
+
   # kafka topics
   topic_missing_auction-raw: sky-canceledauction-raw
   topic_sold_auction-raw: sky-soldauction-raw

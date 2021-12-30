@@ -51,6 +51,16 @@ spec:
               secretKeyRef:
                 name: secret
                 key: pulumi_access_token
+          - name: SNIPER_DATA_USERNAME
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: sniper_data_username
+          - name: SNIPER_DATA_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: secret
+                key: sniper_data_password
         livenessProbe:
           httpGet:
             path: /metrics
