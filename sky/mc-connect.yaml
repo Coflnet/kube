@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
       - name: mc-connect
-        image: registry.flou.dev/sky-mc-connect:82f61c55-7000-4ee5-96a1-26c44bd3ecca
+        image: registry.flou.dev/sky-mc-connect:44694ad3-7364-42b2-b2d6-bb2844acee3d
         ports:
         - containerPort: 80
           name: web
