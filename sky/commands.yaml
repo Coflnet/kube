@@ -42,6 +42,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: payment_host
+          - name: API_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: api_host
           - name: FRONTEND_PROD
             value: stage-frontend
           - name: FRONTEND_STAGING
