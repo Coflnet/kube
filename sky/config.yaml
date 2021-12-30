@@ -18,6 +18,7 @@ data:
   redis_host_sky: redis-service
   payment_host: payment.payment.svc.cluster.local
   commands_host: sky-commands-main-service.sky.svc.cluster.local
+  api_host: sky-api-main-service.sky.svc.cluster.local
   flipper_host: flipper
   minio_host: minio.minio.svc.cluster.local:9000
   minio_key: 82nq6rUqwtWutpTzSZVMiu4R

@@ -32,7 +32,7 @@ spec:
         - name: regcred
       containers:
       - name: commands
-        image: registry.flou.dev/sky-commands:f31e69bc-910e-420b-a133-8560e2039fba
+        image: registry.flou.dev/sky-commands:0e007154-e2b2-4562-876f-aa5373ad6452
         ports:
           - containerPort: 8008
           - containerPort: 8000
@@ -42,6 +42,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: payment_host
+          - name: API_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: api_host
           - name: FRONTEND_PROD
             value: stage-frontend
           - name: FRONTEND_STAGING
