@@ -4,7 +4,7 @@ metadata:
   name: sky
   namespace: argocd
   annotations:
-    notifications.argoproj.io/subscribe.on-sync-succeeded.telegram: "-647662841"
+    notifications.argoproj.io/subscribe.on-rollout-step-completed.telegram: "-647662841"
 spec:
   project: default
   source:
