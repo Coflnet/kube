@@ -6,7 +6,7 @@ metadata:
   labels:
     app: commands
   annotations:
-    notifications.argoproj.io/subscribe.on-rollout-step-completed.slack: "Coflnet Alerts"
+    notifications.argoproj.io/subscribe.on-rollout-step-completed.telegram: "Coflnet Alerts"
 spec:
   replicas: 5
   progressDeadlineSeconds: 2592000
