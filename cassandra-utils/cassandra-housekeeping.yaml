@@ -13,7 +13,7 @@ spec:
             - name: regcred
           containers:
           - name: housekeeping
-            image: registry.flou.dev/cassandra-housekeeping:f1086c76-c9f6-495b-a580-49a4afef2c9f
+            image: registry.flou.dev/cassandra-housekeeping:50fac4ce-90bb-4ccc-8d71-6127bae90093
             imagePullPolicy: IfNotPresent
             env:
               - name: USERNAME
