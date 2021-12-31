@@ -1,28 +1,27 @@
-#apiVersion: batch/v1
-#kind: CronJob
-#metadata:
-#  name: cassandra-housekeeping
-#  namespace: cassandra
-#spec:
-#  schedule: "*/5 * * * *"
-#  jobTemplate:
-#    spec:
-#      template:
-#        spec:
-#          imagePullSecrets:
-#            - name: regcred
-#          containers:
-#          - name: housekeeping
-#            image: registry.flou.dev/cassandra-housekeeping:c79445cf-6b31-4850-9191-31e0b0d007f4
-#            imagePullPolicy: IfNotPresent
-#            env:
-#              - name: USERNAME
-#                value: cassandra
-#              - name: PASSWORD
-#                value: ExmGETL45K
-#              - name: KEYSPACE
-#                value: jaeger_v1
-#              - name: HOSTS
-#                value: cassandra.cassandra
-#          restartPolicy: Never
-#
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cassandra-housekeeping
+  namespace: cassandra-cluster
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          imagePullSecrets:
+            - name: regcred
+          containers:
+          - name: housekeeping
+            image: registry.flou.dev/cassandra-housekeeping:c79445cf-6b31-4850-9191-31e0b0d007f4
+            imagePullPolicy: IfNotPresent
+            env:
+              - name: USERNAME
+                value: cassandra
+              - name: PASSWORD
+                value: rPubG9U8if
+              - name: KEYSPACE
+                value: jaeger_v1
+              - name: HOSTS
+                value: cassandra-cluster.cassandra-cluster
+          restartPolicy: Never
