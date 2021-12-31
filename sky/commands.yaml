@@ -5,6 +5,8 @@ metadata:
   namespace: sky
   labels:
     app: commands
+  annotations:
+    notifications.argoproj.io/subscribe.on-rollout-step-completed.slack: "Coflnet Alerts"
 spec:
   replicas: 5
   progressDeadlineSeconds: 2592000
