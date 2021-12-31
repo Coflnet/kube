@@ -32,7 +32,7 @@ spec:
         - name: regcred
       containers:
       - name: api
-        image: registry.flou.dev/sky-api:c94e74f6-6e5e-4cb3-a1b1-793b82a2461b
+        image: registry.flou.dev/sky-api:1f595704-642a-430b-bb04-0b3e131689d3
         ports:
           - containerPort: 8008
           - containerPort: 8000
