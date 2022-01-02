@@ -7,9 +7,9 @@ spec:
   template:
     serviceAccountName: argo-events-sa
   dependencies:
-  - name: static-sensor
+  - name: static-update
     eventSourceName: ci-eventsource
-    eventName: static-sensor
+    eventName: static-update
     filters: 
       data:
       - path: body.ref
@@ -27,20 +27,21 @@ spec:
         operation: submit
         parameters:
           - src: 
-              dependencyName: static-sensor
+              dependencyName: static-update
               dataKey: body.repository.git_url
             dest: spec.templates.0.dag.tasks.0.arguments.parameters.0.value
           - src: 
-              dependencyName: static-sensor
+              dependencyName: static-update
               dataKey: body.repository.default_branch
             dest: spec.templates.0.dag.tasks.0.arguments.parameters.1.value
           - src: 
-              dependencyName: static-sensor
+              dependencyName: static-update
+              dataKey: body.repository.default_branch
               dataTemplate: "{{ .Input.body.repository.full_name | nospace | lower }}"
             dest: spec.templates.0.dag.tasks.0.arguments.parameters.2.value
             operation: append
           - src:
-              dependencyName: ci-update
+              dependencyName: static-update
               dataTemplate: "{{ .Input.body.repository.name | nospace | lower }}-"
             dest: metadata.generateName
             operation: append
