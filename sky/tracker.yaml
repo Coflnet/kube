@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
       - name: tracker
-        image: registry.flou.dev/sky-tracker:79490d99-f1f0-4fbd-aaf0-c4c711d93ea5
+        image: registry.flou.dev/sky-tracker:8381d90f-2ce1-4273-8a07-7a46b4ac78d9
         ports:
         - containerPort: 8000
           name: web
