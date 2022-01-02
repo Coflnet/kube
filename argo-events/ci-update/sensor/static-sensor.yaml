@@ -16,7 +16,6 @@ spec:
         type: string
         value:
           - refs/heads/main
-
   triggers:
   - template:
       name: trigger
@@ -76,7 +75,7 @@ spec:
                   - name: build
                     templateRef:
                       name: build-harbor-image
-                      template: build-harbor-harbor
+                      template: build-harbor-image
                     arguments:
                       parameters:
                       - name: app_repo
