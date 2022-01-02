@@ -36,10 +36,14 @@ spec:
             dest: spec.templates.0.dag.tasks.0.arguments.parameters.1.value
           - src: 
               dependencyName: static-sensor
-              dataKey: body.repository.name
+              dataTemplate: "{{ .Input.body.repository.full_name | nospace | lower }}"
             dest: spec.templates.0.dag.tasks.0.arguments.parameters.2.value
             operation: append
-            
+          - src:
+              dependencyName: ci-update
+              dataTemplate: "{{ .Input.body.repository.name | nospace | lower }}-"
+            dest: metadata.generateName
+            operation: append
         source:
           resource:
             apiVersion: argoproj.io/v1alpha1
@@ -57,29 +61,21 @@ spec:
                       duration: "1"
                       factor: 2
                       maxDuration: "30m"
-              imagePullSecrets:
-                - name: regcred
               volumes:
-              - name: kaniko-secret
+              - name: harbor
                 secret:
-                  secretName: regcred
+                  secretName: harbor
                   items:
                     - key: .dockerconfigjson
                       path: config.json
-              - name: secret
-                secret:
-                  secretName: secret
-              - name: sky-argo-secret
-                secret:
-                  secretName: sky-argo-secret
               templates:
               - name: build
                 dag:
                   tasks:
                   - name: build
                     templateRef:
-                      name: build-container-image
-                      template: build-kaniko-git
+                      name: build-harbor-image
+                      template: build-harbor-harbor
                     arguments:
                       parameters:
                       - name: app_repo
@@ -87,7 +83,7 @@ spec:
                       - name: branch
                         value: ""
                       - name: container_image
-                        value: "registry.flou.dev/"
+                        value: ""
                       - name: container_tag
                         value: "latest"
                       - name: sub_path 

@@ -17,6 +17,11 @@ spec:
       endpoint: /ci-update
       method: POST
 
+    static-sensor:
+      port: "12000"
+      endpoint: /static-update
+      method: POST
+
     # cassandra
     cassandra-housekeeping:
       port: "12000"
@@ -91,10 +96,6 @@ spec:
       endpoint: /product-provisioner
       method: POST
 
-    static-sensor:
-      port: "12000"
-      endpoint: /promoter
-      method: POST
     
     sensor:
       port: "12000"

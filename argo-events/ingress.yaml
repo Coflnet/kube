@@ -17,6 +17,13 @@ spec:
             name: ci-eventsource-eventsource-svc
             port:
               number: 12000
+      - path: /static-update
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: ci-eventsource-eventsource-svc
+            port:
+              number: 12000
 
   - host: argo-events.flou.dev
     http:
@@ -363,16 +370,6 @@ spec:
             port:
               number: 12000
 
-  - host: argo-events.flou.dev
-    http:
-      paths:
-      - path: /promoter
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: ci-eventsource-eventsource-svc
-            port:
-              number: 12000
   - host: argo-events.flou.dev
     http:
       paths:
