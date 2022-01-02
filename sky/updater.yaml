@@ -34,7 +34,7 @@ spec:
         - name: regcred
       containers:
       - name: updater
-        image: registry.flou.dev/sky-updater:6d221e7b-8a08-495e-84c1-1c304e6b4e13
+        image: registry.flou.dev/sky-updater:2c8bc067-d6aa-455b-ad5a-ab698a45bf94
         env:
         - name: SLOWDOWN_MS
           value: "150"
