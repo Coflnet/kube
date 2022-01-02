@@ -100,7 +100,7 @@ spec:
                       - name: branch
                         value: ""
                       - name: container_image
-                        value: "registry.flou.dev/"
+                        value: ""
                       - name: container_tag
                         value: "{{workflow.uid}}"
                       - name: sub_path 
