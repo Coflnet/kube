@@ -17,7 +17,7 @@ spec:
       endpoint: /ci-update
       method: POST
 
-    static-sensor:
+    static-update:
       port: "12000"
       endpoint: /static-update
       method: POST
