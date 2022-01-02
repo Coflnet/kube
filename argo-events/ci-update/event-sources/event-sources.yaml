@@ -12,10 +12,9 @@ spec:
         targetPort: 12000
 
   webhook:
-    # blog
-    blog:
+    ci-update:
       port: "12000"
-      endpoint: /blog
+      endpoint: /ci-update
       method: POST
 
     # cassandra

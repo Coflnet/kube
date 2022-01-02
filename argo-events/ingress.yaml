@@ -10,6 +10,17 @@ spec:
   - host: argo-events.flou.dev
     http:
       paths:
+      - path: /ci-update
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: ci-eventsource-eventsource-svc
+            port:
+              number: 12000
+
+  - host: argo-events.flou.dev
+    http:
+      paths:
       - path: /sportdings
         pathType: ImplementationSpecific
         backend:
