@@ -13,7 +13,7 @@ spec:
         app: discord-bot-node
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: discord-bot-node
         image: harbor.flou.dev/coflnet/discord-bot-node:552a7b36-f2b2-452a-a2c8-85bef9be6581
