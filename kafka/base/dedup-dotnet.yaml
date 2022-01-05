@@ -16,10 +16,10 @@ spec:
         app: kafka-dedup-dotnet
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: kafka-dedup-dotnet
-        image: registry.flou.dev/kafka-dedup-dotnet:33b665d8-3839-465b-97a6-27d588749e02
+        image: harbor.flou.dev/coflnet/kafka-dedup-dotnet:dbd03abe-5d57-4edf-ad7d-8e070bd5585b
         env:
         - name: KAFKA_HOST
           valueFrom:
