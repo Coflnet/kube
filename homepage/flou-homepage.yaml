@@ -16,7 +16,7 @@ spec:
         app: homepage
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: homepage
         image: harbor.flou.dev/flou21/flou-homepage:150725b3-fd2d-4386-8fc8-c9f567736a6c
