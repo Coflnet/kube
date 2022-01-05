@@ -32,7 +32,7 @@ spec:
         - name: regcred
       containers:
       - name: mod
-        image: registry.flou.dev/sky-mod:63b06378-d596-49e0-bc51-ab3163eaab80
+        image: registry.flou.dev/sky-mod:4d1b918c-407e-4f1d-82dc-1eb0e1cf6d5c
         ports:
           - containerPort: 8008
         env:
