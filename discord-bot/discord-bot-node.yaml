@@ -7,7 +7,6 @@ spec:
   selector:
     matchLabels:
       app: discord-bot-node
-  serviceName: discord-bot-node
   template:
     metadata:
       labels:
