@@ -13,7 +13,7 @@ spec:
         app: coflnet-bot
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: coflnet-bot
         image: harbor.flou.dev/coflnet/coflnet-bot:789af659-0e59-4ce0-b9d3-db7c47547b18
