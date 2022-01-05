@@ -16,7 +16,7 @@ spec:
         app: feedback-backend
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: feedback-backend
         image: harbor.flou.dev/coflnet/feedback:8a0a86a4-2cee-41fc-8985-b60da88dc507
