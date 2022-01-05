@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
       - name: homepage
-        image: registry.flou.dev/homepage:ccca99cc-4526-4b0b-9724-b7eb3d59b334
+        image: harbor.flou.dev/flou21/flou-homepage:150725b3-fd2d-4386-8fc8-c9f567736a6c
         ports:
         - containerPort: 80
           name: web
