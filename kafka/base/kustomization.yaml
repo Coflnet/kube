@@ -1,2 +1,2 @@
 resources:
-- dedup-dotnet.yaml
+- kafka-dedup-dotnet.yaml
