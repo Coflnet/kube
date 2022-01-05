@@ -16,6 +16,7 @@ spec:
         type: string
         value:
           - refs/heads/main
+          - refs/heads/release
 
   triggers:
   - template:
