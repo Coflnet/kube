@@ -16,10 +16,10 @@ spec:
         app: payment
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: payment
-        image: registry.flou.dev/payment:4593983d-85f3-45e6-b88f-2887cfa4db3d
+        image: harbor.flou.dev/coflnet/payments:138f94b0-45cb-4897-9c94-cee98d3cae45
         ports:
         - containerPort: 80
           name: web
