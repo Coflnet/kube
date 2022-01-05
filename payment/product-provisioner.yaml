@@ -9,7 +9,7 @@ spec:
   template:
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: product-provisioner
         image: registry.flou.dev/product-provisioner:abf01fdf-ca04-4c86-b384-778de146032f
