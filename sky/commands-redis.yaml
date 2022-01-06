@@ -15,6 +15,9 @@ spec:
       app: commands-redis
   template:
     metadata:
+      annotations:
+        config.linkerd.io/skip-outbound-ports: "6379"
+        config.linkerd.io/skip-inbound-ports: "6379"
       labels:
         app: commands-redis
     spec:
