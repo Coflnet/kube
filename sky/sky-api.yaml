@@ -29,7 +29,7 @@ spec:
                   - api
               topologyKey: kubernetes.io/hostname
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: api
         image: harbor.flou.dev/coflnet/skyapi:7e692779-da4f-45e6-af20-0ea17425435d
