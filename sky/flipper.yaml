@@ -16,10 +16,10 @@ spec:
         app: flipper
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: flipper
-        image: registry.flou.dev/sky-flipper:c4523463-2538-4cc7-a063-1c4a2d876ee0
+        image: harbor.flou.dev/coflnet/skyflipper:99080f1b-6993-4009-92d8-a6a7a5bc085a
         ports:
         - containerPort: 80
           name: web
