@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: indexer
-        image: harbor.flou.dev/coflnet/skyindexer:51a287b4-8380-489d-abc5-6c780e6625d8
+        image: registry.flou.dev/sky:4080b72f-fd1a-4af7-80fb-4a42546f7c05
         ports:
           - containerPort: 8008
         livenessProbe:
