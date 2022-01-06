@@ -16,10 +16,10 @@ spec:
         app: filter
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: filter
-        image: registry.flou.dev/sky-filter:cdccff6e-40c7-4f86-ba0d-9c5b59c4073a
+        image: harbor.flou.dev/coflnet/skyfilter:7b8d0023-52be-4af7-a3e0-a90548a9fce8
         ports:
         - containerPort: 80
           name: web
