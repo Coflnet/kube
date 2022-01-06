@@ -31,10 +31,10 @@ spec:
                   - commands
               topologyKey: kubernetes.io/hostname
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: commands
-        image: registry.flou.dev/sky-commands:290ea2b8-d41b-468d-a341-afd1c0d8fdef
+        image: harbor.flou.dev/coflnet/skycommands:fa0de16e-9565-4d28-ac75-a9ef2f85244f
         ports:
           - containerPort: 8008
           - containerPort: 8000
