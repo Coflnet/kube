@@ -16,7 +16,7 @@ spec:
         app: indexer
     spec:
       imagePullSecrets:
-        - name: harbor
+        - name: regcred
       containers:
       - name: indexer
         image: registry.flou.dev/sky:4080b72f-fd1a-4af7-80fb-4a42546f7c05
