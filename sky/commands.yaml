@@ -136,6 +136,14 @@ spec:
             port: 8000
           initialDelaySeconds: 20
           periodSeconds: 3
+        livenessProbe:
+          httpGet:
+            path: /metrics
+            port: 8000
+          initialDelaySeconds: 60
+          periodSeconds: 20
+          failureThreshold: 5
+          timeoutSeconds: 10
         resources:
           limits:
             memory: "1500Mi"
