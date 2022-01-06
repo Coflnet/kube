@@ -16,10 +16,10 @@ spec:
         app: mc-connect
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: mc-connect
-        image: registry.flou.dev/sky-mc-connect:fe4e5974-700f-4449-b76b-778751a1394c
+        image: harbor.flou.dev/coflnet/skymcconnect:56816adb-b5bc-45aa-88f9-10addbe05241
         ports:
         - containerPort: 80
           name: web
