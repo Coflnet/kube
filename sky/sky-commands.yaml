@@ -7,6 +7,8 @@ metadata:
     app: commands
   annotations:
     notifications.argoproj.io/subscribe.on-rollout-step-completed.telegram: "Coflnet Alerts"
+    config.linkerd.io/skip-outbound-ports: "6379"
+    config.linkerd.io/skip-inbound-ports: "6379"
 spec:
   replicas: 5
   progressDeadlineSeconds: 2592000
@@ -17,6 +19,9 @@ spec:
     metadata:
       labels:
         app: commands
+      annotations:
+        config.linkerd.io/skip-outbound-ports: "6379"
+        config.linkerd.io/skip-inbound-ports: "6379"
     spec:
       affinity:
         podAntiAffinity:
