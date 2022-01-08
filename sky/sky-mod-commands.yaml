@@ -29,10 +29,10 @@ spec:
                   - mod
               topologyKey: kubernetes.io/hostname
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: mod
-        image: registry.flou.dev/sky-mod:7b533cf0-0cd7-4a17-8a5c-1e8cf260afbd
+        image: harbor.flou.dev/coflnet/skymodcommands:12341234
         ports:
           - containerPort: 8008
         env:
