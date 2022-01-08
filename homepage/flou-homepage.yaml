@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: homepage
-        image: harbor.flou.dev/flou21/flou-homepage:150725b3-fd2d-4386-8fc8-c9f567736a6c
+        image: harbor.flou.dev/flou21/flou-homepage:cf0f33dd-0c9c-4de3-a7f0-7d89b1933d07
         ports:
         - containerPort: 80
           name: web
