@@ -18,7 +18,7 @@ spec:
         - name: container_tag
         - name: container_port
     container:
-      image: registry.flou.de/pr-env:latest
+      image: harbor.flou.dev/flou21/pr-env:latest
       imagePullPolicy: Always
       resources:
         requests:
