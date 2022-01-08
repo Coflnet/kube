@@ -119,7 +119,7 @@ spec:
                         - name: git_password_secret_key
                           value: "password"
                         - name: container_image
-                          value: registry.flou.dev/pr-env
+                          value: harbor.flou.dev/pr-env
                         - name: container_tag
                           value: "{{workflow.uid}}"
                         - name: container_port
