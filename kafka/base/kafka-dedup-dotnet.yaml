@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: kafka-dedup-dotnet
-        image: harbor.flou.dev/coflnet/kafka-dedup-dotnet:f922b565-b11f-437c-a3a9-177a9b32bd64
+        image: harbor.flou.dev/coflnet/kafka-dedup-dotnet:25b6a8c0-1a7b-4c91-b31e-3f60bdcfa573
         env:
         - name: KAFKA_HOST
           valueFrom:
