@@ -110,6 +110,16 @@ spec:
               configMapKeyRef:
                 name: config
                 key: sky_player_name_url
+          - name: SETTINGS_REDIS_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: redis_settings_host
+          - name: SETTINGS_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: settings_base_url
             
         readinessProbe:
           httpGet:

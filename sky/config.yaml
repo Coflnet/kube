@@ -14,6 +14,7 @@ data:
   redis_host: redis-service,syncTimeout=200
   #redis_host: redis-cluster.redis.svc.cluster.local:6379,password=6o2SIpWTpK
   redis_command_host: commands-redis-service,syncTimeout=200
+  redis_settings_host: settings-redis-service
   redis_api_host: api-redis-service,syncTimeout=200
   redis_host_sky: redis-service
   payment_host: payment.payment.svc.cluster.local
@@ -24,6 +25,7 @@ data:
   minio_key: 82nq6rUqwtWutpTzSZVMiu4R
   mongo_host: mongodb://root:root@mongo-mongodb.mongo:27017
   sky_player_name_url: http://player-name:8000/
+  settings_base_url: http://settings:8000/
 
   sniper_data_username: sniper-data
 

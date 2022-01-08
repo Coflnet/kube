@@ -30,7 +30,7 @@ spec:
           valueFrom:
             configMapKeyRef: 
               name: config
-              key: redis_host
+              key: redis_settings_host
         - name: JAEGER_AGENT_HOST
           valueFrom: 
             configMapKeyRef:
