@@ -124,4 +124,4 @@ spec:
                           value: "{{workflow.uid}}"
                         - name: container_port
                           value: "80"
-                    dependencies: [build]
+                      dependencies: [build]
