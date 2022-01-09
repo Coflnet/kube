@@ -17,7 +17,7 @@ spec:
         value:
           - refs/heads/main
           - refs/heads/release
-
+          - refs/heads/master
   triggers:
   - template:
       name: trigger
