@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: feedback-backend
-        image: harbor.flou.dev/coflnet/feedback:83d61b11-3809-42fd-b530-580a077aaffa
+        image: harbor.flou.dev/coflnet/feedback:c8237d05-66da-4a43-af1b-06d20ed73b2e
         ports:
           - containerPort: 3000
           - containerPort: 2112
