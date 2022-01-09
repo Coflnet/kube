@@ -24,41 +24,11 @@ spec:
           - containerPort: 3000
           - containerPort: 2112
         env: 
-        - name: DB_HOST
+        - name: MONGO_HOST
           valueFrom:
             configMapKeyRef:
-              name: config
-              key: db_host
-        - name: DB_PORT
-          valueFrom:
-            configMapKeyRef:
-              name: config
-              key: db_port
-        - name: DB_USER
-          valueFrom:
-            configMapKeyRef:
-              name: config
-              key: db_user
-        - name: DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              key: db_password
               name: secret
-        - name: DB_NAME
-          valueFrom:
-            configMapKeyRef:
-              name: config
-              key: db_name
-        - name: JAEGER_SERVICE_NAME
-          valueFrom: 
-            configMapKeyRef:
-              name: config
-              key: jaeger_service_name
-        - name: JAEGER_AGENT_HOST
-          valueFrom: 
-            configMapKeyRef:
-              name: config
-              key: jaeger_agent_host
+              key: mongo_host
         resources:
           requests:
             memory: "50Mi"
