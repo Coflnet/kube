@@ -8,7 +8,7 @@ data:
   redis_host: redis-service
   source_topic: sky-raw-flips
   target_topic: sky-flips
-  batch_size: "50"
+  batch_size: "200"
   batch_wait_time: "1"
 
 
