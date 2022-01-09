@@ -31,10 +31,10 @@ spec:
                   - updater
               topologyKey: kubernetes.io/hostname
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: updater
-        image: registry.flou.dev/sky-updater:358203fc-84e5-4e6f-8d99-7584f27e34bb
+        image: harbor.flou.dev/skyupdater:358203fc-84e5-4e6f-8d99-7584f27e34bb
         env:
         - name: SLOWDOWN_MS
           value: "150"
