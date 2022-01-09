@@ -62,3 +62,19 @@ spec:
     targetPort: 2112
     name: metrics
     protocol: TCP
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: feedback-metrics-monitor
+  namespace: feedback
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: feedback-metrics-service
+  endpoints:
+  - port: metrics
+    interval: 25s
+    path: /metrics
