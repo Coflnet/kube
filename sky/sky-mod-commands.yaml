@@ -201,3 +201,13 @@ spec:
     targetPort: 8008
     name: metrics
     protocol: TCP
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: mod-pdb
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: mod
