@@ -10,33 +10,77 @@ data:
   products.json: |
     [
       {
+          "slug": "stripe-coflcoins-1800",
+          "title": "1.800 CoflCoins",
+          "cost": 6.69,
+          "type": 4
+      },
+      {
+          "slug": "stripe-coflcoins-5400",
+          "title": "5.400 CoflCoins",
+          "cost": 19.69,
+          "type": 4
+      },
+      {
+          "slug": "stripe-coflcoins-10800",
+          "title": "10.800 CoflCoins",
+          "cost": 38.99,
+          "type": 4
+      },
+      {
+          "slug": "stripe-coflcoins-21600",
+          "title": "21.600 CoflCoins",
+          "cost": 74.99,
+          "type": 4
+      },
+      {
+          "slug": "paypal-coflcoins-1800",
+          "title": "1.800 CoflCoins",
+          "cost": 6.99,
+          "type": 4
+      },
+      {
+          "slug": "paypal-coflcoins-5400",
+          "title": "5.400 CoflCoins",
+          "cost": 19.99,
+          "type": 4
+      },
+      {
+          "slug": "paypal-coflcoins-10800",
+          "title": "10.800 CoflCoins",
+          "cost": 39.69,
+          "type": 4
+      },
+      {
+          "slug": "paypal-coflcoins-21600",
+          "title": "21.600 CoflCoins",
+          "cost": 78.69,
+          "type": 4
+      },
+      {
           "slug": "premium",
           "title": "Premium",
           "description": "Premium plan granting various perks",
           "cost": 1800,
-          "ownershipSeconds": 2592000,
-          "type": 4
+          "ownershipSeconds": 2592000
       },
       {
           "slug": "premium-quater",
           "title": "3 months of Premium",
           "cost": 5400,
-          "ownershipSeconds": 7776000,
-          "type": 4
+          "ownershipSeconds": 7776000
       },
       {
           "slug": "premium-half-year",
           "title": "Half a year of Premium",
           "cost": 10800,
-          "ownershipSeconds": 15552000,
-          "type": 4
+          "ownershipSeconds": 15552000
       },
       {
           "slug": "budget-premium",
           "title": "3 months of Basic Plan",
           "cost": 1800,
-          "ownershipSeconds": 7776000,
-          "type": 4
+          "ownershipSeconds": 7776000
       },
       {
           "slug": "sniper-small",
@@ -71,7 +115,6 @@ data:
       {
           "slug": "referal",
           "title": "Referral bonus",
-          "cost": 100,
-          "type": 4
+          "cost": 100
       }
     ] 
