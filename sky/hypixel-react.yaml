@@ -16,10 +16,10 @@ spec:
         app: stage-frontend
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: stage-frontend
-        image: registry.flou.dev/sky-stage-frontend:e0319039-6b0e-4266-9b7c-caf247c0e0a3
+        image: harbor.flou.dev/hypixel-skyblock:e0319039-6b0e-4266-9b7c-caf247c0e0a3
         ports:
         - containerPort: 80
           name: web
