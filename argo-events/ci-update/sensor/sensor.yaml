@@ -18,6 +18,7 @@ spec:
           - refs/heads/main
           - refs/heads/release
           - refs/heads/master
+          - refs/heads/develop
   triggers:
   - template:
       name: trigger
