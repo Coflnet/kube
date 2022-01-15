@@ -1,0 +1,21 @@
+bases:
+    - ../../base
+patchesJson6902:
+    - target:
+        group: apps
+        version: v1
+        kind: Deployment
+        name: deployment
+      path: pr-env-sky-660-deployment.yaml
+    - target:
+        group: ""
+        version: v1
+        kind: Service
+        name: service
+      path: pr-env-sky-660-service.yaml
+    - target:
+        group: ""
+        version: v1
+        kind: Ingress
+        name: ingress
+      path: pr-env-sky-660-ingress.yaml
