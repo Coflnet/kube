@@ -34,7 +34,7 @@ spec:
             cpu: "10m"
 ---
 apiVersion: v1
-kind: coflnet-bot
+kind: Service
 metadata:
   name: coflnet-bot
 spec:
