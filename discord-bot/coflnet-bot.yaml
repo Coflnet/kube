@@ -17,6 +17,8 @@ spec:
       containers:
       - name: coflnet-bot
         image: harbor.flou.dev/coflnet/coflnet-bot:92965387-9c2f-495c-b802-ec89f74f4fc8
+        ports:
+          - containerPort: 2112
         env:
         - name: DISCORD_BOT_TOKEN
           valueFrom:
@@ -32,3 +34,32 @@ spec:
           limits:
             memory: "50Mi"
             cpu: "10m"
+---
+apiVersion: v1
+kind: coflnet-bot
+metadata:
+  name: coflnet-bot
+spec:
+  selector:
+    app: coflnet-bot
+  ports:
+  - port: 2112
+    targetPort: 2112
+    name: metrics
+
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: coflnet-bot
+  namespace: sky 
+  labels:
+    release: prometheus 
+spec:
+  selector:
+    matchLabels:
+      app: coflnet-bot
+  endpoints:
+  - port: metrics
+    interval: 30s
+    path: /metrics
