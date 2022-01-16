@@ -45,10 +45,9 @@ spec:
   selector:
     app: coflnet-bot
   ports:
-  - port: 2112
+  - name: metrics
+    port: 2112
     targetPort: 2112
-    name: metrics
-
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
