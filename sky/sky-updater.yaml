@@ -108,6 +108,11 @@ spec:
             configMapKeyRef:
               name: config
               key: topic_auction_checked
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: secret
+              key: flou_api_key
         resources:
           requests:
             memory: "1000Mi"
