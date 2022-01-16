@@ -16,7 +16,7 @@ spec:
         - name: harbor
       containers:
       - name: coflnet-bot
-        image: harbor.flou.dev/coflnet/coflnet-bot:8f2c02c5-ed82-41f2-a01c-1578c23b7699
+        image: harbor.flou.dev/coflnet/coflnet-bot:eb4819d5-d377-470d-991c-c8594d81102f
         env:
         - name: DISCORD_BOT_TOKEN
           valueFrom:
