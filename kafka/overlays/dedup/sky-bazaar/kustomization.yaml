@@ -6,4 +6,4 @@ patchesJson6902:
     version: v1
     kind: Deployment
     name: kafka-dedup-dotnet
-  path: sky-bazaar.yaml
+  path: sky-bazaar-dedup.yaml
