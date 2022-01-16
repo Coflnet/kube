@@ -53,7 +53,7 @@ metadata:
   name: coflnet-bot
   namespace: discord
   labels:
-    release: prometheus 
+    release: prometheus
 spec:
   selector:
     matchLabels:
