@@ -29,6 +29,9 @@ data:
 
   sniper_data_username: sniper-data
 
+  cassandra_host: cassandra-cluster.cassandra-cluster
+  cassandra_user: cassandra
+
   # kafka topics
   topic_missing_auction-raw: sky-canceledauction-raw
   topic_sold_auction-raw: sky-soldauction-raw
