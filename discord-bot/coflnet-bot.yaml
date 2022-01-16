@@ -17,6 +17,8 @@ spec:
       containers:
       - name: coflnet-bot
         image: harbor.flou.dev/coflnet/coflnet-bot:eb4819d5-d377-470d-991c-c8594d81102f
+        ports:
+          - containerPort: 2112
         env:
         - name: DISCORD_BOT_TOKEN
           valueFrom:
