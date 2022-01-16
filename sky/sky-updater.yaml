@@ -103,6 +103,11 @@ spec:
             configMapKeyRef:
               name: config
               key: kafka_host
+        - name: TOPICS__AUCTION_CHECK
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: topic_auction_checked
         resources:
           requests:
             memory: "1000Mi"

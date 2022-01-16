@@ -63,6 +63,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: topic_ah_summary
+          - name: TOPICS__AUCTION_CHECK
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: topic_auction_checked
         resources:
           requests:
             memory: "1000Mi"

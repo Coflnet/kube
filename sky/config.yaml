@@ -51,4 +51,5 @@ data:
   topic_low_priced: sky-low-priced
   topic_update_settings: sky-update-settings
   topic_transaction: transactions
+  topic_auction_checked: sky-auction-checked
   mariadb_version: "10.5.5"
