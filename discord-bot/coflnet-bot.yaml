@@ -41,6 +41,8 @@ kind: Service
 metadata:
   name: coflnet-bot
   namespace: discord
+  labels:
+    app: coflnet-bot
 spec:
   selector:
     app: coflnet-bot
