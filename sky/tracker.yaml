@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       app: tracker
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       labels:
@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
       - name: tracker
-        image: registry.flou.dev/sky-tracker:73c4162b-917f-4cec-a067-fef98d200d4a
+        image: registry.flou.dev/sky-tracker:63486e32-807b-4678-84ca-a3668500498b
         ports:
         - containerPort: 8000
           name: web
