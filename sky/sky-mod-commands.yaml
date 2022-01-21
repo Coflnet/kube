@@ -47,6 +47,8 @@ spec:
             value: mc-connect
           - name: TOPICS__LOW_PRICED
             value: sky-low-priced
+          - name: INDEXER_HOST
+            value: sky-indexer-service
           - name: SKYFLIPPER_HOST
             valueFrom:
               configMapKeyRef:
