@@ -37,7 +37,7 @@ spec:
         image: harbor.flou.dev/coflnet/skyupdater:67958c11-3529-48d1-bff5-be858fbe3403
         env:
         - name: SLOWDOWN_MS
-          value: "150"
+          value: "10"
         - name: TOKEN_SECRET
           valueFrom:
             secretKeyRef:
