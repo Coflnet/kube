@@ -6,7 +6,7 @@ metadata:
   labels:
     app: mod
 spec:
-  replicas: 6
+  replicas: 4
   progressDeadlineSeconds: 2592000
   selector:
     matchLabels:
