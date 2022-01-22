@@ -70,8 +70,12 @@ spec:
                 key: topic_auction_checked
         resources:
           requests:
-            memory: "1000Mi"
-            cpu: "1500m"
+            memory: "400Mi"
+            cpu: "500m"
+          limits:
+            memory: "800Mi"
+            cpu: "1000m"
+
 ---
 apiVersion: v1
 kind: Service
