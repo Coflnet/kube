@@ -48,6 +48,11 @@ spec:
             configMapKeyRef:
               name: config
               key: discord_guild
+        - name: CHANNEL_ID_BOT_COMMANDS
+          valueFrom:
+            configMapKeyRef:
+              key: channel_id_bot_commands
+              name: config
         resources:
           requests:
             memory: "50Mi"

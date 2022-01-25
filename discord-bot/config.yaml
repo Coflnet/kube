@@ -7,6 +7,7 @@ data:
   channel_id_bugreport: "903724431468290058"
   channel_id_suggestion: "900810017224134706"
   channel_id_support: "900179998302949409"
+  channel_id_bot_commands: "922237524989075476"
   live_channel_id_bugreport: "884002032392998942"
   live_channel_id_suggestion: "869599942136717322"
   live_channel_id_support: "669976123714699284"
