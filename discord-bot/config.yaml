@@ -11,5 +11,6 @@ data:
   live_channel_id_suggestion: "869599942136717322"
   live_channel_id_support: "669976123714699284"
 
+  client_id: "900179869709762630"
   discord_guild: "267680588666896385"
   mongo_host: "mongodb://root:root@mongo-mongodb.mongo:27017"

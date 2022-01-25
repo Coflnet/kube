@@ -38,6 +38,16 @@ spec:
             configMapKeyRef:
               name: config
               key: live_channel_id_support
+        - name: CLIENT_ID
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: client_id
+        - name: GUILD_ID
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: discord_guild
         resources:
           requests:
             memory: "50Mi"
