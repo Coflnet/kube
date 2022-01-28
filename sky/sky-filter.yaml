@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: filter
-        image: harbor.flou.dev/coflnet/skyfilter:b8215799-16e0-438e-9c1e-1ac8c7b27613
+        image: harbor.flou.dev/coflnet/skyfilter:992a73d4-8247-4798-bc91-bf09e0262847
         ports:
         - containerPort: 80
           name: web
