@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: stage-frontend
-        image: harbor.flou.dev/coflnet/hypixel-react:1b1c07b7-cbb4-4612-b92e-2add1cbeb164
+        image: harbor.flou.dev/coflnet/hypixel-react:8bc5eaf9-123a-42b0-829d-81063e67c581
         ports:
         - containerPort: 80
           name: web
