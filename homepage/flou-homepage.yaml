@@ -1,15 +1,13 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: homepage
   namespace: homepage
-  labels:
-    app: homepage
 spec:
+  replicas: 5
   selector:
     matchLabels:
       app: homepage
-  replicas: 1
   template:
     metadata:
       labels:
@@ -20,13 +18,32 @@ spec:
       containers:
       - name: homepage
         image: harbor.flou.dev/flou21/flou-homepage:cf0f33dd-0c9c-4de3-a7f0-7d89b1933d07
+        resources:
+          requests:
+            memory: 10Mi
+            cpu: 10m
+          limits:
+            memory: 20Mi
+            cpu: 20m
         ports:
         - containerPort: 80
           name: web
-        resources:
-          requests:
-            cpu: 2m
-            memory: 10Mi
+  minReadySeconds: 30
+  revisionHistoryLimit: 3
+  strategy:
+    canary: 
+      maxSurge: "25%"
+      maxUnavailable: 1
+      steps:
+      - setWeight: 10
+      - pause:
+          duration: 30s 
+      - setWeight: 20
+      - pause:
+          duration: 30s
+      - setWeight: 20
+      - pause:
+          duration: 30s
 ---
 apiVersion: v1
 kind: Service
