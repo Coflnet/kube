@@ -10,7 +10,7 @@ metadata:
     config.linkerd.io/skip-outbound-ports: "6379"
     config.linkerd.io/skip-inbound-ports: "6379"
 spec:
-  replicas: 5
+  replicas: 1
   progressDeadlineSeconds: 2592000
   selector:
     matchLabels:
