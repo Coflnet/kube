@@ -19,10 +19,10 @@ spec:
         app: sniper
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: sniper
-        image: registry.flou.dev/sky-sniper:58eaccb8-3bd6-42d7-b104-0898ac6403a3
+        image: harbor.flou.dev/coflnet/skysniper:d08f8dae-baa8-47f2-85ce-2ee11ece7888
         env:
         - name: DBConnection
           valueFrom:
