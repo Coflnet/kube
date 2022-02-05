@@ -29,7 +29,7 @@ data:
 
   sniper_data_username: sniper-data
 
-  cassandra_host: cassandra-cluster-2.cassandra-cluster-headless.cassandra-cluster
+  cassandra_host: 144.91.71.95
   cassandra_user: cassandra
 
   # kafka topics
