@@ -1,15 +1,12 @@
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
   name: settings
   namespace: sky
   labels:
     app: settings
 spec:
-  replicas: 1
-  serviceName: settings
-  updateStrategy: 
-    type: RollingUpdate
+  replicas: 3
   selector:
     matchLabels:
       app: settings
