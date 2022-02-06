@@ -26,7 +26,7 @@ spec:
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 1
+          - weight: 5
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
@@ -160,12 +160,9 @@ spec:
           failureThreshold: 5
           timeoutSeconds: 10
         resources:
-          limits:
-            memory: "1500Mi"
-            cpu: "3000m"
           requests:
-            memory: "1500Mi"
-            cpu: "500m"
+            memory: "1000Mi"
+            cpu: "300m"
   strategy:
     canary: 
       maxUnavailable: 1
