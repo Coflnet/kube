@@ -115,8 +115,8 @@ spec:
               key: flou_api_key
         resources:
           requests:
-            memory: "1000Mi"
-            cpu: "200m"
+            memory: "600Mi"
+            cpu: "400m"
 ---
 apiVersion: v1
 kind: Service
