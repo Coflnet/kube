@@ -19,7 +19,7 @@ spec:
         app: settings
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: settings
         image: harbor.flou.dev/skysettings:ff776922-f8d7-4fb4-80df-df69772a0fcc
