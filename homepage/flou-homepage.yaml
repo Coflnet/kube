@@ -17,7 +17,7 @@ spec:
         - name: harbor
       containers:
       - name: homepage
-        image: harbor.flou.dev/flou21/flou-homepage:2a9d2e8c-ea5b-4f1a-ad1f-b976017fb840
+        image: harbor.flou.dev/flou21/flou-homepage:636630ff-954a-4fff-ba4e-84e11ee71115
         resources:
           requests:
             memory: 10Mi
