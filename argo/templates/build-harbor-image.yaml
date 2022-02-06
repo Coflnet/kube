@@ -25,8 +25,8 @@ spec:
       - --destination=harbor.flou.dev/{{inputs.parameters.container_image}}:{{inputs.parameters.container_tag}}
       resources:
         requests:
-          memory: 1000Mi
-          cpu: 1000m
+          memory: 2000Mi
+          cpu: 2000m
       env:
         - name: GIT_USERNAME
           value: "{{inputs.parameters.git_user}}"
