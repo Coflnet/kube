@@ -69,6 +69,8 @@ spec:
             metadata:
               namespace: argo
               generateName: ci-update-
+              labels:
+                workflows.argoproj.io/archive-strategy: "true"
             spec:
               entrypoint: build
               serviceAccountName: argo
