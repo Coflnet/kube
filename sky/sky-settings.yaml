@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: settings
-        image: harbor.flou.dev/coflnet/skysettings:baa0e241-3fe8-49ea-b6f7-8ae1f050ca72
+        image: harbor.flou.dev/coflnet/skysettings:c6f1436c-4122-4b3b-876a-d5ebe2adf6ab
         ports:
           - containerPort: 8000
         env:
