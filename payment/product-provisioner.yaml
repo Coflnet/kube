@@ -12,7 +12,7 @@ spec:
         - name: harbor
       containers:
       - name: product-provisioner
-        image: harbor.flou.dev/coflnet/productprovisioner:c16df76f-a9c1-4829-91b6-c84c00ee5789
+        image: harbor.flou.dev/coflnet/productprovisioner:88e2bfe0-7d97-493e-ae86-cac13d8b1368
         volumeMounts:
         - mountPath: /app/products.json
           name: config-volume
