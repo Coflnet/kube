@@ -26,6 +26,7 @@ data:
   mongo_host: mongodb://root:root@mongo-mongodb.mongo:27017
   sky_player_name_url: http://player-name:8000/
   settings_base_url: http://settings:8000/
+  payment_base_url: http://payment.payment
 
   sniper_data_username: sniper-data
 
@@ -52,4 +53,7 @@ data:
   topic_update_settings: sky-update-settings
   topic_transaction: transactions
   topic_auction_checked: sky-auction-checked
+  topic_verified: sky-verified
+
   mariadb_version: "10.5.5"
+
