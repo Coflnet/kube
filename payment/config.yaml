@@ -19,27 +19,6 @@ data:
             "type": 4
         },
         {
-            "slug": "premium-quater",
-            "title": "3 months of Premium",
-            "cost": 5400,
-            "ownershipSeconds": 7776000,
-            "type": 4
-        },
-        {
-            "slug": "premium-half-year",
-            "title": "Half a year of Premium",
-            "cost": 10800,
-            "ownershipSeconds": 15552000,
-            "type": 4
-        },
-        {
-            "slug": "premium-year",
-            "title": "A year of Premium",
-            "cost": 21600,
-            "ownershipSeconds": 31104000,
-            "type": 4
-        },
-        {
             "slug": "sniper-small",
             "title": "Small",
             "cost": 212,
