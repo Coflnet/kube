@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: bazaar
-        image: harbor.flou.dev/coflnet/skybazaar:c620bef0-c39c-4b35-b296-03e4ba4ed2ef
+        image: harbor.flou.dev/coflnet/skybazaar:ab3b9d76-8fef-4781-978f-65f4e130d3bf
         ports:
         - containerPort: 8000
           name: metrics
