@@ -20,7 +20,7 @@ spec:
         - name: regcred
       containers:
       - name: subscriptions
-        image: registry.flou.dev/sky-subscriptions:032cfcce-a820-4988-a336-da943e3fc478
+        image: registry.flou.dev/sky-subscriptions:4d61607f-b5b9-42a8-8e5c-a0408c987b7b
         ports:
         - containerPort: 80
           name: web
