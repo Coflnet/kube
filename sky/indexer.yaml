@@ -16,10 +16,10 @@ spec:
         app: indexer
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: indexer
-        image: registry.flou.dev/sky:f0f09578-7fe5-4585-8eaa-b3b05e6030b3
+        image: harbor.flou.dev/coflnet/sky:567e496b-b40b-43b1-a5a7-1f3f8d38e35d
         ports:
           - containerPort: 8008
         livenessProbe:
