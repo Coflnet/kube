@@ -81,7 +81,7 @@ spec:
                       - name: branch
                         value: legacy
                       - name: container_image
-                        value: harbor.flou.dev/sky
+                        value: harbor.flou.dev/coflnet/sky
                       - name: container_tag
                         value: "{{workflow.uid}}"
                       - name: sub_path 
@@ -111,7 +111,7 @@ spec:
                       - name: repo_url
                         value: "github.com/Coflnet/kube.git"
                       - name: image_name
-                        value: harbor.flou.dev\/sky
+                        value: harbor.flou.dev\/coflnet\/sky
                       - name: k8s_file
                         value: ./sky/server.yaml
                       - name: message
