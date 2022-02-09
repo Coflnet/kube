@@ -161,19 +161,19 @@ spec:
                     dependencies: [promote-indexer]
 
 
-                  - name: cypress-tests-chrome91
-                    templateRef:
-                      name: cypress-tests-chrome91
-                      template: cypress-tests-chrome91
-                    arguments: 
-                      parameters:
-                        - name: git_repository
-                          value: "https://github.com/Coflnet/hypixel-react"
-                        - name: spec
-                          value: "all"
-                        - name: cypress_base_url
-                          value: "https://sky-preview.coflnet.com"
-                    dependencies: [argo-sync]
+#                  - name: cypress-tests-chrome91
+#                    templateRef:
+#                      name: cypress-tests-chrome91
+#                      template: cypress-tests-chrome91
+#                    arguments: 
+#                      parameters:
+#                        - name: git_repository
+#                          value: "https://github.com/Coflnet/hypixel-react"
+#                        - name: spec
+#                          value: "all"
+#                        - name: cypress_base_url
+#                          value: "https://sky-preview.coflnet.com"
+#                    dependencies: [argo-sync]
 
 #                  - name: cypress-tests-chrome87
 #                    templateRef:
