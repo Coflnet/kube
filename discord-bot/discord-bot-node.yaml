@@ -53,6 +53,11 @@ spec:
             configMapKeyRef:
               key: channel_id_bot_commands
               name: config
+        - name: API_ENDPOINT
+          valueFrom:
+            configMapKeyRef:
+              key: api_endpoint
+              name: config
         resources:
           requests:
             memory: "50Mi"

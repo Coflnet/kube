@@ -11,6 +11,7 @@ data:
   live_channel_id_bugreport: "884002032392998942"
   live_channel_id_suggestion: "869599942136717322"
   live_channel_id_support: "669976123714699284"
+  api_endpoint: sky-api-main-service/api
 
   client_id: "900179869709762630"
   discord_guild: "267680588666896385"
