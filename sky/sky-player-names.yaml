@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: player-name
-        image: harbor.flou.dev/coflnet/sky-player-names:273f1335-c5b5-4404-b4d4-3a07560b3eca
+        image: harbor.flou.dev/coflnet/skyplayername:71641bd2-7a61-407c-bb99-6cb2dfd698e2
         ports:
         - containerPort: 8000
           name: web
