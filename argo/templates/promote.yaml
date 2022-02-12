@@ -18,7 +18,7 @@ spec:
       - name: git_secret_name
       - name: git_secret_key
     script:
-      image: registry.flou.dev/alpine-git:3.14.0
+      image: harbor.flou.dev/coflnet/alpine-git:3.14.0
       command: [sh]
       source: |
         git clone "https://{{inputs.parameters.git_user}}:$GITHUB_SECRET@{{inputs.parameters.repo_url}}" /app
