@@ -73,7 +73,7 @@ metadata:
   namespace: sky
 spec:
   selector:
-    app: subscriptions-metrics
+    app: subscriptions
   ports:
   - port: 8000
     targetPort: 8000
