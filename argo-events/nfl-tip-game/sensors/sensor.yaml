@@ -48,7 +48,7 @@ spec:
               volumes:
               - name: kaniko-secret
                 secret:
-                  secretName: regcred
+                  secretName: harbor
                   items:
                     - key: .dockerconfigjson
                       path: config.json
@@ -68,7 +68,7 @@ spec:
                       - name: app_repo
                         value: git://github.com/Coflnet/kube
                       - name: container_image
-                        value: registry.flou.dev/nfl-tip-game
+                        value: harbor.flou.dev/coflnet/nfl-tip-game
                       - name: container_tag
                         value: "{{workflow.uid}}"
                       - name: sub_path 
@@ -98,7 +98,7 @@ spec:
                       - name: git_secret_key
                         value: password
                       - name: image_name
-                        value: registry.flou.dev\/nfl-tip-game
+                        value: harbor.flou.dev\/coflnet\/nfl-tip-game
                       - name: k8s_file
                         value: ./nfl-tip-game/k8s/backend.yaml
                       - name: message
