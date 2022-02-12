@@ -23,7 +23,6 @@ spec:
         image: harbor.flou.dev/coflnet/skysubscriptions:a3ccc36e-6e73-44e1-a5ab-33fc13c86a3a
         ports:
         - containerPort: 8000
-          name: web
         env: 
         - name: DB_CONNECTION
           valueFrom:
