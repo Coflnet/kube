@@ -11,7 +11,6 @@ spec:
       parameters:
       - name: tag
       - name: git_user
-      - name: image_name
       - name: repo_url
       - name: k8s_file
       - name: git_secret_name
