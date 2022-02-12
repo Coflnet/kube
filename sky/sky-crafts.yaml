@@ -12,10 +12,10 @@ spec:
         app: sky-craft
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: sky-craft
-        image: registry.flou.dev/sky-craft:afd7e7ea-aaa4-44b4-a6ad-50389c32f421
+        image: harbor.flou.dev/coflnet/skycrafts:94a69e83-13f0-4a22-8e6d-1b2cfd69e718
         ports:
           - containerPort: 8000
         resources:
