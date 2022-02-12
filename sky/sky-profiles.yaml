@@ -16,7 +16,7 @@ spec:
         - name: harbor
       containers:
       - name: player
-        image: harbor.flou.dev/coflnet/skyprofiles:1e67117f-e80a-43fb-8340-3e2831851a57
+        image: harbor.flou.dev/coflnet/skyprofiles:e8ba496f-05b6-4ad8-b6b0-a71bae516190
         ports:
           - containerPort: 8000
         env:
