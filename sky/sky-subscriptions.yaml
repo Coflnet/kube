@@ -64,5 +64,24 @@ spec:
   ports:
   - port: 80
     targetPort: 8000
-
+    name: api
+  - port: 8000
+    targetPort: 8000
+    name: metrics
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: sky-subscriptions
+  namespace: sky 
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: subscriptions
+  endpoints:
+  - port: metrics
+    interval: 25s
+    path: /metrics
 
