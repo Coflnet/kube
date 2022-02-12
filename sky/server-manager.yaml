@@ -16,10 +16,10 @@ spec:
         app: server-manager
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: server-manager
-        image: registry.flou.dev/sky-server-manager:d54055bb-a876-46eb-93d0-19c13449c481
+        image: harbor.flou.dev/sky-server-manager:d54055bb-a876-46eb-93d0-19c13449c481
         ports:
         - containerPort: 3000
           name: api
