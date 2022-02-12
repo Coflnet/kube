@@ -22,7 +22,7 @@ spec:
       - name: subscriptions
         image: harbor.flou.dev/coflnet/skysubscriptions:8a0e9621-d48a-4e5b-8476-d636cfe74de6
         ports:
-        - containerPort: 80
+        - containerPort: 8000
           name: web
         env: 
         - name: DB_CONNECTION
@@ -63,6 +63,6 @@ spec:
     app: subscriptions
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 8000
 
 

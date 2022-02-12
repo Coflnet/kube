@@ -125,7 +125,10 @@ spec:
                 name: config
                 key: redis_host_sky
           - name: SUBSCRIPTION_HOST
-            value: subscriptions
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: subscriptions_host
           - name: INDEXER_HOST
             value: sky-indexer-service
           - name: PLAYERNAME_URL
