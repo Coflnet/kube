@@ -13,7 +13,7 @@ spec:
           - name: spec
           - name: cypress_base_url
       container:
-        image: registry.flou.dev/cypress-runner:chrome87
+        image: harbor.flou.dev/coflnet/cypress-runner:chrome87
         imagePullPolicy: Always
         env:
         - name: CYPRESS_BASE_URL
