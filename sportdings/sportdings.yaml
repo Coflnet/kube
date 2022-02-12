@@ -16,10 +16,10 @@ spec:
         app: sportdings
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: sportdings-backend
-        image: registry.flou.dev/sport-dings:a4a812e1-f2b9-4754-a535-ee6877882306
+        image: harbor.flou.dev/coflnet/sport-dings:a4a812e1-f2b9-4754-a535-ee6877882306
         ports:
         - containerPort: 80
         resources:
