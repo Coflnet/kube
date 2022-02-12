@@ -126,6 +126,8 @@ spec:
                       template: promote-v2
                     arguments:
                       parameters:
+                      - name: image_name
+                        value: "harbor.flou.dev/"
                       - name: k8s_file
                         value: ""
                       - name: message
