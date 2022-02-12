@@ -65,6 +65,16 @@ spec:
   - port: 80
     targetPort: 8000
     name: api
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: subscriptions-metrics
+  namespace: sky
+spec:
+  selector:
+    app: subscriptions-metrics
+  ports:
   - port: 8000
     targetPort: 8000
     name: metrics
@@ -79,9 +89,8 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: subscriptions
+      app: subscriptions-metrics
   endpoints:
   - port: metrics
     interval: 25s
     path: /metrics
-
