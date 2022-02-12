@@ -19,36 +19,6 @@ data:
             "type": 4
         },
         {
-            "slug": "sniper-small",
-            "title": "Small",
-            "cost": 212,
-            "ownershipSeconds": 3600
-        },
-        {
-            "slug": "sniper-medium",
-            "title": "Medium",
-            "cost": 322,
-            "ownershipSeconds": 3600
-        },
-        {
-            "slug": "sniper-big",
-            "title": "Big",
-            "cost": 360,
-            "ownershipSeconds": 3600
-        },
-        {
-            "slug": "sniper-ultra",
-            "title": "Ultra",
-            "cost": 634,
-            "ownershipSeconds": 3600
-        },
-        {
-            "slug": "sniper-cloud",
-            "title": "Cloud",
-            "cost": 1342,
-            "ownershipSeconds": 3600
-        },
-        {
             "slug": "test-premium",
             "title": "Test Premium for invited user",
             "cost": 100,
@@ -62,7 +32,7 @@ data:
             "cost": 1800,
             "price": 6.69,
             "currencyCode": "eur",
-            "ProviderSlug": "paypal",
+            "ProviderSlug": "stripe",
             "type": 4
         },
         {
@@ -71,7 +41,7 @@ data:
             "cost": 5400,
             "price": 19.69,
             "currencyCode": "eur",
-            "ProviderSlug": "paypal",
+            "ProviderSlug": "stripe",
             "type": 4
         },
         {
@@ -80,7 +50,7 @@ data:
             "cost": 10800,
             "price": 38.99,
             "currencyCode": "eur",
-            "ProviderSlug": "paypal",
+            "ProviderSlug": "stripe",
             "type": 4
         },
         {
@@ -89,7 +59,7 @@ data:
             "cost": 21600,
             "price": 74.99,
             "currencyCode": "eur",
-            "ProviderSlug": "paypal",
+            "ProviderSlug": "stripe",
             "type": 4
         },
         {
