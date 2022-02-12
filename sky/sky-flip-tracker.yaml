@@ -16,10 +16,10 @@ spec:
         app: tracker
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: tracker
-        image: registry.flou.dev/sky-tracker:6619eb8b-4a4b-41c2-a442-3cc4357a9e07
+        image: harbor.flou.dev/coflnet/skyfliptracker:a41924c5-2544-4b28-92b5-45887bceea7a
         ports:
         - containerPort: 8000
           name: web
