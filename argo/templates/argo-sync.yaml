@@ -15,7 +15,7 @@ spec:
       - name: argo_auth_token_secret_name
       - name: argo_auth_token_secret_key
     container:
-      image: registry.flou.dev/argocd-sync
+      image: harbor.flou.dev/coflnet/argocd-sync
       command: ["argocd-sync", "--app", "{{inputs.parameters.app_name}}"]
       env:
         - name: ARGOCD_SERVER
