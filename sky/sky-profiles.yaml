@@ -13,10 +13,10 @@ spec:
         app: player
     spec:
       imagePullSecrets:
-        - name: regcred
+        - name: harbor
       containers:
       - name: player
-        image: registry.flou.dev/sky-player:f41777da-f1cd-4ab2-ac85-0e8f45b0c1b1
+        image: harbor.flou.dev/coflnet/sky-profiles:f41777da-f1cd-4ab2-ac85-0e8f45b0c1b1
         ports:
           - containerPort: 8000
         env:
