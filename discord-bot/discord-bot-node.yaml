@@ -16,7 +16,7 @@ spec:
         - name: harbor
       containers:
       - name: discord-bot-node
-        image: harbor.flou.dev/coflnet/discord-bot-node:c0dacb4a-d73e-44cd-9a0c-0e59a0adbb4a
+        image: harbor.flou.dev/coflnet/discord-bot-node:02d19966-46da-4a7f-a820-ccbd7fd1bb64
         env:
         - name: TOKEN
           valueFrom:
