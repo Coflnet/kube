@@ -27,7 +27,7 @@ data:
     ],
     "topups": [
         {
-            "slug": "stripe-coflcoins-1800",
+            "slug": "s_cc_1800",
             "title": "1.800 CoflCoins",
             "cost": 1800,
             "price": 6.69,
@@ -36,7 +36,7 @@ data:
             "type": 4
         },
         {
-            "slug": "stripe-coflcoins-5400",
+            "slug": "s_cc_5400",
             "title": "5.400 CoflCoins",
             "cost": 5400,
             "price": 19.69,
@@ -45,7 +45,7 @@ data:
             "type": 4
         },
         {
-            "slug": "stripe-coflcoins-10800",
+            "slug": "s_cc_10800",
             "title": "10.800 CoflCoins",
             "cost": 10800,
             "price": 38.99,
@@ -54,7 +54,7 @@ data:
             "type": 4
         },
         {
-            "slug": "stripe-coflcoins-21600",
+            "slug": "s_cc_21600",
             "title": "21.600 CoflCoins",
             "cost": 21600,
             "price": 74.99,
@@ -63,7 +63,7 @@ data:
             "type": 4
         },
         {
-            "slug": "paypal-coflcoins-1800",
+            "slug": "p_cc_1800",
             "title": "1.800 CoflCoins",
             "cost": 1800,
             "price": 6.99,
@@ -72,7 +72,7 @@ data:
             "type": 4
         },
         {
-            "slug": "stripe-coflcoins-5400",
+            "slug": "p_cc_5400",
             "title": "5.400 CoflCoins",
             "cost": 5400,
             "price": 19.99,
@@ -81,7 +81,7 @@ data:
             "type": 4
         },
         {
-            "slug": "stripe-coflcoins-10800",
+            "slug": "p_cc_10800",
             "title": "10.800 CoflCoins",
             "cost": 10800,
             "price": 39.69,
@@ -90,7 +90,7 @@ data:
             "type": 4
         },
         {
-            "slug": "stripe-coflcoins-21600",
+            "slug": "p_cc_21600",
             "title": "21.600 CoflCoins",
             "cost": 21600,
             "price": 78.69,
@@ -99,14 +99,14 @@ data:
             "type": 4
         },
         {
-            "slug": "verify-mc",
+            "slug": "verify_mc",
             "title": "Bonus for the MC verification",
             "cost": 100,
             "ProviderSlug": "custom",
             "type": 4
         },
         {
-            "slug": "referal-bonus",
+            "slug": "referal_bonus",
             "title": "Bonus if a refered user purchased premium",
             "cost": 4320,
             "ProviderSlug": "custom",
