@@ -23,7 +23,7 @@ data:
   flipper_host: flipper
   minio_host: s3-minio.s3.svc.cluster.local:9000
   minio_key: 82nq6rUqwtWutpTzSZVMiu4R
-  mongo_host: mongodb://root:root@mongo-mongodb.mongo:27017
+  mongo_host: "mongodb://root:aVJS9DTDxqHuCqwaXHu2P7Dts@mongodb-mongodb-sharded.mongodb:27017"
   sky_player_name_url: http://player-name:8000/
   settings_base_url: http://settings:8000/
   payment_base_url: http://payment.payment
