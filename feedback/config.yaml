@@ -4,4 +4,4 @@ metadata:
   name: config
   namespace: feedback
 data:
-  mongo_host: mongodb://root:root@mongo-mongodb.mongo:27017
+  mongo_host: "mongodb://root:aVJS9DTDxqHuCqwaXHu2P7Dts@mongodb-mongodb-sharded.mongodb:27017"
