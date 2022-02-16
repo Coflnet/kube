@@ -58,7 +58,7 @@ spec:
             valueFrom:
               configMapKeyRef:
                 name: config
-                key: api_host
+                key: http_api_host
           - name: FRONTEND_PROD
             value: stage-frontend
           - name: FRONTEND_STAGING
