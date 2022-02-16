@@ -16,6 +16,17 @@ spec:
       containers:
       - name: sky-craft
         image: harbor.flou.dev/coflnet/skycrafts:97f5b09f-d0c0-4bc2-b2ab-ba5ca837abbe
+        env:
+        - name: API_BASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: http_api_host
+        - name: JAEGER_AGENT_HOST
+          valueFrom: 
+            configMapKeyRef:
+              name: config
+              key: jaeger_agent_host
         ports:
           - containerPort: 8000
         resources:
