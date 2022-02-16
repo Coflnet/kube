@@ -54,6 +54,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: api_host
+          - name: API_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: api_host
           - name: FRONTEND_PROD
             value: stage-frontend
           - name: FRONTEND_STAGING
