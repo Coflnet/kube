@@ -15,7 +15,7 @@ spec:
         - name: harbor
       containers:
       - name: sky-craft
-        image: harbor.flou.dev/coflnet/skycrafts:ae151bcf-67f4-4646-8695-85c354ca97af
+        image: harbor.flou.dev/coflnet/skycrafts:97f5b09f-d0c0-4bc2-b2ab-ba5ca837abbe
         ports:
           - containerPort: 8000
         resources:

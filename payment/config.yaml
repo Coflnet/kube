@@ -8,70 +8,108 @@ data:
   jaeger_agent_host: jaeger-agent.observability.svc.cluster.local
 
   products.json: |
-    [
-      {
-          "slug": "premium",
-          "title": "Premium",
-          "description": "Premium plan granting various perks",
-          "cost": 1800,
-          "ownershipSeconds": 2592000,
-          "type": 4
-      },
-      {
-          "slug": "premium-quater",
-          "title": "3 months of Premium",
-          "cost": 5400,
-          "ownershipSeconds": 7776000,
-          "type": 4
-      },
-      {
-          "slug": "premium-half-year",
-          "title": "Half a year of Premium",
-          "cost": 10800,
-          "ownershipSeconds": 15552000,
-          "type": 4
-      },
-      {
-          "slug": "budget-premium",
-          "title": "3 months of Basic Plan",
-          "cost": 1800,
-          "ownershipSeconds": 7776000,
-          "type": 4
-      },
-      {
-          "slug": "sniper-small",
-          "title": "Small",
-          "cost": 212,
-          "ownershipSeconds": 3600
-      },
-      {
-          "slug": "sniper-medium",
-          "title": "Medium",
-          "cost": 322,
-          "ownershipSeconds": 3600
-      },
-      {
-          "slug": "sniper-big",
-          "title": "Big",
-          "cost": 360,
-          "ownershipSeconds": 3600
-      },
-      {
-          "slug": "sniper-ultra",
-          "title": "Ultra",
-          "cost": 634,
-          "ownershipSeconds": 3600
-      },
-      {
-          "slug": "sniper-cloud",
-          "title": "Cloud",
-          "cost": 1.342,
-          "ownershipSeconds": 3600
-      },
-      {
-          "slug": "referal",
-          "title": "Referral bonus",
-          "cost": 100,
-          "type": 4
-      }
-    ] 
+    {
+    "products": [
+        {
+            "slug": "premium",
+            "title": "Premium",
+            "description": "Premium plan granting various perks",
+            "cost": 1800,
+            "ownershipSeconds": 2592000,
+            "type": 4
+        },
+        {
+            "slug": "test-premium",
+            "title": "Test Premium for invited user",
+            "cost": 100,
+            "ownershipSeconds": 86400
+        }
+    ],
+    "topups": [
+        {
+            "slug": "s_cc_1800",
+            "title": "1.800 CoflCoins",
+            "cost": 1800,
+            "price": 6.69,
+            "currencyCode": "eur",
+            "ProviderSlug": "stripe",
+            "type": 4
+        },
+        {
+            "slug": "s_cc_5400",
+            "title": "5.400 CoflCoins",
+            "cost": 5400,
+            "price": 19.69,
+            "currencyCode": "eur",
+            "ProviderSlug": "stripe",
+            "type": 4
+        },
+        {
+            "slug": "s_cc_10800",
+            "title": "10.800 CoflCoins",
+            "cost": 10800,
+            "price": 38.99,
+            "currencyCode": "eur",
+            "ProviderSlug": "stripe",
+            "type": 4
+        },
+        {
+            "slug": "s_cc_21600",
+            "title": "21.600 CoflCoins",
+            "cost": 21600,
+            "price": 74.99,
+            "currencyCode": "eur",
+            "ProviderSlug": "stripe",
+            "type": 4
+        },
+        {
+            "slug": "p_cc_1800",
+            "title": "1.800 CoflCoins",
+            "cost": 1800,
+            "price": 6.99,
+            "currencyCode": "eur",
+            "ProviderSlug": "paypal",
+            "type": 4
+        },
+        {
+            "slug": "p_cc_5400",
+            "title": "5.400 CoflCoins",
+            "cost": 5400,
+            "price": 19.99,
+            "currencyCode": "eur",
+            "ProviderSlug": "paypal",
+            "type": 4
+        },
+        {
+            "slug": "p_cc_10800",
+            "title": "10.800 CoflCoins",
+            "cost": 10800,
+            "price": 39.69,
+            "currencyCode": "eur",
+            "ProviderSlug": "paypal",
+            "type": 4
+        },
+        {
+            "slug": "p_cc_21600",
+            "title": "21.600 CoflCoins",
+            "cost": 21600,
+            "price": 78.69,
+            "currencyCode": "eur",
+            "ProviderSlug": "paypal",
+            "type": 4
+        },
+        {
+            "slug": "verify_mc",
+            "title": "Bonus for the MC verification",
+            "cost": 100,
+            "ProviderSlug": "custom",
+            "type": 4
+        },
+        {
+            "slug": "referal_bonus",
+            "title": "Bonus if a refered user purchased premium",
+            "cost": 4320,
+            "ProviderSlug": "custom",
+            "type": 36
+        }
+    ]}
