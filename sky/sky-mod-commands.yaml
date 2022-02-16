@@ -133,14 +133,14 @@ spec:
           httpGet:
             path: /status
             port: 8000
-          initialDelaySeconds: 20
-          periodSeconds: 3
+          initialDelaySeconds: 60
+          periodSeconds: 5
         startupProbe:
           httpGet:
             path: /status
             port: 8000
-          initialDelaySeconds: 20
-          periodSeconds: 3
+          initialDelaySeconds: 45
+          periodSeconds: 5
         resources:
           limits:
             memory: "1000Mi"
