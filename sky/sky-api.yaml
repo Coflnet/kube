@@ -37,6 +37,11 @@ spec:
           - containerPort: 8008
           - containerPort: 8000
         env:
+          - name: API_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: http_api_host
           - name: PAYMENTS_HOST
             valueFrom:
               configMapKeyRef:

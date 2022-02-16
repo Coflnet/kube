@@ -49,6 +49,11 @@ spec:
             value: sky-low-priced
           - name: INDEXER_HOST
             value: sky-indexer-service
+          - name: API_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: http_api_host
           - name: SKYFLIPPER_HOST
             valueFrom:
               configMapKeyRef:
