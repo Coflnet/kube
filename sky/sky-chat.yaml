@@ -24,7 +24,7 @@ spec:
         - containerPort: 8000
           name: metrics
         env: 
-        - name: DBConnection
+        - name: DB_CONNECTION
           valueFrom:
             secretKeyRef:
               name: secret 
