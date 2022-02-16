@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chat
+  namespace: sky
+  labels:
+    app: chat
+spec:
+  selector:
+    matchLabels:
+      app: chat
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: chat
+    spec:
+      imagePullSecrets:
+        - name: harbor
+      containers:
+      - name: chat
+        image: harbor.flou.dev/coflnet/skychat:6a31b58f-2691-4b21-9345-efe1e232ea88
+        ports:
+        - containerPort: 8000
+          name: metrics
+        env: 
+        - name: DBConnection
+          valueFrom:
+            secretKeyRef:
+              name: secret 
+              key: connection_chat_database
+        - name: JAEGER_AGENT_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: jaeger_agent_host
+        - name: REDIS_HOST
+          valueFrom: 
+            configMapKeyRef:
+              name: config
+              key: redis_host
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: chat-metrics-service
+  namespace: sky
+  labels:
+    app: chat-metrics-service
+spec:
+  selector:
+    app: chat
+  ports:
+  - port: 8000
+    targetPort: 8000
+    name: metrics
+    protocol: TCP

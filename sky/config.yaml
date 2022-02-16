@@ -12,7 +12,6 @@ data:
   reload_config_on_change: "false"
   kafka_host: kafka-helm.kafka.svc.cluster.local
   redis_host: redis-service,syncTimeout=200
-  #redis_host: redis-cluster.redis.svc.cluster.local:6379,password=6o2SIpWTpK
   redis_command_host: commands-redis-service,syncTimeout=200
   redis_settings_host: settings-redis-service
   redis_api_host: api-redis-service,syncTimeout=200
