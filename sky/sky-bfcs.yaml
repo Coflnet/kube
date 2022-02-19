@@ -21,13 +21,11 @@ spec:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
-            - weight: 1
-              preference:
-                matchExpressions:
-                - key: hetzner
-                  operator: In
-                  values:
-                  - "true"
+            - matchExpressions:
+              - key: hetzner
+                operator: In
+                values:
+                - "true"
       imagePullSecrets:
         - name: harbor
       containers:
