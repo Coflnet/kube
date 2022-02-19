@@ -6,6 +6,8 @@ metadata:
   labels:
     app: sky-bfcs
 spec:
+  strategy: 
+    type: Recreate
   selector:
     matchLabels:
       app: sky-bfcs
