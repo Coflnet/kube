@@ -59,6 +59,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: flipper_host
+          - name: FLIP_REDIS_OPTIONS
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: sky_bfcs_redis
           - name: REDIS_HOST
             valueFrom: 
               configMapKeyRef:
