@@ -42,7 +42,7 @@ spec:
               key: sky_bfcs_redis
         resources:
           requests:
-            cpu: 1000m
+            cpu: 400m
             memory: 3000Mi
 ---
 apiVersion: v1
