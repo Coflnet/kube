@@ -23,14 +23,15 @@ spec:
     spec:
       affinity:
         nodeAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 1
-            preference:
-              matchExpressions:
-              - key: hetzner
-                operator: In
-                values:
-                - "true"
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - weight: 1
+              preference:
+                matchExpressions:
+                - key: hetzner
+                  operator: In
+                  values:
+                  - "true"
       containers:
       - name: sky-bfcs-redis
         image: redis:6.2.6-alpine

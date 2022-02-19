@@ -17,14 +17,15 @@ spec:
     spec:
       affinity:
         nodeAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 1
-            preference:
-              matchExpressions:
-              - key: hetzner
-                operator: In
-                values:
-                - "true"
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - weight: 1
+              preference:
+                matchExpressions:
+                - key: hetzner
+                  operator: In
+                  values:
+                  - "true"
       imagePullSecrets:
         - name: harbor
       containers:
