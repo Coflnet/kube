@@ -16,6 +16,7 @@ data:
   redis_settings_host: settings-redis-service
   redis_api_host: api-redis-service,syncTimeout=200
   redis_host_sky: redis-service
+  sky_bfcs_redis: redis-bfcs
   payment_host: payment.payment.svc.cluster.local
   commands_host: sky-commands-main-service.sky.svc.cluster.local
   api_host: sky-api-main-service.sky.svc.cluster.local

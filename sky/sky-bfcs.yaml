@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sky-bfcs
+  namespace: sky
+  labels:
+    app: sky-bfcs
+spec:
+  selector:
+    matchLabels:
+      app: sky-bfcs
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: hetzner
+            operator: In
+            values:
+            - "true"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sky-bfcs
+    spec:
+      imagePullSecrets:
+        - name: harbor
+      containers:
+      - name: sky-bfcs
+        image: harbor.flou.dev/coflnet/skybfcs:6a31b58f-2691-4b21-9345-efe1e232ea88
+        ports:
+        - containerPort: 8000
+          name: web
+        env: 
+        - name: FLIP_REDIS_OPTIONS
+          valueFrom: 
+            configMapKeyRef:
+              name: config
+              key: sky_bfcs_redis
+        resources:
+          requests:
+            cpu: 1000m
+            memory: 3000Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sky-bfcs
+  namespace: sky
+spec:
+  selector:
+    app: sky-bfcs
+  ports:
+  - port: 8000
+    targetPort: 8000
+    name: api
