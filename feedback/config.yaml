@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: config
-  namespace: feedback
-data:
-  mongo_host: "mongodb://root:aVJS9DTDxqHuCqwaXHu2P7Dts@mongodb-mongodb-sharded.mongodb:27017"

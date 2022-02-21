@@ -26,8 +26,8 @@ spec:
         env: 
         - name: MONGO_HOST
           valueFrom:
-            configMapKeyRef:
-              name: config
+            secretKeyRef:
+              name: secret
               key: mongo_host
         resources:
           requests:
