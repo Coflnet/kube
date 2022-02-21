@@ -15,4 +15,3 @@ data:
 
   client_id: "900179869709762630"
   discord_guild: "267680588666896385"
-  mongo_host: "mongodb://root:aVJS9DTDxqHuCqwaXHu2P7Dts@mongodb-mongodb-sharded.mongodb:27017"

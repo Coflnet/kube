@@ -28,8 +28,8 @@ spec:
               key: coflnet_token
         - name: MONGO_HOST
           valueFrom:
-            configMapKeyRef:
-              name: config
+            secretKeyRef:
+              name: secret
               key: mongo_host
         resources:
           limits:
