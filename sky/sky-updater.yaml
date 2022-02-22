@@ -24,15 +24,6 @@ spec:
         value: "true"
         effect: "NoSchedule"
       affinity:
-        #nodeAffinity: 
-        #  preferredDuringSchedulingIgnoredDuringExecution:
-        #  - weight: 1
-        #    preference:
-        #      matchExpressions:
-        #      - key: us
-        #        operator: In
-        #        values:
-        #        - "true"
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
           - weight: 10

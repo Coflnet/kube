@@ -10,7 +10,7 @@ metadata:
     config.linkerd.io/skip-outbound-ports: "6379"
     config.linkerd.io/skip-inbound-ports: "6379"
 spec:
-  replicas: 5
+  replicas: 6
   progressDeadlineSeconds: 2592000
   selector:
     matchLabels:
@@ -23,6 +23,11 @@ spec:
         config.linkerd.io/skip-outbound-ports: "6379"
         config.linkerd.io/skip-inbound-ports: "6379"
     spec:
+      tolerations:
+      - key: "us"
+        operator: "Equal"
+        value: "true"
+        effect: "NoSchedule"
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:

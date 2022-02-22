@@ -6,7 +6,7 @@ metadata:
   labels:
     app: mod
 spec:
-  replicas: 4
+  replicas: 5
   progressDeadlineSeconds: 2592000
   selector:
     matchLabels:
@@ -16,6 +16,11 @@ spec:
       labels:
         app: mod
     spec:
+      tolerations:
+      - key: "us"
+        operator: "Equal"
+        value: "true"
+        effect: "NoSchedule"
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
