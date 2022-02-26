@@ -42,7 +42,7 @@ spec:
             name: player
             port:
               number: 8000
-      - path: /api/chat
+      - path: /api/chat/send
         pathType: ImplementationSpecific
         backend:
           service:
