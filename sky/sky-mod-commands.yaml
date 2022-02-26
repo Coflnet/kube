@@ -148,8 +148,6 @@ spec:
               configMapKeyRef:
                 name: config
                 key: chat_base_url
-
-            
         readinessProbe:
           httpGet:
             path: /status
@@ -160,7 +158,7 @@ spec:
           httpGet:
             path: /status
             port: 8000
-          initialDelaySeconds: 45
+          initialDelaySeconds: 60
           periodSeconds: 5
         resources:
           limits:
