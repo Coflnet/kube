@@ -143,6 +143,11 @@ spec:
               secretKeyRef:
                 name: secret
                 key: mod_chat_api_key
+          - name: CHAT__BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: chat_base_url
 
             
         readinessProbe:
