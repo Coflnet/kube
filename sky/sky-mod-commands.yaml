@@ -37,7 +37,7 @@ spec:
         - name: harbor
       containers:
       - name: mod
-        image: harbor.flou.dev/coflnet/skymodcommands:e19f4df6-6b73-4324-a286-5ffe71f2b6ed
+        image: harbor.flou.dev/coflnet/skymodcommands:709ce397-32af-43d3-89ba-80e0ca6b5022
         ports:
           - containerPort: 8008
           - containerPort: 8000
@@ -151,15 +151,15 @@ spec:
         readinessProbe:
           httpGet:
             path: /status
-            port: 8000
+            port: 8008
           initialDelaySeconds: 60
-          periodSeconds: 5
+          periodSeconds: 3
         startupProbe:
           httpGet:
             path: /status
-            port: 8000
+            port: 8008
           initialDelaySeconds: 60
-          periodSeconds: 5
+          periodSeconds: 3
         resources:
           limits:
             memory: "1000Mi"
