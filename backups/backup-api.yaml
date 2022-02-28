@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backup-api
+  namespace: backups
+spec:
+  selector:
+    matchLabels:
+      app: backup-api
+  template:
+    metadata:
+      labels:
+        app: backup-api
+    spec:
+      containers:
+      - name: backup-api
+        image: harbor.flou.dev/flou21/backupapi:latest
+        resources:
+          requests:
+            cpu: "10m"
+            memory: "32Mi"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backup-api
+  namespace: backups
+spec:
+  selector:
+    app: backup-api
+  ports:
+  - port: 80
+    targetPort: 3000
+    name: api

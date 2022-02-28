@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: backups-ingress
+  namespace: backups
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: backups.flou.dev
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: backup-frontend
+            port:
+              number: 80
+      - path: /api
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: backup-api
+            port:
+              nunmber: 80
