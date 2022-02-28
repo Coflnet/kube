@@ -15,6 +15,12 @@ spec:
       containers:
       - name: backup-api
         image: harbor.flou.dev/flou21/backup-api:5049a60a-e831-4ba4-b099-75cf08cf4ec2
+        env:
+          - name: MONGO_HOST
+            valueFrom:
+              secretKeyRef:
+                name: secret
+                key: mongo_host
         resources:
           requests:
             cpu: "10m"
