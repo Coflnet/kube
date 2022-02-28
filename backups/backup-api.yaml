@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backup-api
-        image: harbor.flou.dev/flou21/backup-api:5049a60a-e831-4ba4-b099-75cf08cf4ec2
+        image: harbor.flou.dev/flou21/backup-api:65d0b090-e9f5-4f7a-896b-8bc035f7248c
         resources:
           requests:
             cpu: "10m"
