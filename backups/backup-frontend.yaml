@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backup-frontend
-        image: harbor.flou.dev/flou21/backupfrontend:latest
+        image: harbor.flou.dev/flou21/backup-frontend:latest
         resources:
           requests:
             memory: "32Mi"

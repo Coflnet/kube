@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backup-api
-        image: harbor.flou.dev/flou21/backupapi:latest
+        image: harbor.flou.dev/flou21/backup-api:latest
         resources:
           requests:
             cpu: "10m"
