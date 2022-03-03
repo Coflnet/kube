@@ -31,6 +31,11 @@ spec:
               key: connection_read_secondary
         - name: SKYCOMMANDS_HOST
           value: "sky-commands-main-service:8008"
+        - name: API_BASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: http_api_host
         - name: JAEGER_AGENT_HOST
           valueFrom:
             configMapKeyRef:
