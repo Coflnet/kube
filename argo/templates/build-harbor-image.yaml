@@ -3,6 +3,8 @@ kind: WorkflowTemplate
 metadata:
   name: build-harbor-image
   namespace: argo
+  labels:
+    workflows.argoproj.io/container-runtime-executor: emissary
 spec:
   serviceAccountName: argo-events-sa
   templates:
