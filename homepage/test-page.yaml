@@ -55,7 +55,19 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: test-page
+  name: test-page-canary-svc
+  namespace: homepage
+spec:
+  selector:
+    app: test-page
+  ports:
+  - port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-page-stable-svc
   namespace: homepage
 spec:
   selector:
