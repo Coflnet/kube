@@ -29,7 +29,7 @@ spec:
           - name: MONGO_HOST
             valueFrom:
               configMapKeyRef:
-                name: config
+                name: secret
                 key: mongo_host
           - name: KAFKA_HOST
             valueFrom:
