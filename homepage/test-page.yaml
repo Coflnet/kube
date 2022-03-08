@@ -1,23 +1,24 @@
+
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: homepage
+  name: test-page
   namespace: homepage
 spec:
   replicas: 5
   selector:
     matchLabels:
-      app: homepage
+      app: test-page
   template:
     metadata:
       labels:
-        app: homepage
+        app: test-page
     spec:
       imagePullSecrets:
         - name: harbor
       containers:
-      - name: homepage
-        image: harbor.flou.dev/flou21/flou-homepage:b9fc7b3f-7876-4230-bf09-e4a48d05b6ba
+      - name: test-page
+        image: harbor.flou.dev/flou21/test-page:b9fc7b3f-7876-4230-bf09-e4a48d05b6ba
         resources:
           requests:
             memory: 10Mi
@@ -44,21 +45,21 @@ spec:
       - setWeight: 20
       - pause:
           duration: 30s
-      canaryService: canary-svc # required
-      stableService: stable-svc # required
+      canaryService: test-page-canary-svc # required
+      stableService: test-page-stable-svc # required
       trafficRouting:
         smi:
           rootService: root-svc
-          trafficSplitName: homepage-canary-traffic-split
+          trafficSplitName: test-page-canary-traffic-split
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: homepage
+  name: test-page
   namespace: homepage
 spec:
   selector:
-    app: homepage
+    app: test-page
   ports:
   - port: 80
     targetPort: 80
