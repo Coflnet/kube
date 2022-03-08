@@ -28,7 +28,7 @@ spec:
         env: 
           - name: MONGO_HOST
             valueFrom:
-              configMapKeyRef:
+              secretKeyRef:
                 name: secret
                 key: mongo_host
           - name: KAFKA_HOST
