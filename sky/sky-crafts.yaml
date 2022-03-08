@@ -15,7 +15,7 @@ spec:
         - name: harbor
       containers:
       - name: sky-craft
-        image: harbor.flou.dev/coflnet/skycrafts:4d9849ac-b1ea-410a-8f13-c41fd705fb4c
+        image: harbor.flou.dev/coflnet/skycrafts:1ea86bab-0252-4443-b1cb-70e8fc7d1791
         env:
         - name: API_BASE_URL
           valueFrom:

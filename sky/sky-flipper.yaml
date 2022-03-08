@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: flipper
-        image: harbor.flou.dev/coflnet/skyflipper:1038455c-33cc-4b9c-90fa-d609281a57ca
+        image: harbor.flou.dev/coflnet/skyflipper:19940107-46b5-4cc6-8341-2ce0470c27f6
         ports:
         - containerPort: 80
           name: web
@@ -31,6 +31,11 @@ spec:
               key: connection_read_secondary
         - name: SKYCOMMANDS_HOST
           value: "sky-commands-main-service:8008"
+        - name: API_BASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: http_api_host
         - name: JAEGER_AGENT_HOST
           valueFrom:
             configMapKeyRef:
