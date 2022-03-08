@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: server-manager
-        image: harbor.flou.dev/coflnet/server-manager:7a2bbc92-b0f7-41c4-97dd-9e10cf067d8b
+        image: harbor.flou.dev/coflnet/server-manager:77a8e195-5006-4b19-b766-9ee7d4240830
         ports:
         - containerPort: 3000
           name: api
