@@ -37,24 +37,66 @@ spec:
       steps:
       - setWeight: 10
       - pause:
-          duration: 30s 
+          duration: 1m
+      - analysis:
+          templates:
+          - templateName: success-rate
+          args:
+          - name: service-name
+            value: homepage-canary
       - setWeight: 20
       - pause:
-          duration: 30s
-      - setWeight: 20
+          duration: 1m
+      - analysis:
+          templates:
+          - templateName: success-rate
+          args:
+          - name: service-name
+            value: homepage-canary
+      - setWeight: 50
       - pause:
           duration: 30s
-      canaryService: canary-svc # required
-      stableService: stable-svc # required
+      - analysis:
+          templates:
+          - templateName: success-rate
+          args:
+          - name: service-name
+            value: homepage-canary
+      canaryService: homepage-canary
+      stableService: homepage-stable
       trafficRouting:
         smi:
-          rootService: root-svc
+          rootService: homepage
           trafficSplitName: homepage-canary-traffic-split
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: homepage
+  namespace: homepage
+spec:
+  selector:
+    app: homepage
+  ports:
+  - port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: homepage-stable
+  namespace: homepage
+spec:
+  selector:
+    app: homepage
+  ports:
+  - port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: homepage-canary
   namespace: homepage
 spec:
   selector:
