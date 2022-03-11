@@ -14,6 +14,6 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: test-page-stable-svc
+            name: test-page
             port:
               number: 80
