@@ -35,14 +35,21 @@ spec:
     canary: 
       steps:
       - setWeight: 20
-      - pause: {duration: 5m}
+      - pause: {duration: 2m}
       - analysis:
           templates:
           - templateName: success-rate
           args:
           - name: service-name
             value: test-page-svc
-      maxSurge: "25%"
+      - setWeight: 50
+      - pause: {duration: 2m}
+      - analysis:
+          templates:
+          - templateName: success-rate
+          args:
+          - name: service-name
+            value: test-page-svc
       maxUnavailable: 1
       canaryService: test-page-canary
       stableService: test-page-stable
