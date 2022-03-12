@@ -190,7 +190,7 @@ metadata:
   name: api-service
   namespace: sky
   labels:
-    app: api-metrics-service
+    app: api-service
 spec:
   selector:
     app: api
