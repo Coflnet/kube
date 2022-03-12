@@ -48,7 +48,7 @@ spec:
             valueFrom:
               secretKeyRef: 
                 name: secret
-                key: stripe_test_secret
+                key: stripe_signing_secret
           - name: PAYPAL__ID
             valueFrom:
               secretKeyRef: 
