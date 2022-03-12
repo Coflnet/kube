@@ -166,23 +166,41 @@ spec:
             cpu: "500m"
   strategy:
     canary: 
+      steps:
+      - setWeight: 10
+      - pause: 
+          duration: 1m
+      - analysis:
+          templates:
+          - templateName: sky-api-analysis
+          args:
+          - name: service-name
+            value: api-service
+      - setWeight: 30
+      - pause:
+          duration: 3m
+      - analysis:
+          templates:
+          - templateName: sky-api-analysis
+          args:
+          - name: service-name
+            value: api-service
+      - setWeight: 50
+      - pause:
+          duration: 10m
+      - analysis:
+          templates:
+          - templateName: sky-api-analysis
+          args:
+          - name: service-name
+            value: api-service
       maxUnavailable: 1
       canaryService: sky-api-canary-service
       stableService: sky-api-main-service
-      steps:
-      - setWeight: 5
-      - pause:
-          duration: 1h
-      - setWeight: 10
-      - pause:
-          duration: 2h
-      - setWeight: 20
-      - pause:
-          duration: 3h
-      - setWeight: 50
-      - pause:
-          duration: 6h
-      - setWeight: 100
+      trafficRouting:
+        smi:
+          rootService: api-service
+          trafficSplitName: sky-api-traffic-split
 ---
 apiVersion: v1
 kind: Service
