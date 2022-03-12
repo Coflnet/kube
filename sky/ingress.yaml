@@ -53,7 +53,7 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: sky-api-main-service
+            name: api-service
             port:
               number: 8000
       - path: /swagger
@@ -84,7 +84,7 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: sky-api-main-service
+            name: api-service
             port:
               number: 8000
       - path: /swagger

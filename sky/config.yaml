@@ -19,8 +19,8 @@ data:
   sky_bfcs_redis: redis-bfcs
   payment_host: payment.payment.svc.cluster.local
   commands_host: sky-commands-main-service.sky.svc.cluster.local
-  api_host: sky-api-main-service.sky.svc.cluster.local
-  http_api_host: http://sky-api-main-service.sky.svc.cluster.local:8000
+  api_host: api-service.sky.svc.cluster.local
+  http_api_host: http://api-service.sky.svc.cluster.local:8000
   flipper_host: flipper
   minio_host: s3-minio.s3.svc.cluster.local:9000
   minio_key: 82nq6rUqwtWutpTzSZVMiu4R
