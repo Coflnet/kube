@@ -199,7 +199,7 @@ spec:
             value: sky-commands
       - setWeight: 80
       - pause:
-          duration: 10m
+          duration: 2m
       - analysis:
           templates:
           - templateName: sky-commands-analysis
