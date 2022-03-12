@@ -9,7 +9,7 @@ spec:
   metrics:
   - name: sky-api-error
     interval: 1m
-    successCondition: result[0] >= 1
+    successCondition: result[0] < 1
     failureLimit: 1
     count: 3
     provider:
