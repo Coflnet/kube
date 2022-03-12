@@ -16,4 +16,4 @@ spec:
       prometheus:
         address: http://prometheus-prometheus.prometheus.svc.cluster.local:9090
         query: |
-          rate(sky_commands_flip_send[1m])
+          sum(rate(sky_commands_flip_send[1m]))
