@@ -64,6 +64,11 @@ spec:
               secretKeyRef: 
                 name: secret
                 key: paypal_secret
+          - name: KAFKA_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: kafka_host
         resources:
           requests:
             cpu: 10m

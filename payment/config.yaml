@@ -6,6 +6,7 @@ metadata:
 data:
   jaeger_service_name: payment
   jaeger_agent_host: jaeger-agent.observability.svc.cluster.local
+  kafka_host: kafka-helm.kafka.svc.cluster.local
 
   products.json: |
     {
