@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: payment-ingress
+  namespace: payment
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: sky.coflnet.com
+    http:
+      paths:
+      - path: /callback/stripe
+        pathType: ImplementationSpecific
+        backend:
+          service: 
+            name: payment
+            port:
+              number: 80
+      - path: /callback/paypal
+        pathType: ImplementationSpecific
+        backend:
+          service: 
+            name: payment
+            port:
+              number: 80
