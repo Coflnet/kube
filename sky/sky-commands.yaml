@@ -178,23 +178,56 @@ spec:
             cpu: "300m"
   strategy:
     canary: 
+      steps:
+      - setWeight: 20
+      - pause: 
+          duration: 2m
+      - analysis:
+          templates:
+          - templateName: sky-commands-analysis
+          args:
+          - name: service-name
+            value: sky-commands
+      - setWeight: 40
+      - pause:
+          duration: 5m
+      - analysis:
+          templates:
+          - templateName: sky-commands-analysis
+          args:
+          - name: service-name
+            value: sky-commands
+      - setWeight: 60
+      - pause:
+          duration: 10m
+      - analysis:
+          templates:
+          - templateName: sky-commands-analysis
+          args:
+          - name: service-name
+            value: sky-commands
       maxUnavailable: 1
       canaryService: sky-commands-canary-service
       stableService: sky-commands-main-service
-      steps:
-      - setWeight: 5
-      - pause:
-          duration: 1h
-      - setWeight: 10
-      - pause:
-          duration: 2h
-      - setWeight: 20
-      - pause:
-          duration: 3h
-      - setWeight: 50
-      - pause:
-          duration: 6h
-      - setWeight: 100
+      trafficRouting:
+        smi:
+          rootService: sky-commands
+          trafficSplitName: sky-commands-traffic-split
+---    
+Kubernetes apiVersion: v1
+kind: Service
+metadata:
+  name: sky-commands
+spec:
+  selector:
+    app: commands
+  ports:
+  - port: 80
+    targetPort: 8000
+    name: api
+  - port: 8008
+    targetPort: 8008
+    name: websocket
 ---
 apiVersion: v1
 kind: Service
