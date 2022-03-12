@@ -50,7 +50,7 @@ spec:
               name: secret
               key: firebase_key
         - name: SKYCOMMANDS_HOST
-          value: sky-commands-main-service
+          value: sky-commands
 ---
 apiVersion: v1
 kind: Service

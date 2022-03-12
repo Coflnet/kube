@@ -18,7 +18,7 @@ data:
   redis_host_sky: redis-service
   sky_bfcs_redis: redis-bfcs
   payment_host: payment.payment.svc.cluster.local
-  commands_host: sky-commands-main-service.sky.svc.cluster.local
+  commands_host: sky-commands.sky.svc.cluster.local
   api_host: api-service.sky.svc.cluster.local
   http_api_host: http://api-service.sky.svc.cluster.local:8000
   flipper_host: flipper

@@ -43,7 +43,7 @@ spec:
           - containerPort: 8000
         env:
           - name: SKYCOMMANDS_HOST
-            value: "sky-commands-main-service:8008"
+            value: "sky-commands:8008"
           - name: FLIPTRACKER_HOST
             value: tracker
           - name: UPDATER_HOST
