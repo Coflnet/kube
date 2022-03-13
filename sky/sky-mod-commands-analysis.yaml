@@ -9,7 +9,7 @@ spec:
   metrics:
   - name: sky-mod-commands-sent-flip
     interval: 1m
-    successCondition: result[0] > 50
+    successCondition: result[0] >= 10
     failureLimit: 1
     count: 3
     provider:

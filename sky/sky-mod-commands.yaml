@@ -170,15 +170,6 @@ spec:
   strategy:
     canary: 
       steps:
-      - setWeight: 10
-      - pause: 
-          duration: 1m
-      - analysis:
-          templates:
-          - templateName: sky-mod-commands-analysis
-          args:
-          - name: service-name
-            value: sky-mod
       - setWeight: 30
       - pause:
           duration: 2m
