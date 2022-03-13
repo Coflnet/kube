@@ -169,23 +169,73 @@ spec:
             cpu: "200m"
   strategy:
     canary: 
+      steps:
+      - setWeight: 10
+      - pause: 
+          duration: 1m
+      - analysis:
+          templates:
+          - templateName: sky-mod-commands-analysis
+          args:
+          - name: service-name
+            value: sky-mod
+      - setWeight: 30
+      - pause:
+          duration: 2m
+      - analysis:
+          templates:
+          - templateName: sky-mod-commands-analysis
+          args:
+          - name: service-name
+            value: sky-mod
+      - setWeight: 50
+      - pause:
+          duration: 2m
+      - analysis:
+          templates:
+          - templateName: sky-mod-commands-analysis
+          args:
+          - name: service-name
+            value: sky-mod
+      - setWeight: 90
+      - pause:
+          duration: 2m
+      - analysis:
+          templates:
+          - templateName: sky-mod-commands-analysis
+          args:
+          - name: service-name
+            value: sky-mod
+      - setWeight: 100
+      - pause:
+          duration: 2m
+      - analysis:
+          templates:
+          - templateName: sky-mod-commands-analysis
+          args:
+          - name: service-name
+            value: sky-mod
       maxUnavailable: 1
       canaryService: sky-mod-canary-service
       stableService: sky-mod-main-service
-      steps:
-      - setWeight: 5
-      - pause:
-          duration: 1h
-      - setWeight: 10
-      - pause:
-          duration: 2h
-      - setWeight: 20
-      - pause:
-          duration: 3h
-      - setWeight: 50
-      - pause:
-          duration: 6h
-      - setWeight: 100
+      trafficRouting:
+        smi:
+          rootService: sky-mod
+          trafficSplitName: sky-mod-traffic-split
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sky-mod
+  labels:
+    mirror.linkerd.io/exported: "true"
+spec:
+  selector:
+    app: mod
+  ports:
+  - port: 8008
+    targetPort: 8008
+    name: api
 ---
 apiVersion: v1
 kind: Service
