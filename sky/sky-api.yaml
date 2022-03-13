@@ -178,7 +178,7 @@ spec:
             value: api-service
       - setWeight: 30
       - pause:
-          duration: 3m
+          duration: 2m
       - analysis:
           templates:
           - templateName: sky-api-analysis
@@ -187,7 +187,16 @@ spec:
             value: api-service
       - setWeight: 50
       - pause:
-          duration: 10m
+          duration: 2m
+      - analysis:
+          templates:
+          - templateName: sky-api-analysis
+          args:
+          - name: service-name
+            value: api-service
+      - setWeight: 80
+      - pause:
+          duration: 5m
       - analysis:
           templates:
           - templateName: sky-api-analysis
