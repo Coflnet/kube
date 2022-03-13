@@ -9,11 +9,11 @@ spec:
   metrics:
   - name: sky-mod-commands-sent-flip
     interval: 1m
-    successCondition: result[0] > 1
+    successCondition: result[0] > 50
     failureLimit: 1
     count: 3
     provider:
       prometheus:
         address: http://prometheus-prometheus.prometheus.svc.cluster.local:9090
         query: |
-          sum(rate(sky_mod_sent_flips[1m]))
+          sum(increase(sky_mod_sent_flips[1m]))

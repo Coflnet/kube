@@ -9,11 +9,11 @@ spec:
   metrics:
   - name: sky-commands-flips-sent
     interval: 1m
-    successCondition: result[0] >= 3
+    successCondition: result[0] >= 500
     failureLimit: 1
     count: 3
     provider:
       prometheus:
         address: http://prometheus-prometheus.prometheus.svc.cluster.local:9090
         query: |
-          sum(rate(sky_commands_flip_send[1m]))
+          sum(increase(sky_commands_flip_send[1m]))
