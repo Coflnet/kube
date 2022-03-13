@@ -67,7 +67,7 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: sky-mod-main-service
+            name: sky-mod
             port:
               number: 8008
   - host: sky-commands.coflnet.com
@@ -98,7 +98,7 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: sky-mod-main-service
+            name: sky-mod
             port:
               number: 8008
   - host: sky-preview.coflnet.com
@@ -180,7 +180,7 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: sky-mod-main-service
+            name: sky-mod
             port:
               number: 8008
 
