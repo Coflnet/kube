@@ -77,9 +77,9 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: sky-commands
+            name: frontend
             port:
-              number: 8008
+              number: 80
       - path: /api
         pathType: ImplementationSpecific
         backend:
@@ -87,6 +87,27 @@ spec:
             name: api-service
             port:
               number: 8000
+      - path: /commands
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: sky-commands
+            port:
+              number: 80
+      - path: /skyblock
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: sky-commands
+            port:
+              number: 80
+      - path: /static
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: sky-commands
+            port:
+              number: 80
       - path: /swagger
         pathType: ImplementationSpecific
         backend:
