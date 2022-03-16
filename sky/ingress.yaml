@@ -93,28 +93,28 @@ spec:
           service:
             name: sky-commands
             port:
-              number: 80
+              number: 8008
       - path: /skyblock
         pathType: ImplementationSpecific
         backend:
           service:
             name: sky-commands
             port:
-              number: 80
+              number: 8008
       - path: /static
         pathType: ImplementationSpecific
         backend:
           service:
             name: sky-commands
             port:
-              number: 80
+              number: 8008
       - path: /swagger
         pathType: ImplementationSpecific
         backend:
           service:
             name: sky-commands
             port:
-              number: 80
+              number: 8008
       - path: /modsocket
         pathType: ImplementationSpecific
         backend:
