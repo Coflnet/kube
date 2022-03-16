@@ -87,7 +87,7 @@ spec:
             name: api-service
             port:
               number: 8000
-      - path: /commands
+      - path: /command
         pathType: ImplementationSpecific
         backend:
           service:
