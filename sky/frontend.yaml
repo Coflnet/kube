@@ -21,7 +21,7 @@ spec:
       - name: frontend
         image: harbor.flou.dev/coflnet/hypixel-react:dev-next-03
         ports:
-        - containerPort: 80
+        - containerPort: 3000
           name: web
         env: 
           - name: JAEGER_SERVICE_NAME
@@ -45,4 +45,4 @@ spec:
     app: frontend
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 3000
