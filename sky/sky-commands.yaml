@@ -67,7 +67,7 @@ spec:
           - name: FRONTEND_PROD
             value: stage-frontend
           - name: FRONTEND_STAGING
-            value: stage-frontend 
+            value: frontend
           - name: UPDATER_HOST
             value: updater
           - name: MCCONNECT_HOST

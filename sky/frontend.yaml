@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: sky
+  labels:
+    app: frontend
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      imagePullSecrets:
+        - name: harbor
+      containers:
+      - name: frontend
+        image: harbor.flou.dev/coflnet/hypixel-react:3378a381-10fa-4e92-8c5d-1d21eeb07178
+        ports:
+        - containerPort: 80
+          name: web
+        env: 
+          - name: JAEGER_SERVICE_NAME
+            valueFrom: 
+              configMapKeyRef:
+                name: config
+                key: jaeger_service_name
+          - name: JAEGER_AGENT_HOST
+            valueFrom: 
+              configMapKeyRef:
+                name: config
+                key: jaeger_agent_host
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: sky
+spec:
+  selector:
+    app: frontend
+  ports:
+  - port: 80
+    targetPort: 80
