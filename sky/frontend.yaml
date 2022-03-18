@@ -25,6 +25,18 @@ spec:
           ports:
             - containerPort: 3000
               name: web
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 5
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - frontend
+                topologyKey: kubernetes.io/hostname
   strategy:
     blueGreen:
       activeService: frontend
