@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: blog
-        image: harbor.flou.dev/coflnet/blog:0dc21cc4-a959-4b81-b248-fd3731b7608c
+        image: harbor.flou.dev/coflnet/blog:ac2844c3-0c1f-41e5-b0c8-ce6374446c4f
         ports:
           - containerPort: 80
         livenessProbe:
