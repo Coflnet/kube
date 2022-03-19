@@ -188,18 +188,9 @@ spec:
           args:
           - name: service-name
             value: sky-mod
-      - setWeight: 90
-      - pause:
-          duration: 2m
-      - analysis:
-          templates:
-          - templateName: sky-mod-commands-analysis
-          args:
-          - name: service-name
-            value: sky-mod
       - setWeight: 100
       - pause:
-          duration: 2m
+          duration: 5m
       - analysis:
           templates:
           - templateName: sky-mod-commands-analysis

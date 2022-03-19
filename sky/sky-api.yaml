@@ -194,7 +194,7 @@ spec:
           args:
           - name: service-name
             value: api-service
-      - setWeight: 80
+      - setWeight: 100
       - pause:
           duration: 5m
       - analysis:

@@ -188,7 +188,7 @@ spec:
           args:
           - name: service-name
             value: sky-commands
-      - setWeight: 40
+      - setWeight: 50
       - pause:
           duration: 5m
       - analysis:
@@ -197,16 +197,7 @@ spec:
           args:
           - name: service-name
             value: sky-commands
-      - setWeight: 80
-      - pause:
-          duration: 2m
-      - analysis:
-          templates:
-          - templateName: sky-commands-analysis
-          args:
-          - name: service-name
-            value: sky-commands
-      - setWeight: 95
+      - setWeight: 100
       - pause:
           duration: 5m
       - analysis:
