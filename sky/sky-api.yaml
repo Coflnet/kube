@@ -151,6 +151,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: flipper_host
+          - name: BAZAAR_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                key: bazaar_base_url
+                name: config
         readinessProbe:
           httpGet:
             path: /metrics

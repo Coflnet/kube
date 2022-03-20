@@ -29,6 +29,7 @@ data:
   settings_base_url: http://settings:8000/
   payment_base_url: http://payment.payment
   chat_base_url: http://chat-service.sky:8000/
+  bazaar_base_url: http://bazaar:8000
   subscriptions_host: subscriptions
 
   sniper_data_username: sniper-data
