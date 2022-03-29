@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: tracker
-        image: harbor.flou.dev/coflnet/skyfliptracker:a25a073e-69d6-4c5f-8f18-ae2ed9f964ab
+        image: harbor.flou.dev/coflnet/skyfliptracker:780d40d2-549d-4e7c-b386-9571e7475a8f
         ports:
         - containerPort: 8000
           name: web
