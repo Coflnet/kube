@@ -6,7 +6,7 @@ metadata:
   labels:
     app: commands
   annotations:
-    notifications.argoproj.io/subscribe.on-rollout-step-completed.telegram: "Coflnet Alerts"
+    notifications.argoproj.io/subscribe.on-rollout-step-completed.slack: "Coflnet Alerts"
     config.linkerd.io/skip-outbound-ports: "6379"
     config.linkerd.io/skip-inbound-ports: "6379"
 spec:
