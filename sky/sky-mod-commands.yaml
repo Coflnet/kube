@@ -177,7 +177,7 @@ spec:
       steps:
       - setWeight: 30
       - pause:
-          duration: 2m
+          duration: 5m
       - analysis:
           templates:
           - templateName: sky-mod-commands-analysis
@@ -186,7 +186,7 @@ spec:
             value: sky-mod
       - setWeight: 50
       - pause:
-          duration: 2m
+          duration: 5m
       - analysis:
           templates:
           - templateName: sky-mod-commands-analysis
