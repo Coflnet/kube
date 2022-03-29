@@ -75,7 +75,7 @@ spec:
               entrypoint: build
               serviceAccountName: argo
               retryStrategy:
-                    limit: 10
+                    limit: 3
                     retryPolicy: "Always"
                     backoff:
                       duration: "1"
