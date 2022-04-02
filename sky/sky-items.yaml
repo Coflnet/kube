@@ -62,7 +62,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: secret
-                key: connection_items_database
+                key: connection_items_database_proxy
         readinessProbe:
           httpGet:
             path: /metrics
