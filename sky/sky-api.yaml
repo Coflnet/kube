@@ -5,6 +5,8 @@ metadata:
   namespace: sky
   labels:
     app: api
+  annotations:
+    notifications.argoproj.io/subscribe.on-rollout-updated.telegram: -647662841
 spec:
   replicas: 3
   progressDeadlineSeconds: 2592000
