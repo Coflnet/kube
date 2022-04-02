@@ -95,6 +95,8 @@ spec:
                       path: config.json
               templates:
               - name: build
+                resource:
+                  setOwnerReference: true
                 dag:
                   tasks:
                   - name: build
