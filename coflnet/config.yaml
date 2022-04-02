@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config
+  namespace: coflnet
+data:
+  git_username: Flou21
+  git_organization: Coflnet
+  git_repo: internal
+  git_head: main

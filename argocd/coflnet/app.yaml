@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: coflnet
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Coflnet/kube.git
+    targetRevision: HEAD
+    path: coflnet
+    directory:
+      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: coflnet
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
