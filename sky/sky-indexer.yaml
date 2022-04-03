@@ -75,10 +75,10 @@ spec:
                 key: items_base_url
         resources:
           requests:
-            memory: "500Mi"
+            memory: "700Mi"
             cpu: "250m"
           limits:
-            memory: "1000Mi"
+            memory: "1500Mi"
             cpu: "500m"
 
 ---
