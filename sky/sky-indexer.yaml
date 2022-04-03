@@ -19,9 +19,9 @@ spec:
         - name: harbor
       containers:
       - name: sky-indexer
-        image: harbor.flou.dev/coflnet/skyindexer:679cb06c-56d0-4d8a-93e3-c619e79b91ae
+        image: harbor.flou.dev/coflnet/skyindexer:dfefc702-d174-41c1-ae85-bc60060d856a
         ports:
-          - containerPort: 80
+          - containerPort: 8000
         env:
           - name: DBConnection
             valueFrom:
@@ -92,7 +92,7 @@ spec:
     app: sky-indexer
   ports:
     - port: 80
-      targetPort: 80
+      targetPort: 8000
 ---
 apiVersion: v1
 kind: Service
@@ -106,6 +106,6 @@ spec:
     app: sky-indexer
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 8000
     name: metrics
     protocol: TCP
