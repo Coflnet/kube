@@ -75,11 +75,11 @@ spec:
                 key: items_base_url
         resources:
           requests:
-            memory: "400Mi"
-            cpu: "500m"
+            memory: "500Mi"
+            cpu: "250m"
           limits:
-            memory: "800Mi"
-            cpu: "1000m"
+            memory: "1000Mi"
+            cpu: "500m"
 
 ---
 apiVersion: v1
