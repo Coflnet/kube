@@ -8,7 +8,7 @@ metadata:
   annotations:
     notifications.argoproj.io/subscribe.on-rollout-updated.telegram: "-647662841"
 spec:
-  replicas: 3
+  replicas: 0
   progressDeadlineSeconds: 2592000
   selector:
     matchLabels:
