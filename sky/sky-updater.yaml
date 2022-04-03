@@ -118,6 +118,11 @@ spec:
             secretKeyRef:
               name: secret
               key: flou_api_key
+        - name: ITEMS_BASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: items_base_url
         resources:
           requests:
             memory: "600Mi"

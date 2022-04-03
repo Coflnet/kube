@@ -163,6 +163,11 @@ spec:
               configMapKeyRef:
                 key: bazaar_base_url
                 name: config
+          - name: ITEMS_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: items_base_url
         readinessProbe:
           httpGet:
             path: /metrics

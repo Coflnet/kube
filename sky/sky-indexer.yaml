@@ -68,6 +68,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: topic_auction_checked
+          - name: ITEMS_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: items_base_url
         resources:
           requests:
             memory: "400Mi"

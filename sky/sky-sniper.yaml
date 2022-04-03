@@ -84,6 +84,11 @@ spec:
             configMapKeyRef:
               name: config
               key: kafka_host
+        - name: ITEMS_BASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: items_base_url
         resources:
           requests:
             memory: "3000Mi"

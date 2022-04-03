@@ -63,6 +63,11 @@ spec:
               key: topic_new_auction
         - name: TOPICS__LOW_PRICED
           value: sky-low-priced
+        - name: ITEMS_BASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: items_base_url
         livenessProbe:
           httpGet:
             path: /status

@@ -31,6 +31,7 @@ data:
   chat_base_url: http://chat-service.sky:8000/
   bazaar_base_url: http://bazaar:8000
   subscriptions_host: subscriptions
+  items_base_url: http://items:8000
 
   sniper_data_username: sniper-data
 
