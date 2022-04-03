@@ -81,14 +81,14 @@ spec:
       steps:
       - setWeight: 10
       - pause: 
-          duration: 1m
+          duration: 5m
       - setWeight: 50
       - pause:
           duration: 2m
       - setWeight: 100
       - pause:
           duration: 2m
-      maxUnavailable: 1
+      maxUnavailable: 2
       canaryService: items-canary
       stableService: items-main
       trafficRouting:
