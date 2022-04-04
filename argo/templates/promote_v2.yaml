@@ -17,6 +17,7 @@ spec:
       - name: git_secret_key
     container:
       image: harbor.flou.dev/coflnet/promoter:latest
+      command: ["/bin/sh", "-c", "promoter"]
       resources:
         requests:
           memory: 1000Mi
