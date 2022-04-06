@@ -244,7 +244,7 @@ kind: Service
 metadata:
   name: sky-commands-main-service
   labels:
-    mirror.linkerd.io/exported: "true"
+    app: sky-commands-main-service
 spec:
   selector:
     app: commands
@@ -255,11 +255,17 @@ spec:
   - port: 8008
     targetPort: 8008
     name: websocket
+  - port: 80
+    targetPort: 8000
+    name: metrics
+    protocol: TCP
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: sky-commands-canary-service
+  labels:
+    app: sky-commands-canary-service
 spec:
   selector:
     app: commands
@@ -267,25 +273,45 @@ spec:
   - port: 80
     targetPort: 8000
     name: api
-  - port: 8008
-    targetPort: 8008
-    name: websocket
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: commands-metrics-service
-  namespace: sky
-  labels:
-    app: commands-metrics-service
-spec:
-  selector:
-    app: commands
-  ports:
   - port: 80
     targetPort: 8000
     name: metrics
     protocol: TCP
+  - port: 8008
+    targetPort: 8008
+    name: websocket
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: commands-main
+  namespace: sky
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: sky-commands-main-service
+  endpoints:
+  - port: metrics
+    interval: 25s
+    path: /metrics
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: commands-canary
+  namespace: sky
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: sky-commands-canary-service
+  endpoints:
+  - port: metrics
+    interval: 25s
+    path: /metrics
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
