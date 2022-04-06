@@ -27,11 +27,6 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: config
-                  key: command_endpoint
-            - name: COMMAND_ENDPOINT
-              valueFrom:
-                configMapKeyRef:
-                  name: config
                   key: frontend_command_endpoint
             - name: API_ENDPOINT
               valueFrom:
