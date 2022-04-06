@@ -33,6 +33,9 @@ data:
   subscriptions_host: subscriptions
   items_base_url: http://items:8000
 
+  frontend_api_endpoint: http://api-service/api
+  frontend_command_endpoint: http://sky-commands/command
+
   sniper_data_username: sniper-data
 
   cassandra_host: 167.86.103.225,144.91.71.95,5.182.17.65

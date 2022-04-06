@@ -22,6 +22,22 @@ spec:
         - name: frontend
           image: harbor.flou.dev/coflnet/hypixel-react:a8ef4fc1-6aa7-440e-8dff-1c9fb01903b7
           imagePullPolicy: IfNotPresent
+          env:
+            - name: COMMAND_ENDPOINT
+              valueFrom:
+                configMapKeyRef:
+                  name: config
+                  key: command_endpoint
+            - name: COMMAND_ENDPOINT
+              valueFrom:
+                configMapKeyRef:
+                  name: config
+                  key: frontend_command_endpoint
+            - name: API_ENDPOINT
+              valueFrom:
+                configMapKeyRef:
+                  name: config
+                  key: frontend_api_endpoint
           ports:
             - containerPort: 3000
               name: web
