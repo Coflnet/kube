@@ -228,6 +228,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: sky-commands
+  namespace: sky
 spec:
   selector:
     app: commands
@@ -243,6 +244,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: sky-commands-main-service
+  namespace: sky
   labels:
     app: sky-commands-main-service
 spec:
@@ -264,6 +266,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: sky-commands-canary-service
+  namespace: sky
   labels:
     app: sky-commands-canary-service
 spec:
