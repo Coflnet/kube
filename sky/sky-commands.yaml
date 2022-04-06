@@ -191,13 +191,13 @@ spec:
       steps:
       - setWeight: 20
       - pause: 
-          duration: 2m
+          duration: 3m
       - analysis:
           templates:
           - templateName: sky-commands-analysis
           args:
           - name: service-name
-            value: sky-commands
+            value: sky-commands-canary-service
       - setWeight: 50
       - pause:
           duration: 5m
@@ -206,7 +206,7 @@ spec:
           - templateName: sky-commands-analysis
           args:
           - name: service-name
-            value: sky-commands
+            value: sky-commands-canary-service
       - setWeight: 100
       - pause:
           duration: 5m
@@ -215,7 +215,7 @@ spec:
           - templateName: sky-commands-analysis
           args:
           - name: service-name
-            value: sky-commands
+            value: sky-commands-canary-service
       maxUnavailable: 1
       canaryService: sky-commands-canary-service
       stableService: sky-commands-main-service
