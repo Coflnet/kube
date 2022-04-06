@@ -188,18 +188,9 @@ spec:
           args:
           - name: service-name
             value: sky-api-canary-service
-      - setWeight: 30
-      - pause:
-          duration: 2m
-      - analysis:
-          templates:
-          - templateName: sky-api-analysis
-          args:
-          - name: service-name
-            value: sky-api-canary-service
       - setWeight: 50
       - pause:
-          duration: 2m
+          duration: 5m
       - analysis:
           templates:
           - templateName: sky-api-analysis
