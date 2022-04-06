@@ -276,15 +276,31 @@ spec:
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: sky-api
+  name: sky-api-main
   namespace: sky 
   labels:
     release: prometheus
 spec:
   selector:
     matchLabels:
-      app: api-service
+      app: sky-api-main-service
   endpoints:
   - port: api
-    interval: 25s
+    interval: 60s
+    path: /metrics
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: sky-api-canary
+  namespace: sky 
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: sky-api-canary-service
+  endpoints:
+  - port: api
+    interval: 60s
     path: /metrics
