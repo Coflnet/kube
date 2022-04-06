@@ -37,7 +37,7 @@ data:
         },
         {
             "slug": "premium_year",
-            "title": "Premium 12 Months",
+            "title": "Premium 1 Year",
             "description": "Premium plan granting various perks",
             "cost": 21600,
             "ownershipSeconds": 31104000,
