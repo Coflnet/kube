@@ -251,12 +251,14 @@ spec:
   selector:
     app: commands
   ports:
-  - port: 80
-    name: api
+  - name: api
+    port: 80
+    protocol: TCP
     targetPort: 8000
-  - port: 8008
+  - name: websocket
+    port: 8008
+    protocol: TCP
     targetPort: 8008
-    name: websocket
 ---
 apiVersion: v1
 kind: Service
@@ -269,12 +271,14 @@ spec:
   selector:
     app: commands
   ports:
-  - port: 80
-    name: api
+  - name: api
+    port: 80
+    protocol: TCP
     targetPort: 8000
-  - port: 8008
+  - name: websocket
+    port: 8008
+    protocol: TCP
     targetPort: 8008
-    name: websocket
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
