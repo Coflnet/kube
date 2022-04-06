@@ -252,8 +252,8 @@ spec:
     app: commands
   ports:
   - port: 80
-    targetPort: 8000
     name: api
+    targetPort: 8000
   - port: 8008
     targetPort: 8008
     name: websocket
@@ -270,8 +270,8 @@ spec:
     app: commands
   ports:
   - port: 80
-    targetPort: 8000
     name: api
+    targetPort: 8000
   - port: 8008
     targetPort: 8008
     name: websocket
