@@ -34,7 +34,7 @@ data:
   items_base_url: http://items:8000
 
   frontend_api_endpoint: http://api-service/api
-  frontend_command_endpoint: http://sky-commands/command
+  frontend_command_endpoint: http://sky-commands:8008/command
 
   sniper_data_username: sniper-data
 
