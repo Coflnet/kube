@@ -20,6 +20,30 @@ data:
             "type": 4
         },
         {
+            "slug": "premium_quarter_year",
+            "title": "Premium",
+            "description": "Premium plan granting various perks",
+            "cost": 5400,
+            "ownershipSeconds": 7776000,
+            "type": 4
+        },
+        {
+            "slug": "premium_half_year",
+            "title": "Premium",
+            "description": "Premium plan granting various perks",
+            "cost": 10800,
+            "ownershipSeconds": 15552000,
+            "type": 4
+        },
+        {
+            "slug": "premium_year",
+            "title": "Premium",
+            "description": "Premium plan granting various perks",
+            "cost": 21600,
+            "ownershipSeconds": 31104000,
+            "type": 4
+        },
+        {
             "slug": "test-premium",
             "title": "Test Premium for invited user",
             "cost": 100,
