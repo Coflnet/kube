@@ -8,10 +8,11 @@ metadata:
 spec:
   defaultBackend:
     service: 
-      name: sky-commands
+      name: frontend
       port:
-        number: 8008
+        number: 80
   rules:
+
   - host: sky.coflnet.com
     http:
       paths:
@@ -19,19 +20,9 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: sky-commands
+            name: frontend
             port:
-              number: 8008
-  - host: sky-preview.coflnet.com
-    http:
-      paths:
-      - path: /
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: sky-commands
-            port:
-              number: 8008
+              number: 80
   - host: sky.coflnet.com
     http:
       paths:
@@ -56,6 +47,27 @@ spec:
             name: api-service
             port:
               number: 8000
+      - path: /command
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: sky-commands
+            port:
+              number: 8008
+      - path: /skyblock
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: sky-commands
+            port:
+              number: 8008
+      - path: /static
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: sky-commands
+            port:
+              number: 8008
       - path: /swagger
         pathType: ImplementationSpecific
         backend:
@@ -70,6 +82,7 @@ spec:
             name: sky-mod
             port:
               number: 8008
+
   - host: sky-commands.coflnet.com
     http:
       paths:
@@ -77,7 +90,7 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: frontend
+            name: frontend-preview
             port:
               number: 80
       - path: /api
@@ -120,6 +133,17 @@ spec:
         backend:
           service:
             name: sky-mod
+            port:
+              number: 8008
+
+  - host: sky-preview.coflnet.com
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: sky-commands
             port:
               number: 8008
   - host: sky-preview.coflnet.com
