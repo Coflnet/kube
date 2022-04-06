@@ -246,7 +246,7 @@ kind: Service
 metadata:
   name: sky-api-main-service
   labels:
-    mirror.linkerd.io/exported: "true"
+    app: sky-api-main-service
 spec:
   selector:
     app: api
@@ -262,6 +262,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: sky-api-canary-service
+  labels:
+    app: sky-api-canary-service
 spec:
   selector:
     app: api
