@@ -13,7 +13,7 @@ data:
     "products": [
         {
             "slug": "premium",
-            "title": "Premium",
+            "title": "Premium 1 Month",
             "description": "Premium plan granting various perks",
             "cost": 1800,
             "ownershipSeconds": 2592000,
@@ -21,7 +21,7 @@ data:
         },
         {
             "slug": "premium_quarter_year",
-            "title": "Premium",
+            "title": "Premium 3 Months",
             "description": "Premium plan granting various perks",
             "cost": 5400,
             "ownershipSeconds": 7776000,
@@ -29,7 +29,7 @@ data:
         },
         {
             "slug": "premium_half_year",
-            "title": "Premium",
+            "title": "Premium 6 Months",
             "description": "Premium plan granting various perks",
             "cost": 10800,
             "ownershipSeconds": 15552000,
@@ -37,7 +37,7 @@ data:
         },
         {
             "slug": "premium_year",
-            "title": "Premium",
+            "title": "Premium 12 Months",
             "description": "Premium plan granting various perks",
             "cost": 21600,
             "ownershipSeconds": 31104000,
