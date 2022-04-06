@@ -20,7 +20,7 @@ spec:
         - name: harbor
       containers:
         - name: frontend
-          image: harbor.flou.dev/coflnet/hypixel-react:829cd0b2-0965-4429-885e-b35ed6252c80
+          image: harbor.flou.dev/coflnet/hypixel-react:5f1e1215-38b0-4328-90d7-7bafbb1053a2
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
