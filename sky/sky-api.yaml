@@ -187,7 +187,7 @@ spec:
           - templateName: sky-api-analysis
           args:
           - name: service-name
-            value: api-service
+            value: sky-api-canary-service
       - setWeight: 30
       - pause:
           duration: 2m
@@ -196,7 +196,7 @@ spec:
           - templateName: sky-api-analysis
           args:
           - name: service-name
-            value: api-service
+            value: sky-api-canary-service
       - setWeight: 50
       - pause:
           duration: 2m
@@ -205,7 +205,7 @@ spec:
           - templateName: sky-api-analysis
           args:
           - name: service-name
-            value: api-service
+            value: sky-api-canary-service
       - setWeight: 100
       - pause:
           duration: 5m
@@ -214,7 +214,7 @@ spec:
           - templateName: sky-api-analysis
           args:
           - name: service-name
-            value: api-service
+            value: sky-api-canary-service
       maxUnavailable: 1
       canaryService: sky-api-canary-service
       stableService: sky-api-main-service
