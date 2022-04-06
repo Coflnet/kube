@@ -257,10 +257,6 @@ spec:
   - port: 8008
     targetPort: 8008
     name: websocket
-  - port: 80
-    targetPort: 8000
-    name: metrics
-    protocol: TCP
 ---
 apiVersion: v1
 kind: Service
@@ -276,10 +272,6 @@ spec:
   - port: 80
     targetPort: 8000
     name: api
-  - port: 80
-    targetPort: 8000
-    name: metrics
-    protocol: TCP
   - port: 8008
     targetPort: 8008
     name: websocket
@@ -296,7 +288,7 @@ spec:
     matchLabels:
       app: sky-commands-main-service
   endpoints:
-  - port: metrics
+  - port: api
     interval: 25s
     path: /metrics
 ---
@@ -312,7 +304,7 @@ spec:
     matchLabels:
       app: sky-commands-canary-service
   endpoints:
-  - port: metrics
+  - port: api
     interval: 25s
     path: /metrics
 ---
