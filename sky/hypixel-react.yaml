@@ -1,48 +1,70 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
-  name: stage-frontend
+  name: frontend
   namespace: sky
   labels:
-    app: stage-frontend
+    app: frontend
 spec:
+  replicas: 3
+  revisionHistoryLimit: 5
   selector:
     matchLabels:
-      app: stage-frontend
-  replicas: 3
+      app: frontend
   template:
     metadata:
       labels:
-        app: stage-frontend
+        app: frontend
     spec:
       imagePullSecrets:
         - name: harbor
       containers:
-      - name: stage-frontend
-        image: harbor.flou.dev/coflnet/hypixel-react:fc3b82eb-37ad-4283-8f3c-464bb1aecbf8
-        ports:
-        - containerPort: 80
-          name: web
-        env: 
-          - name: JAEGER_SERVICE_NAME
-            valueFrom: 
-              configMapKeyRef:
-                name: config
-                key: jaeger_service_name
-          - name: JAEGER_AGENT_HOST
-            valueFrom: 
-              configMapKeyRef:
-                name: config
-                key: jaeger_agent_host
+        - name: frontend
+          image: harbor.flou.dev/coflnet/hypixel-react:dev-next-15
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+              name: web
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 5
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - frontend
+                topologyKey: kubernetes.io/hostname
+  strategy:
+    blueGreen:
+      activeService: frontend
+      previewService: frontend-preview
+      autoPromotionEnabled: false
+      scaleDownDelaySeconds: 60
+      previewReplicaCount: 1
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: stage-frontend
+  name: frontend
   namespace: sky
 spec:
   selector:
-    app: stage-frontend
+    app: frontend
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-preview
+  namespace: sky
+spec:
+  selector:
+    app: frontend
+  ports:
+    - port: 80
+      targetPort: 3000
