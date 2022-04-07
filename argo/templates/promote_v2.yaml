@@ -5,6 +5,16 @@ metadata:
   namespace: argo
 spec:
   serviceAccountName: argo-events-sa
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: hetzner
+            operator: NotIn
+            values:
+            - "true"
   templates:
   - name: promote-v2
     inputs:

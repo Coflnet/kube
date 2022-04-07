@@ -7,6 +7,16 @@ metadata:
     workflows.argoproj.io/container-runtime-executor: emissary
 spec:
   serviceAccountName: argo-events-sa
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: hetzner
+            operator: NotIn
+            values:
+            - "true"
   templates:
   - name: build-harbor-image
     inputs:
