@@ -95,6 +95,15 @@ spec:
                       path: config.json
               templates:
               - name: build
+                affinity:
+                  nodeAffinity:
+                    requiredDuringSchedulingIgnoredDuringExecution:
+                      nodeSelectorTerms:
+                      - matchExpressions:
+                        - key: hetzner
+                          operator: NotIn
+                          values:
+                          - "true"
                 dag:
                   tasks:
                   - name: build
