@@ -74,10 +74,9 @@ spec:
             spec:
               affinity:
                 nodeAffinity:
-                  preferredDuringSchedulingIgnoredDuringExecution:
-                  - weight: 1
-                    preference:
-                      matchExpressions:
+                  requiredDuringSchedulingIgnoredDuringExecution:
+                    nodeSelectorTerms:
+                    - matchExpressions:
                       - key: hetzner
                         operator: NotIn
                         values:
