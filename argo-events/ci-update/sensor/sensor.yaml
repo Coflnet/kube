@@ -72,15 +72,6 @@ spec:
               labels:
                 workflows.argoproj.io/archive-strategy: "true"
             spec:
-              affinity:
-                nodeAffinity:
-                  requiredDuringSchedulingIgnoredDuringExecution:
-                    nodeSelectorTerms:
-                    - matchExpressions:
-                      - key: hetzner
-                        operator: NotIn
-                        values:
-                        - "true"
               entrypoint: build
               serviceAccountName: argo
               retryStrategy:
@@ -106,6 +97,15 @@ spec:
               - name: build
                 resource:
                   setOwnerReference: true
+                affinity:
+                  nodeAffinity:
+                    requiredDuringSchedulingIgnoredDuringExecution:
+                      nodeSelectorTerms:
+                      - matchExpressions:
+                        - key: hetzner
+                          operator: NotIn
+                          values:
+                          - "true"
                 dag:
                   tasks:
                   - name: build
