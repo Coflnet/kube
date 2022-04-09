@@ -9,21 +9,21 @@ spec:
   selector:
     matchLabels:
       app: flipper
-  affinity: 
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: hetzner
-            operator: NotIn
-            values:
-            - "true"
   replicas: 3
   template:
     metadata:
       labels:
         app: flipper
     spec:
+      affinity: 
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: hetzner
+                operator: NotIn
+                values:
+                - "true"
       imagePullSecrets:
         - name: harbor
       containers:
