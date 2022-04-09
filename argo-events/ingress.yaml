@@ -45,36 +45,6 @@ spec:
   - host: argo-events.flou.dev
     http:
       paths:
-      - path: /blog
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: blog-eventsource-eventsource-svc
-            port:
-              number: 12000
-  - host: argo-events.flou.dev
-    http:
-      paths:
-      - path: /homepage
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: homepage-eventsource-eventsource-svc
-            port:
-              number: 12000
-  - host: argo-events.flou.dev
-    http:
-      paths:
-      - path: /damlo
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: damlo-eventsource-eventsource-svc
-            port:
-              number: 12000
-  - host: argo-events.flou.dev
-    http:
-      paths:
       - path: /static-server
         pathType: ImplementationSpecific
         backend:
@@ -85,41 +55,11 @@ spec:
   - host: argo-events.flou.dev
     http:
       paths:
-      - path: /cypress-executor
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: cypress-executor-eventsource-eventsource-svc
-            port:
-              number: 12000
-  - host: argo-events.flou.dev
-    http:
-      paths:
       - path: /base-images
         pathType: ImplementationSpecific
         backend:
           service:
             name: base-images-eventsource-eventsource-svc
-            port:
-              number: 12000
-  - host: argo-events.flou.dev
-    http:
-      paths:
-      - path: /mail-notification
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: mail-notification-eventsource-eventsource-svc
-            port:
-              number: 12000
-  - host: argo-events.flou.dev
-    http:
-      paths:
-      - path: /songvoter
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: songvoter-eventsource-eventsource-svc
             port:
               number: 12000
   - host: argo-events.flou.dev
@@ -175,17 +115,6 @@ spec:
   - host: argo-events.flou.dev
     http:
       paths:
-      - path: /nfl-tip-game
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: nfl-tip-game-eventsource-eventsource-svc
-            port:
-              number: 12000
-
-  - host: argo-events.flou.dev
-    http:
-      paths:
       - path: /kafka-sim
         pathType: ImplementationSpecific
         backend:
@@ -209,27 +138,5 @@ spec:
         backend:
           service:
             name: discord-bot-node-eventsource-eventsource-svc
-            port:
-              number: 12000
-
-  - host: argo-events.flou.dev
-    http:
-      paths:
-      - path: /pr-env
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: pr-env-eventsource-eventsource-svc
-            port:
-              number: 12000
-
-  - host: argo-events.flou.dev
-    http:
-      paths:
-      - path: /cassandra-housekeeping
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: ci-eventsource-eventsource-svc
             port:
               number: 12000

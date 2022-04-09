@@ -22,24 +22,6 @@ spec:
       endpoint: /static-update
       method: POST
 
-    # cassandra
-    cassandra-housekeeping:
-      port: "12000"
-      endpoint: /cassandra-housekeeping
-      method: POST
-
-    # cypress-executor
-    cypress-executor:
-      port: "12000"
-      endpoint: /cypress-executor
-      method: POST
-
-    # damlo
-    damlo:
-      port: "12000"
-      endpoint: /damlo
-      method: POST
-
     # discord
     discord-bot-node:
       port: "12000"
@@ -56,12 +38,6 @@ spec:
       endpoint: /feedback-backend
       method: POST
 
-    # homepage
-    homepage:
-      port: "12000"
-      endpoint: /homepage
-      method: POST
-
     # kafka-dedup
     kafka-dedup-dotnet:
       port: "12000"
@@ -74,29 +50,6 @@ spec:
       endpoint: /kafka-sim
       method: POST
 
-    # mail-notification
-    mail-notification:
-      port: "12000"
-      endpoint: /mail-notification
-      method: POST
-
-    # nfl-tip-game
-    nfl-tip-game:
-      port: "12000"
-      endpoint: /nfl-tip-game
-      method: POST
-
-    # payment
-    payment:
-      port: "12000"
-      endpoint: /payment
-      method: POST
-    product-provisioner:
-      port: "12000"
-      endpoint: /product-provisioner
-      method: POST
-
-    
     sensor:
       port: "12000"
       endpoint: /cassandra-housekeeping
