@@ -34,7 +34,7 @@ spec:
         - name: harbor
       containers:
       - name: api
-        image: harbor.flou.dev/coflnet/skyapi:e30360fa-d225-42a7-b946-694915f36d39
+        image: harbor.flou.dev/coflnet/skyapi:31c20c6b-97d1-4879-aefc-b243b5de2d8c
         ports:
           - containerPort: 8008
           - containerPort: 8000
