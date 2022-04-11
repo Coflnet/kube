@@ -362,10 +362,10 @@ affinity:
       podAffinityTerm:
         labelSelector:
           matchExpressions:
-          - key: app
+          - key: app.kubernetes.io/name
             operator: In
             values:
-            - updater
+            - zookeeper
         topologyKey: kubernetes.io/hostname
   nodeAffinity:
     requiredDuringSchedulingIgnoredDuringExecution:
