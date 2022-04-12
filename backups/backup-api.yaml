@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backup-api
-        image: harbor.flou.dev/flou21/backup-api:9d7bf0f0-be0b-4fdc-b3a6-3e9e4d2b764e
+        image: harbor.flou.dev/flou21/backup-api:dea75f86-29c8-43b3-87b0-aba4c17cfdcd
         env:
           - name: MONGO_HOST
             valueFrom:
