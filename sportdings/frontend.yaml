@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: sportdings-frontend
-        image: harbor.flou.dev/coflnet/sport-dings-frontend:3374b909-93e8-4f82-a929-897a235bcf96
+        image: harbor.flou.dev/coflnet/sport-dings-frontend:01
         ports:
         - containerPort: 80
         resources:

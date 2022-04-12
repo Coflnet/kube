@@ -37,7 +37,7 @@ spec:
         - name: harbor
       containers:
       - name: mod
-        image: harbor.flou.dev/coflnet/skymodcommands:9d089fcd-17f9-410d-a93b-f3b6e7521073
+        image: harbor.flou.dev/coflnet/skymodcommands:ba039414-d551-4209-b239-608213f503c4
         ports:
           - containerPort: 8008
           - containerPort: 8000
