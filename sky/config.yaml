@@ -32,6 +32,7 @@ data:
   bazaar_base_url: http://bazaar:8000
   subscriptions_host: subscriptions
   items_base_url: http://items:8000
+  referral_base_url: http://referral:8000
 
   frontend_api_endpoint: http://api-service/api
   frontend_command_endpoint: http://sky-commands:8008/command

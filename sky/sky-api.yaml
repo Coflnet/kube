@@ -163,6 +163,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: items_base_url
+          - name: REFERRAL_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: referral_base_url
         readinessProbe:
           httpGet:
             path: /metrics
