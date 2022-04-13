@@ -7,6 +7,8 @@ metadata:
     nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - foo'
     nginx.ingress.kubernetes.io/auth-secret: basic-auth
     nginx.ingress.kubernetes.io/auth-type: basic
+    kubernetes.io/ingress.class: "nginx"
+
   labels:
     name: jaeger-ingress
 spec:
