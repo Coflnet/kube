@@ -66,7 +66,7 @@ spec:
                 key: paypal_sandbox_secret
           - name: PAYPAL__IS_SANDBOX
             valueFrom:
-              secretKeyRef: 
+              configMapKeyRef: 
                 name: secret
                 key: paypal_is_sandbox
           - name: KAFKA_HOST
