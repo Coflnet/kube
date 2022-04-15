@@ -58,12 +58,12 @@ spec:
             valueFrom:
               secretKeyRef: 
                 name: secret
-                key: paypal_id
+                key: paypal_sandbox_id
           - name: PAYPAL__SECRET
             valueFrom:
               secretKeyRef: 
                 name: secret
-                key: paypal_secret
+                key: paypal_sandbox_secret
           - name: KAFKA_HOST
             valueFrom:
               configMapKeyRef:
