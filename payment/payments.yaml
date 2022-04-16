@@ -24,11 +24,6 @@ spec:
         - containerPort: 8000
           name: web
         env: 
-          - name: DB_CONNECTION
-            valueFrom:
-              secretKeyRef:
-                name: secret
-                key: connection_micro_payments
           - name: JAEGER_SERVICE_NAME
             valueFrom: 
               configMapKeyRef:
@@ -43,12 +38,12 @@ spec:
             valueFrom:
               secretKeyRef: 
                 name: secret
-                key: stripe_test_key
+                key: stripe_key
           - name: STRIPE__KEY
             valueFrom:
               secretKeyRef:
                 name: secret
-                key: stripe_test_secret
+                key: stripe_secret
           - name: STRIPE__SIGNING_SECRET
             valueFrom:
               secretKeyRef: 
@@ -58,12 +53,12 @@ spec:
             valueFrom:
               secretKeyRef: 
                 name: secret
-                key: paypal_sandbox_id
+                key: paypal_id
           - name: PAYPAL__SECRET
             valueFrom:
               secretKeyRef: 
                 name: secret
-                key: paypal_sandbox_secret
+                key: paypal_secret
           - name: PAYPAL__IS_SANDBOX
             valueFrom:
               configMapKeyRef: 
@@ -74,6 +69,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: kafka_host
+          - name: DB_CONNECTION
+            valueFrom:
+              secretKeyRef:
+                name: secret
+                key: connection_string_payment
         resources:
           requests:
             cpu: 10m
