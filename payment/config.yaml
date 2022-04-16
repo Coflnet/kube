@@ -18,12 +18,13 @@ data:
             "description": "Premium plan granting various perks",
             "cost": 1800,
             "ownershipSeconds": 2592000,
-            "type": 4
+            "type": 5
         },
         {
             "slug": "test-premium",
             "title": "Test Premium for invited user",
             "cost": 100,
+            "type": 5,
             "ownershipSeconds": 86400
         }
     ],
