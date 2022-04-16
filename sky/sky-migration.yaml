@@ -6,7 +6,7 @@ metadata:
   labels:
     app: migration
 spec:
-  replicas: 1
+  replicas: 0
   serviceName: migration
   selector:
     matchLabels:
