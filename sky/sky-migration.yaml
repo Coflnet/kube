@@ -20,7 +20,7 @@ spec:
         - name: harbor
       containers:
       - name: migration
-        image: harbor.flou.dev/coflnet/skymigration:3f4fc12d-e002-40f2-b339-d7ccc24ad5a5
+        image: harbor.flou.dev/coflnet/skymigration:83792535-d98c-480b-a525-2a3fea09aa33
         env:
           - name: DBCONNECTION
             valueFrom:
