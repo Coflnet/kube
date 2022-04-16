@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: migration
+  namespace: sky
+  labels:
+    app: migration
+spec:
+  replicas: 0
+  serviceName: migration
+  selector:
+    matchLabels:
+      app: migration
+  template:
+    metadata:
+      labels:
+        app: migration
+    spec:
+      imagePullSecrets:
+        - name: harbor
+      containers:
+      - name: migration
+        image: harbor.flou.dev/coflnet/skymigration:3f4fc12d-e002-40f2-b339-d7ccc24ad5a5
+        env:
+          - name: DBCONNECTION
+            valueFrom:
+              secretKeyRef:
+                key: connection_read_secondary
+                name: secret
+          - name: PAYMENTS_CONNECTION
+            valueFrom:
+              secretKeyRef:
+                key: connection_string_payment
+                name: secret
+          - name: Referral_CONNECTION
+            valueFrom:
+              secretKeyRef:
+                key: connection_micro_referral
+                name: secret
+
+        resources:
+          requests:
+            memory: "1000Mi"
+            cpu: "1000m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: migration
+spec:
+  selector:
+    app: migration
