@@ -34,21 +34,24 @@ spec:
               configMapKeyRef:
                 name: config
                 key: jaeger_agent_host
+
           - name: STRIPE__ID
             valueFrom:
               secretKeyRef: 
                 name: secret
-                key: stripe_key
+                key: stripe_secret
           - name: STRIPE__KEY
             valueFrom:
               secretKeyRef:
                 name: secret
-                key: stripe_secret
+                key: stripe_key
+
           - name: STRIPE__SIGNING_SECRET
             valueFrom:
               secretKeyRef: 
                 name: secret
                 key: stripe_signing_secret
+
           - name: PAYPAL__ID
             valueFrom:
               secretKeyRef: 
