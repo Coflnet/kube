@@ -48,5 +48,10 @@ kind: Service
 metadata:
   name: migration
 spec:
+  ports:
+    - port: 8000
+      targetPort: 8000
+      name: web
   selector:
     app: migration
+  
