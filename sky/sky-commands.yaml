@@ -44,7 +44,7 @@ spec:
         - name: harbor
       containers:
       - name: commands
-        image: harbor.flou.dev/coflnet/skycommands:f79a4619-8c3a-454d-aaef-910e1647680e
+        image: harbor.flou.dev/coflnet/skycommands:a1a17fe1-945a-4541-b953-5f196d343ac5
         ports:
           - containerPort: 8008
           - containerPort: 8000
