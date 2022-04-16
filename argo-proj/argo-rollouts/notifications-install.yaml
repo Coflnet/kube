@@ -1,8 +1,6 @@
 # This is an auto-generated file. DO NOT EDIT
 apiVersion: v1
 data:
-  service.telegram: |
-    token: $telegram-token
   template.analysis-run-error: |
     message: Rollout {{.rollout.metadata.name}}'s analysis run is in error state.
     email:
