@@ -27,10 +27,17 @@ spec:
   - host: skyblock-backend.coflnet.com
     http:
       paths:
-      - path: /stripe
+      - path: /callback/stripe
         pathType: ImplementationSpecific
         backend:
           service:
+            name: payment
+            port:
+              number: 80
+      - path: /callback/paypal
+        pathType: ImplementationSpecific
+        backend:
+          service: 
             name: payment
             port:
               number: 80
