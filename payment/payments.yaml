@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       app: payment
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
@@ -92,3 +92,13 @@ spec:
   ports:
   - port: 80
     targetPort: 8000
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: payment
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: payment
