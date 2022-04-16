@@ -173,9 +173,9 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: indexer-service
+            name: frontend
             port:
-              number: 8008
+              number: 80
   - host: coflnet.com
     http:
       paths:
