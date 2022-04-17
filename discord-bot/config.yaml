@@ -13,7 +13,7 @@ data:
   live_channel_id_support: "669976123714699284"
 
   api_endpoint: http://api-service.sky/api
-  chat_endpoint: http://chat-service.sky
+  chat_endpoint: http://chat-service.sky:8000
 
   client_id: "900179869709762630"
   discord_guild: "267680588666896385"
