@@ -31,6 +31,25 @@ spec:
             secretKeyRef:
               name: secret
               key: mongo_host
+
+        - name: DISCORD_COFLCHAT_ID
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: cofl_chat_id
+        
+        - name: REDIS_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: redis_host
+        
+        - name: REDIS_CHAT_CHANNEL
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: redis_channel
+
         resources:
           limits:
             memory: "50Mi"

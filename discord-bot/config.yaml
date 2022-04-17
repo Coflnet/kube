@@ -15,3 +15,7 @@ data:
 
   client_id: "900179869709762630"
   discord_guild: "267680588666896385"
+
+  cofl_chat_id: "965313539239718942"
+  redis_host: "redis.sky:6379"
+  redis_channel: "chat"
