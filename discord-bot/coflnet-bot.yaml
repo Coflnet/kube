@@ -16,7 +16,7 @@ spec:
         - name: harbor
       containers:
       - name: coflnet-bot
-        image: harbor.flou.dev/coflnet/coflnet-bot:f2d1aa93-bac9-4c34-a72b-3999179a9740
+        image: harbor.flou.dev/coflnet/coflnet-bot:2cbbcbc5-e4a0-4f25-b07b-a7b83f290b13
         ports:
           - containerPort: 2112
             name: metrics
