@@ -52,6 +52,10 @@ spec:
             configMapKeyRef:
               name: config
               key: topic_verified
+        - name: PRODUCTS__REFERAL_BONUS
+          value: "referal_bonus"
+        - name: PRODUCTS__VERIFY_MC
+          value: "verify_mc"
 
         resources:
           requests:
