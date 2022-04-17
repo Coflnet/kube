@@ -49,6 +49,24 @@ spec:
             configMapKeyRef:
               name: config
               key: redis_channel
+        
+        - name: COFL_CHAT_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: secret
+              key: chat_api_key
+
+        - name: COFL_CHAT_BASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: chat_endpoint
+
+        - name: COFL_API_BASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: api_endpoint
 
         resources:
           limits:
