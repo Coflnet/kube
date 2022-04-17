@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: referral
-        image: harbor.flou.dev/coflnet/skyreferral:66c66be9-800f-4f19-90eb-2f3f18bf4e27
+        image: harbor.flou.dev/coflnet/skyreferral:09e5482d-2fcc-4006-835a-e3a3e246d83c
         ports:
         - containerPort: 8000
           name: metrics
