@@ -7,7 +7,7 @@ data:
   user: sky 
   database: sky
   jaeger_service_name: hypixel-skyblock-core
-  jaeger_agent_host: jaeger-collector.observability.svc.cluster.local
+  jaeger_agent_host: jaeger-agent.observability.svc.cluster.local
   jaeger_sampling_host: http://jaeger-agent.observability.svc.cluster.local:5778/sampling
   reload_config_on_change: "false"
   kafka_host: kafka-3.kafka.svc.cluster.local
