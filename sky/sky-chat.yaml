@@ -34,6 +34,11 @@ spec:
             configMapKeyRef:
               name: config
               key: jaeger_agent_host
+        - name: API_BASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: http_api_host
         - name: REDIS_HOST
           valueFrom: 
             configMapKeyRef:
