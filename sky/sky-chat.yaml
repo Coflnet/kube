@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: chat
-        image: harbor.flou.dev/coflnet/skychat:85797c03-b8e8-4cd7-84d5-a78034b7ca83
+        image: harbor.flou.dev/coflnet/skychat:96da61f7-a3de-4ebb-8312-5e3095946f6f
         ports:
         - containerPort: 8000
           name: api
@@ -34,6 +34,11 @@ spec:
             configMapKeyRef:
               name: config
               key: jaeger_agent_host
+        - name: API_BASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: http_api_host
         - name: REDIS_HOST
           valueFrom: 
             configMapKeyRef:
