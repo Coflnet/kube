@@ -24,6 +24,13 @@ spec:
             name: ci-eventsource-eventsource-svc
             port:
               number: 12000
+      - path: /build-container
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: build-container-eventsource-svc
+            port:
+              number: 12000
 
   - host: argo-events.flou.dev
     http:
