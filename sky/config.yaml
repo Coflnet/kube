@@ -27,6 +27,7 @@ data:
   mongo_host: "mongodb://root:aVJS9DTDxqHuCqwaXHu2P7Dts@mongodb-mongodb-sharded.mongodb:27017"
   sky_player_name_url: http://player-name:8000/
   settings_base_url: http://settings:8000/
+  sniper_base_url: http://sniper:8000/
   payment_base_url: http://payment.payment
   chat_base_url: http://chat-service.sky:8000/
   bazaar_base_url: http://bazaar:8000
