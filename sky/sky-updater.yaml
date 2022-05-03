@@ -6,7 +6,7 @@ metadata:
   labels:
     app: updater
 spec:
-  replicas: 5
+  replicas: 6
   serviceName: updater
   updateStrategy: 
     type: RollingUpdate
