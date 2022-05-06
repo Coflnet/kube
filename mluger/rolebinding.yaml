@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: mluger-role
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: mluger-role
+subjects:
+- kind: ServiceAccount
+  name: mluger-user
+  namespace: kube-system
