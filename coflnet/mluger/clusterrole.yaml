@@ -1,8 +1,0 @@
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: mluger-role
-rules:
-- apiGroups: ["v1alpha1.Experiment", "v1alpha1.AnalysisRun", "v1.Deployment", "v1.ReplicaSet", "v1alpha1.Rollout"]
-  resources: ["pods", "pods/log", "pods/portforward"]
-  verbs: ["get", "list", "log", "watch"]
