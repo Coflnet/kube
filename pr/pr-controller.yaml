@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pr-controller
+  namespace: pr-env
+spec:
+  selector:
+    matchLabels:
+      app: pr-controller
+  template:
+    metadata:
+      labels:
+        app: pr-controller
+    spec:
+      serviceAccountName: pr-controller
+      containers:
+      - name: pr-controller
+        image: harbor.flou.dev/flou21/pr-env-controller:dev
+        imagePullPolicy: Always
+        env:
+          - name: GITHUB_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: secret
+                key: github_token
+          - name: MONGO_URL
+            valueFrom:
+              secretKeyRef:
+                name: secret
+                key: mongo_url
+          - name: BUILD_IMAGE_WEBHOOK
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: build_webhook
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 8080
