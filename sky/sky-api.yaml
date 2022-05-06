@@ -191,7 +191,7 @@ spec:
       steps:
       - setWeight: 10
       - pause: 
-          duration: 5m
+          duration: 3m
       - analysis:
           templates:
           - templateName: sky-api-analysis
