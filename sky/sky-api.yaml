@@ -34,7 +34,7 @@ spec:
         - name: harbor
       containers:
       - name: api
-        image: harbor.flou.dev/coflnet/skyapi:daf9c98d-233e-4ad9-b1da-7c1fb02fe68b
+        image: harbor.flou.dev/coflnet/skyapi:3a84ac56-7700-4d28-beb3-3aaa4bcfb2f1
         ports:
           - containerPort: 8008
           - containerPort: 8000
@@ -191,7 +191,7 @@ spec:
       steps:
       - setWeight: 10
       - pause: 
-          duration: 5m
+          duration: 3m
       - analysis:
           templates:
           - templateName: sky-api-analysis
