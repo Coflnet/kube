@@ -3,6 +3,6 @@ kind: ClusterRole
 metadata:
   name: mluger-role
 rules:
-- apiGroups: [""]
+- apiGroups: ["*"]
   resources: ["pods", "pods/log", "pods/portforward"]
   verbs: ["get", "list", "log"]
