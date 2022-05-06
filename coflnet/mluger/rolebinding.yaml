@@ -4,7 +4,7 @@ metadata:
   name: mluger-role
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: Role
+  kind: ClusterRole
   name: mluger-role
 subjects:
 - kind: ServiceAccount
