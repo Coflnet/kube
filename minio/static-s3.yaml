@@ -16,7 +16,7 @@ spec:
         - name: harbor
       containers:
       - name: static-server
-        image: harbor.flou.dev/coflnet/statics3:c40cd065-6754-4784-aa35-106e15aecd2f
+        image: harbor.flou.dev/coflnet/statics3:fde55cea-4cdc-41fe-a5fb-e3446c1dd144
         env: 
           - name: ACCESS_KEY
             valueFrom: 
