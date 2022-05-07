@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config
+  namespace: pr-env
+data:
+  build_webhook: http://build-container-eventsource-svc.argo-events.svc.cluster.local/build-container

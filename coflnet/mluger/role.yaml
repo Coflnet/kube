@@ -1,0 +1,9 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: pr-env
+  name: pr-controller
+rules:
+- apiGroups: ["", "apps", "networking.k8s.io"]
+  resources: ["pods", "deployments", "services", "ingresses", "pods/portforward", "pods/logs"]
+  verbs: ["get", "watch", "list", "create"]
