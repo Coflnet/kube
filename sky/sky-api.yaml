@@ -90,7 +90,7 @@ spec:
           - name: DBConnection
             valueFrom:
               secretKeyRef:
-                key: connection_read_secondary
+                key: connection_read_api
                 name: secret
           - name: MODES
             value: api
