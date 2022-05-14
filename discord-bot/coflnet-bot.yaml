@@ -18,6 +18,8 @@ spec:
       - name: coflnet-bot
         image: harbor.flou.dev/coflnet/coflnet-bot:2e6da5fe-a17e-4de1-b5a7-7270e67bd002
         ports:
+          - containerPort: 8080
+            name: api
           - containerPort: 2112
             name: metrics
         env:
@@ -85,7 +87,6 @@ spec:
             configMapKeyRef:
               name: config
               key: payment
-
         resources:
           limits:
             memory: "50Mi"
@@ -105,6 +106,9 @@ spec:
   - name: metrics
     port: 2112
     targetPort: 2112
+  - name: api
+    port: 80
+    targetPort: 8080
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
@@ -121,3 +125,4 @@ spec:
   - port: metrics
     interval: 30s
     path: /metrics
+
