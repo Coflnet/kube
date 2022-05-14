@@ -67,6 +67,12 @@ spec:
             configMapKeyRef:
               name: config
               key: api_endpoint
+            
+
+        - name: MC_CONNECT_URL
+          value: http://mc-connect.sky
+        - name: PAYMENT_URL
+          value: http://payment.payment
 
         resources:
           limits:
