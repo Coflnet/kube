@@ -21,7 +21,7 @@ spec:
       - name: mc-connect
         image: harbor.flou.dev/coflnet/skymcconnect:dbc7ead7-b8cf-4e66-a13d-6ed65d8a9ddd
         ports:
-        - containerPort: 80
+        - containerPort: 8000
           name: web
         env: 
         - name: DB_CONNECTION
@@ -62,4 +62,4 @@ spec:
     app: mc-connect
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 8000
