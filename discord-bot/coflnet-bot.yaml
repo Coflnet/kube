@@ -67,12 +67,24 @@ spec:
             configMapKeyRef:
               name: config
               key: api_endpoint
+        
+        - name: HYPIXEL_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: secret
+              key: hypixel_api_key
             
 
         - name: MC_CONNECT_URL
-          value: http://mc-connect.sky
+          valueFrom: 
+            configMapKeyRef:
+              name: config
+              key: mc_connect
         - name: PAYMENT_URL
-          value: http://payment.payment
+          valueFrom: 
+            configMapKeyRef:
+              name: config
+              key: payment
 
         resources:
           limits:

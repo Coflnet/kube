@@ -14,6 +14,8 @@ data:
 
   api_endpoint: http://api-service.sky/api
   chat_endpoint: http://chat-service.sky:8000
+  mc_connect: http://mc-connect.sky
+  payment: http://payment.payment
 
   client_id: "900179869709762630"
   discord_guild: "267680588666896385"
