@@ -87,6 +87,11 @@ spec:
             configMapKeyRef:
               name: config
               key: payment
+        
+        - name: TOPIC_TRANSACTION
+          value: transactions
+        - name: KAFKA_HOST
+          value: kafka-3.kafka:9092
         resources:
           limits:
             memory: "50Mi"
