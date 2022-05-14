@@ -88,6 +88,12 @@ spec:
               name: config
               key: payment
         
+        - name: CHAT_WEBHOOK
+          valueFrom:
+            secretKeyRef:
+              name: secret
+              key: cofl_chat_discord_webhook
+        
         - name: TOPIC_TRANSACTION
           value: transactions
         - name: KAFKA_HOST
