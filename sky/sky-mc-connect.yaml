@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: mc-connect
-        image: harbor.flou.dev/coflnet/skymcconnect:dbc7ead7-b8cf-4e66-a13d-6ed65d8a9ddd
+        image: harbor.flou.dev/coflnet/skymcconnect:1bbf36cb-dc2c-45d4-a647-a58136eadf55
         ports:
         - containerPort: 8000
           name: web
