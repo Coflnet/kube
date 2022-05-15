@@ -96,6 +96,8 @@ spec:
         
         - name: TOPIC_TRANSACTION
           value: transactions
+        - name: TOPIC_VERIFICATION
+          value: sky-verified
         - name: KAFKA_HOST
           value: kafka-3.kafka:9092
         resources:
