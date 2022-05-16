@@ -58,6 +58,11 @@ spec:
             configMapKeyRef:
               key: api_endpoint
               name: config
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              key: hypixel_api_key
+              name: secret
         resources:
           requests:
             memory: "50Mi"
