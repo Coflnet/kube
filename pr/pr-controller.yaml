@@ -15,7 +15,7 @@ spec:
       serviceAccountName: pr-controller
       containers:
       - name: pr-controller
-        image: harbor.flou.dev/coflnet/pr-controller:327f98e5-fd39-4607-ab8b-66adda02f99c
+        image: harbor.flou.dev/coflnet/pr-controller:846f14e6-a162-47b8-928b-4feb7fa541a0
         imagePullPolicy: Always
         env:
           - name: GITHUB_TOKEN
