@@ -27,7 +27,7 @@ spec:
       - --destination=harbor.flou.dev/{{inputs.parameters.container_image}}:{{inputs.parameters.container_tag}}
       command: ["/kaniko/executor"] 
       resources:
-        requests:
+        limits:
           memory: 4000Mi
           cpu: 2000m
       env:
