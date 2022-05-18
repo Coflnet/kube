@@ -184,8 +184,11 @@ spec:
           timeoutSeconds: 10
         resources:
           requests:
-            memory: "1000Mi"
+            memory: "2000Mi"
             cpu: "300m"
+          limits:
+            cpu: "600m"
+            memory: "3000Mi"
   strategy:
     canary: 
       steps:
