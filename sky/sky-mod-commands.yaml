@@ -172,11 +172,11 @@ spec:
           periodSeconds: 3
         resources:
           limits:
-            memory: "1000Mi"
-            cpu: "200m"
+            memory: "700Mi"
+            cpu: "300m"
           requests:
-            memory: "1000Mi"
-            cpu: "200m"
+            memory: "400Mi"
+            cpu: "100m"
   strategy:
     canary: 
       steps:
