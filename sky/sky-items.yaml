@@ -72,10 +72,10 @@ spec:
         resources:
           limits:
             memory: "512Mi"
-            cpu: "400m"
+            cpu: "100m"
           requests:
             memory: "128Mi"
-            cpu: "100m"
+            cpu: "50m"
   strategy:
     canary: 
       steps:
