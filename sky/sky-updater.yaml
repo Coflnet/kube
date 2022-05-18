@@ -125,8 +125,11 @@ spec:
               key: items_base_url
         resources:
           requests:
-            memory: "600Mi"
+            memory: "400Mi"
             cpu: "400m"
+          limits:
+            memory: "800Mi"
+            cpu: "600m"
 ---
 apiVersion: v1
 kind: Service
