@@ -56,6 +56,13 @@ spec:
             configMapKeyRef:
               name: config
               key: items_base_url
+        resources:
+          requests:
+            cpu: 10m
+            memory: 400Mi
+          limits:
+            cpu: 50m
+            memory: 700Mi
 ---
 apiVersion: v1
 kind: Service
