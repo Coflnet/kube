@@ -50,11 +50,11 @@ spec:
               key: sky_settings_database
         resources:
           requests:
-            memory: "300Mi"
-            cpu: "50m"
+            memory: "200Mi"
+            cpu: "30m"
           limits:
             memory: "512Mi"
-            cpu: "100m"
+            cpu: "80m"
 ---
 apiVersion: v1
 kind: Service

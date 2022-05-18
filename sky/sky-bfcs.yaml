@@ -42,8 +42,11 @@ spec:
               key: sky_bfcs_redis
         resources:
           requests:
-            cpu: 400m
+            cpu: 100m
             memory: 3000Mi
+          limits:
+            cpu: 200m
+            memory: 5000Mi
 ---
 apiVersion: v1
 kind: Service
