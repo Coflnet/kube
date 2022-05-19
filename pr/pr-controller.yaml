@@ -39,15 +39,44 @@ spec:
             cpu: "50m"
         ports:
         - containerPort: 8080
+        - containerPort: 2112
+        livenessProbe:
+          httpGet:
+            path: /metrics
+            port: 2112
+          initialDelaySeconds: 10
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: pr-controller
   namespace: pr-env
+  labels:
+    app: pr-controller
 spec:
   selector:
     app: pr-controller
   ports:
     - port: 80
       targetPort: 8080
+      name: api
+    - port: 2112
+      targetPort: 2112
+      name: metrics
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: pr-controller-service-monitor
+  namespace: pr-env
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: pr-controller
+  endpoints:
+    - port: metrics
+      interval: 30s
+      path: /metrics
+
