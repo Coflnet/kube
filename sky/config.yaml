@@ -11,11 +11,14 @@ data:
   jaeger_sampling_host: http://jaeger-agent.observability.svc.cluster.local:5778/sampling
   reload_config_on_change: "false"
   kafka_host: kafka-3.kafka.svc.cluster.local
+
   redis_host: redis-service,syncTimeout=200
   redis_command_host: commands-redis-service,syncTimeout=200
   redis_settings_host: settings-redis-service
   redis_api_host: api-redis-service,syncTimeout=200
   redis_host_sky: redis-service
+  redis_event_broker: event-broker-redis,syncTimeout=200
+
   sky_bfcs_redis: redis-bfcs
   payment_host: payment.payment.svc.cluster.local
   commands_host: sky-commands.sky.svc.cluster.local
@@ -39,6 +42,7 @@ data:
   frontend_command_endpoint: http://sky-commands:8008/command
 
   sniper_data_username: sniper-data
+
 
   cassandra_host: 5.182.17.65
   cassandra_user: cassandra

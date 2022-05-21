@@ -1,0 +1,110 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: event-broker
+  namespace: sky
+  labels:
+    app: event-broker
+spec:
+  selector:
+    matchLabels:
+      app: event-broker
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: event-broker
+    spec:
+      imagePullSecrets:
+        - name: harbor
+      containers:
+        - name: event-broker
+          image: harbor.flou.dev/coflnet/skyeventbroker:d6079be0-a2e0-48dc-853c-2a94820b70b9
+          ports:
+            - containerPort: 8000
+              name: metrics
+          env:
+            - name: DBConnection
+              valueFrom:
+                secretKeyRef:
+                  name: secret
+                  key: connection_eventmessages_database
+
+            - name: JAEGER_AGENT_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: config
+                  key: jaeger_agent_host
+
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: config
+                  key: kafka_host
+
+            - name: REDIS_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: config
+                  key: redis_event_broker
+
+            - name: TOPICS__VERIFIED
+              valueFrom:
+                configMapKeyRef:
+                  name: config
+                  key: topic_verified
+
+            - name: TOPICS__TRANSACTIONS
+              valueFrom:
+                configMapKeyRef:
+                  name: config
+                  key: topic_transaction
+
+          resources:
+            requests:
+              cpu: 200m
+              memory: 100Mi
+            limits:
+              cpu: 500m
+              memory: 500Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: event-broker
+  namespace: sky
+spec:
+  selector:
+    app: event-broker
+  ports:
+    - port: 8000
+      targetPort: 8000
+      name: metrics
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: event-broker-pdb
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: event-broker
+
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: event-broker
+  namespace: sky
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: event-broker
+  endpoints:
+    - port: metrics
+      interval: 30s
+      path: /metrics
+
