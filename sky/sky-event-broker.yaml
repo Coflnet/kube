@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       app: event-broker
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
@@ -24,7 +24,7 @@ spec:
             - containerPort: 8000
               name: metrics
           env:
-            - name: DBConnection
+            - name: DB_CONNECTION
               valueFrom:
                 secretKeyRef:
                   name: secret
