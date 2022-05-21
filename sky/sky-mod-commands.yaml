@@ -161,9 +161,9 @@ spec:
 
           - name: EVENTS_REDIS_HOST
             valueFrom:
-              - configMapKeyRef:
-                  name: config
-                  key: redis_event_broker
+              configMapKeyRef:
+                name: config
+                key: redis_event_broker
 
           - name: EVENTS_BASE_URL
             valueFrom:
