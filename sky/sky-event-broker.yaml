@@ -42,7 +42,7 @@ spec:
                   name: config
                   key: kafka_host
 
-            - name: REDIS_HOST
+            - name: REDIS_CONFIG
               valueFrom:
                 configMapKeyRef:
                   name: config
@@ -60,6 +60,11 @@ spec:
                   name: config
                   key: topic_transaction
 
+            - name: SETTINGS_BASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: config
+                  key: settings_base_url
           resources:
             requests:
               cpu: 200m
