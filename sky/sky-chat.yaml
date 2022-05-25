@@ -46,10 +46,10 @@ spec:
               key: redis_host
         resources:
           requests:
-            cpu: 10m
+            cpu: 100m
             memory: 300Mi
           limits:
-            cpu: 50m
+            cpu: 250m
             memory: 500Mi
 ---
 apiVersion: v1
