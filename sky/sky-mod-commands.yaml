@@ -6,7 +6,7 @@ metadata:
   labels:
     app: mod
 spec:
-  replicas: 5
+  replicas: 3
   progressDeadlineSeconds: 2592000
   selector:
     matchLabels:
@@ -189,7 +189,7 @@ spec:
             cpu: "1500m"
           requests:
             memory: "400Mi"
-            cpu: "1000m"
+            cpu: "700m"
   strategy:
     canary: 
       steps:
