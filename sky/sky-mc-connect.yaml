@@ -53,10 +53,10 @@ spec:
               key: jaeger_agent_host
         resources:
           requests:
-            cpu: 50m
+            cpu: 10m
             memory: 200Mi
           limits:
-            cpu: 100m
+            cpu: 300m
             memory: 400Mi
 ---
 apiVersion: v1
