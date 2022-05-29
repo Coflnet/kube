@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
         - name: event-broker
-          image: harbor.flou.dev/coflnet/skyeventbroker:e24ded18-3d18-4591-954e-ce3872a1e696
+          image: harbor.flou.dev/coflnet/skyeventbroker:26e55db2-03ba-4fc2-8591-7c9a9e068137
           ports:
             - containerPort: 8000
               name: metrics
