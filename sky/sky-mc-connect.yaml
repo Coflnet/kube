@@ -51,6 +51,11 @@ spec:
             configMapKeyRef:
               name: config
               key: jaeger_agent_host
+        - name: TOPICS__VERIFIED
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: topic_verified
         resources:
           requests:
             cpu: 10m
