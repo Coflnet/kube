@@ -65,6 +65,11 @@ spec:
                 configMapKeyRef:
                   name: config
                   key: settings_base_url
+            - name: PAYMENTS_BASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: config
+                  key: payment_base_url
           resources:
             requests:
               cpu: 200m
