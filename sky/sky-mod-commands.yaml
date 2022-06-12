@@ -6,7 +6,7 @@ metadata:
   labels:
     app: mod
 spec:
-  replicas: 3
+  replicas: 4
   progressDeadlineSeconds: 2592000
   selector:
     matchLabels:
@@ -37,7 +37,7 @@ spec:
         - name: harbor
       containers:
       - name: mod
-        image: harbor.flou.dev/coflnet/skymodcommands:0c4483e6-895c-41a8-96ce-513b2da643a7
+        image: harbor.flou.dev/coflnet/skymodcommands:5e3e3502-049b-4d28-8395-1960355c02e6
         ports:
           - containerPort: 8008
           - containerPort: 8000

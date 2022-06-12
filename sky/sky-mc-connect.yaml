@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: mc-connect
-        image: harbor.flou.dev/coflnet/skymcconnect:3674adda-9d38-4de6-bd65-6cae6c3ecaf1
+        image: harbor.flou.dev/coflnet/skymcconnect:0f0d184f-b50f-4503-968d-cb2818129e6c
         ports:
         - containerPort: 8000
           name: web
@@ -51,12 +51,17 @@ spec:
             configMapKeyRef:
               name: config
               key: jaeger_agent_host
+        - name: TOPICS__VERIFIED
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: topic_verified
         resources:
           requests:
-            cpu: 50m
+            cpu: 10m
             memory: 200Mi
           limits:
-            cpu: 100m
+            cpu: 300m
             memory: 400Mi
 ---
 apiVersion: v1
