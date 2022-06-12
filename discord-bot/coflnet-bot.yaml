@@ -93,6 +93,12 @@ spec:
             secretKeyRef:
               name: secret
               key: cofl_chat_discord_webhook
+
+        - name: DEV_WEBHOOK
+          valueFrom:
+            secretKeyRef:
+              key: dev_chat_discord_webhook
+              name: secret
         
         - name: TOPIC_TRANSACTION
           value: transactions
