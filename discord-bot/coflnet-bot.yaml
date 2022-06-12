@@ -94,6 +94,9 @@ spec:
               name: secret
               key: cofl_chat_discord_webhook
 
+        - name: GIN_MODE
+          value: release
+
         - name: DEV_WEBHOOK
           valueFrom:
             secretKeyRef:
