@@ -26,6 +26,8 @@ spec:
         - name: metrics
           containerPort: 2112
         env:
+        - name: GIN_MODE
+          value: release
         - name: SLOWDOWN_MS
           value: "10"
         - name: KAFKA_HOST
