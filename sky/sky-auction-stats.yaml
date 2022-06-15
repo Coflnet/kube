@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: auction-stats
-        image: harbor.flou.dev/coflnet/sky-auction-stats:4433edc2-d7b2-4023-9f17-4b2c7b122330
+        image: harbor.flou.dev/coflnet/sky-auction-stats:7710cc13-c768-464e-a953-602d85ddd31d
         ports:
         - name: web
           containerPort: 8080
