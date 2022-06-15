@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auction-stats
+  namespace: sky
+  labels:
+    app: auction-stats
+spec:
+  selector:
+    matchLabels:
+      app: auction-stats
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: auction-stats
+    spec:
+      imagePullSecrets:
+        - name: harbor
+      containers:
+      - name: auction-stats
+        image: harbor.flou.dev/coflnet/sky-auction-stats:4433edc2-d7b2-4023-9f17-4b2c7b122330
+        ports:
+        - name: web
+          containerPort: 8080
+        - name: metrics
+          containerPort: 2112
+        env:
+          - name: SLOWDOWN_MS
+            value: "10"
+        - name: KAFKA_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: kafka_host
+        - name: KAFKA_CONSUMER_GROUP
+        - name: REDIS_URL
+          value: redis://auction-stats-redis-service:6379
+        - name: TOPIC_NEW_AUCTION
+          valueFrom:
+            configMapKeyRef:
+              key: topic_new_auction
+              name: config
+        - name: TOPIC_NEW_FLIP
+          valueFrom:
+            configMapKeyRef:
+              key: topic_flip
+              name: config
+        resources:
+          requests:
+            cpu: 50m
+            memory: 50Mi
+          limits:
+            cpu: 200m
+            memory: 200Mi
