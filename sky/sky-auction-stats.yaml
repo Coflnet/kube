@@ -26,14 +26,15 @@ spec:
         - name: metrics
           containerPort: 2112
         env:
-          - name: SLOWDOWN_MS
-            value: "10"
+        - name: SLOWDOWN_MS
+          value: "10"
         - name: KAFKA_HOST
           valueFrom:
             configMapKeyRef:
               name: config
               key: kafka_host
         - name: KAFKA_CONSUMER_GROUP
+          value: auction-stats-cg
         - name: REDIS_URL
           value: redis://auction-stats-redis-service:6379
         - name: TOPIC_NEW_AUCTION
