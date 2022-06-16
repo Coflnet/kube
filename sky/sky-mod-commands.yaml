@@ -185,10 +185,10 @@ spec:
           periodSeconds: 3
         resources:
           limits:
-            memory: "700Mi"
+            memory: "1000Mi"
             cpu: "1500m"
           requests:
-            memory: "400Mi"
+            memory: "600Mi"
             cpu: "700m"
   strategy:
     canary: 
