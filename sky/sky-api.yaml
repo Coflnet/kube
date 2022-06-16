@@ -99,6 +99,12 @@ spec:
               configMapKeyRef:
                 name: config
                 key: jaeger_agent_host
+          - name: OTEL_EXPORTER_JAEGER_AGENT_HOST
+            valueFrom: 
+              configMapKeyRef:
+                name: config
+                key: jaeger_agent_host
+ 
           - name: TOPICS__MISSING_AUCTION
             valueFrom: 
               configMapKeyRef:
