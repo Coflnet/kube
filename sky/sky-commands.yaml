@@ -18,7 +18,7 @@ spec:
       labels:
         app: commands
       annotations:
-        config.linkerd.io/opaque-ports: "3307"
+        config.linkerd.io/skip-outbound-ports: "3307"
     spec:
       tolerations:
       - key: "us"
