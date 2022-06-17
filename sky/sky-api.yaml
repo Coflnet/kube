@@ -94,7 +94,7 @@ spec:
                 name: secret
           - name: MODES
             value: api
-          - name: OTEL_EXPORTER_JAEGER_AGENT_HOST
+          - name: JAEGER_AGENT_HOST
             valueFrom: 
               configMapKeyRef:
                 name: config
