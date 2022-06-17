@@ -13,6 +13,8 @@ spec:
       app: mod
   template:
     metadata:
+      annotations:
+        config.linkerd.io/skip-outbound-ports: "3307"
       labels:
         app: mod
     spec:
