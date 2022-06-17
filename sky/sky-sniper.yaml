@@ -22,7 +22,7 @@ spec:
         - name: harbor
       containers:
       - name: sniper
-        image: harbor.flou.dev/coflnet/skysniper:b0c1062a-6c82-4864-b840-66d1cea4d48d
+        image: harbor.flou.dev/coflnet/skysniper:a6cb53c2-0732-4656-bb9b-bb72a957e786
         env:
         - name: DBConnection
           valueFrom:
