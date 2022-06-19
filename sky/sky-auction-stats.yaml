@@ -65,6 +65,8 @@ kind: Service
 metadata:
   name: auction-stats
   namespace: sky
+  labels:
+    app: auction-stats
 spec:
   selector:
     app: auction-stats
