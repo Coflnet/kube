@@ -21,8 +21,6 @@ spec:
       - name: auction-stats
         image: harbor.flou.dev/coflnet/sky-auction-stats:8af612a7-9fb8-4aae-a02e-9d584b598a35
         ports:
-        - name: web
-          containerPort: 8080
         - name: metrics
           containerPort: 2112
         env:
@@ -61,3 +59,32 @@ spec:
           limits:
             cpu: 200m
             memory: 200Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auction-stats
+  namespace: sky
+spec:
+  selector:
+    app: auction-stats
+  ports:
+    - port: 2112
+      targetPort: 2112
+      name: metrics
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auction-stats-metrics-service
+  namespace: sky
+  labels:
+    app: auction-stats-metrics-service
+spec:
+  selector:
+    app: auction-stats
+  ports:
+    - port: 2112
+      targetPort: 2112
+      name: metrics
+      protocol: TCP
