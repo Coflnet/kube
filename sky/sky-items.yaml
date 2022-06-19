@@ -34,7 +34,7 @@ spec:
         - name: harbor
       containers:
       - name: items
-        image: harbor.flou.dev/coflnet/skyitems:5856d6b9-0dbc-43d6-b137-51bba3d3e502
+        image: harbor.flou.dev/coflnet/skyitems:dc298c72-a599-491f-9342-e99d7fd11326
         ports:
           - containerPort: 8000
         env:
