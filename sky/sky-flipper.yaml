@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: flipper
   namespace: sky
+  annotations:
+    config.linkerd.io/skip-outbound-ports: "3307"
   labels:
     app: flipper
 spec:

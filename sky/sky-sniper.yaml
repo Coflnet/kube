@@ -22,7 +22,7 @@ spec:
         - name: harbor
       containers:
       - name: sniper
-        image: harbor.flou.dev/coflnet/skysniper:b0c1062a-6c82-4864-b840-66d1cea4d48d
+        image: harbor.flou.dev/coflnet/skysniper:9b46b834-8427-4d58-9ffe-49b70fdc817e
         env:
         - name: DBConnection
           valueFrom:
@@ -92,10 +92,10 @@ spec:
         resources:
           requests:
             memory: "3000Mi"
-            cpu: "750m"
+            cpu: "1500m"
           limits:
             memory: "5000Mi"
-            cpu: "1500m"
+            cpu: "2500m"
 ---
 apiVersion: v1
 kind: Service
