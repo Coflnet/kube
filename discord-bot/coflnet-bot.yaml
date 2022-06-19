@@ -102,6 +102,17 @@ spec:
             secretKeyRef:
               key: dev_chat_discord_webhook
               name: secret
+
+        - name: DISCORD_FLIPPER_ROLE
+          valueFrom:
+            configMapKeyRef:
+              key: flipper_role
+              name: config
+        - name: DISCORD_GUILD
+          valueFrom:
+            configMapKeyRef:
+              key: discord_guild
+              name: config
         
         - name: TOPIC_TRANSACTION
           value: transactions
