@@ -73,18 +73,18 @@ spec:
       targetPort: 2112
       name: metrics
 ---
-apiVersion: v1
-kind: Service
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
 metadata:
-  name: auction-stats-metrics-service
+  name: auction-stats
   namespace: sky
   labels:
-    app: auction-stats-metrics-service
+    release: prometheus
 spec:
   selector:
-    app: auction-stats
-  ports:
-    - port: 2112
-      targetPort: 2112
-      name: metrics
-      protocol: TCP
+    matchLabels:
+      app: auction-stats
+  endpoints:
+    - port: metrics
+      interval: 60s
+      path: /metrics
