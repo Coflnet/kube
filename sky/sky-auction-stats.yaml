@@ -49,6 +49,11 @@ spec:
             configMapKeyRef:
               key: topic_flip
               name: config
+        - name: MONGO_URL
+          valueFrom:
+            secretKeyRef:
+              name: secret 
+              key: mongo_url
         resources:
           requests:
             cpu: 50m
