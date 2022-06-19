@@ -38,7 +38,7 @@ spec:
         - name: KAFKA_CONSUMER_GROUP
           value: auction-stats-cg
         - name: REDIS_URL
-          value: redis://auction-stats-redis-service:6379
+          value: redis://redis.redis:6379
         - name: TOPIC_NEW_AUCTION
           valueFrom:
             configMapKeyRef:
