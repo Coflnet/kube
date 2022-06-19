@@ -30,7 +30,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: secret 
-              key: mayor_mongo_url
+              key: mongo_url
         livenessProbe:
           httpGet:
             path: /metrics
