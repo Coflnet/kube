@@ -9,7 +9,6 @@ spec:
   selector:
     matchLabels:
       app: auction-stats
-  replicas: 1
   template:
     metadata:
       labels:
@@ -90,3 +89,21 @@ spec:
     - port: metrics
       interval: 60s
       path: /metrics
+---
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: mod-hpa
+  namespace: sky
+spec:
+  minReplicas: 2
+  maxReplicas: 5
+  metrics:
+    - type: External
+      external:
+        metricName: mod_connections_per_instance
+        targetValue: "10"
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: deployment-first
