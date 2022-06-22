@@ -45,7 +45,7 @@ data:
   sniper_data_username: sniper-data
 
 
-  cassandra_host: 5.182.17.65
+  cassandra_host: cassandra-proxy-haproxy.proxy
   cassandra_user: cassandra
 
   # kafka topics
