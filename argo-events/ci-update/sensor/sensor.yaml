@@ -83,7 +83,6 @@ spec:
                 workflows.argoproj.io/archive-strategy: "true"
             spec:
               entrypoint: build
-              onExit: exit
               serviceAccountName: argo
               retryStrategy:
                     limit: 3
