@@ -103,78 +103,67 @@ spec:
                   items:
                     - key: .dockerconfigjson
                       path: config.json
+              onExit: notification
               templates:
-              - name: build
-                affinity:
-                  nodeAffinity:
-                    requiredDuringSchedulingIgnoredDuringExecution:
-                      nodeSelectorTerms:
-                      - matchExpressions:
-                        - key: hetzner
-                          operator: NotIn
-                          values:
-                          - "true"
-                dag:
-                  tasks:
-                  - name: build
-                    templateRef:
-                      name: build-harbor-image
-                      template: build-harbor-image
-                    arguments:
-                      parameters:
-                      - name: app_repo
-                        value: ""
-                      - name: branch
-                        value: ""
-                      - name: container_image
-                        value: ""
-                      - name: container_tag
-                        value: "{{workflow.uid}}"
-                      - name: sub_path 
-                        value: .
-                      - name: git_user
-                        value: "Flou21"
-                      - name: git_secret_name
-                        value: github-secret
-                      - name: git_secret_key
-                        value: password
-
-                  - name: promote-v2
-                    templateRef:
-                      name: promote-v2
-                      template: promote-v2
-                    arguments:
-                      parameters:
-                      - name: image_name
-                        value: "harbor.flou.dev/"
-                      - name: k8s_file
-                        value: ""
-                      - name: message
-                        value: "[CI] update - version bump "
-                      - name: tag
-                        value: "{{workflow.uid}}"
-                      - name: git_user
-                        value: "Flou21"
-                      - name: git_secret_name
-                        value: github-secret
-                      - name: git_secret_key
-                        value: password
-                      - name: repo_url
-                        value: "https://github.com/Coflnet/kube"
-                    dependencies: [build]
-
-                  - name: ci-notification
-                    templateRef:
-                      name: ci-notification
-                      template: ci-notification
-                    arguments:
-                      parameters:
-                        - name: project
-                          value: ""
-                        - name: organization
-                          value: ""
-                        - name: duration
-                          value: "idk"
-                        - name: success
-                          value: "maybe"
-                    dependencies: [promote-v2]
+                - name: ci
+                  steps:
+                    - name: build
+                      templateRef:
+                        name: build-harbor-image
+                        template: build-harbor-image
+                      arguments:
+                        parameters:
+                          - name: app_repo
+                            value: ""
+                          - name: branch
+                            value: ""
+                          - name: container_image
+                            value: ""
+                          - name: container_tag
+                            value: "{{workflow.uid}}"
+                          - name: sub_path
+                            value: .
+                          - name: git_user
+                            value: "Flou21"
+                          - name: git_secret_name
+                            value: github-secret
+                          - name: git_secret_key
+                            value: password
+                    - name: promote
+                      templateRef:
+                        name: promote-v2
+                        template: promote-v2
+                      arguments:
+                        parameters:
+                          - name: image_name
+                            value: "harbor.flou.dev/"
+                          - name: k8s_file
+                            value: ""
+                          - name: message
+                            value: "[CI] update - version bump "
+                          - name: tag
+                            value: "{{workflow.uid}}"
+                          - name: git_user
+                            value: "Flou21"
+                          - name: git_secret_name
+                            value: github-secret
+                          - name: git_secret_key
+                            value: password
+                          - name: repo_url
+                            value: "https://github.com/Coflnet/kube"
+                - name: notification
+                  steps:
+                    - name: notification
+                      templateRef:
+                        name: ci-notification
+                        template: ci-notification
+                      arguments:
+                        parameters:
+                          - name: project
+                            value: ""
+                          - name: organization
+                            value: ""
+                          - name: duration
+                            value: "idk"
+                          - name: success
+                            value: "{{workflow.status}}"
