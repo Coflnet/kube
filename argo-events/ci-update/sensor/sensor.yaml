@@ -175,7 +175,7 @@ spec:
                         - name: organization
                           value: ""
                         - name: duration
-                          value: "{{workflow.status}}"
+                          value: "idk"
                         - name: success
-                          value: "{{workflow.duration}}"
+                          value: "maybe"
                     dependencies: [promote-v2]
