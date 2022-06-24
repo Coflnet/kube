@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: ci-notification
+  namespace: argo
+spec:
+  serviceAccountName: argo-events-sa
+  templates:
+  - name: ci-notification
+    inputs:
+      parameters:
+      - name: project
+      - name: organization
+    container:
+      image: harbor.flou.dev/coflnet/promoter:latest
+      resources:
+        requests:
+          memory: 50Mi
+          cpu: 10m
+      env:
+        - name: PROJECT
+          value: "{{inputs.parameters.project}}"
+        - name: ORGANIZATION
+          value: "{{inputs.parameters.organization}}"
+

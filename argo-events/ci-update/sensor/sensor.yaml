@@ -61,7 +61,17 @@ spec:
               dataTemplate: "{{ .Input.body.repository.name | nospace | lower }}-"
             dest: metadata.generateName
             operation: append
-            
+
+          # ci notification
+          - src:
+              dependencyName: ci-update
+              dataKey: body.repository.name
+            dest: spec.templates.0.dag.tasks.2.arguments.parameters.0.value
+          - src:
+              dependencyName: ci-update
+              dataKey: body.repository.owner.name
+            dest: spec.templates.0.dag.tasks.2.arguments.parameters.0.value
+
         source:
           resource:
             apiVersion: argoproj.io/v1alpha1
@@ -152,3 +162,15 @@ spec:
                       - name: repo_url
                         value: "https://github.com/Coflnet/kube"
                     dependencies: [build]
+
+                  - name: promote-v2
+                    templateRef:
+                      name: promote-v2
+                      template: promote-v2
+                    arguments:
+                      parameters:
+                        - name: project
+                          value: "harbor.flou.dev/"
+                        - name: organization
+                          value: ""
+                    dependencies: [promote-v2]
