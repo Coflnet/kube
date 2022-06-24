@@ -163,19 +163,19 @@ spec:
                             - name: repo_url
                               value: "https://github.com/Coflnet/kube"
                         dependencies: [build]
-                - name: exit
-                  template:
-                    templateRef:
-                      name: ci-notification
-                      template: ci-notification
-                    arguments:
-                      parameters:
-                        - name: project
-                          value: ""
-                        - name: organization
-                          value: ""
-                        - name: duration
-                          value: "idk"
-                        - name: success
-                          value: "maybe"
-                        - name: message
+
+                      - name: ci-notification
+                        templateRef:
+                          name: ci-notification
+                          template: ci-notification
+                        arguments:
+                          parameters:
+                            - name: project
+                              value: ""
+                            - name: organization
+                              value: ""
+                            - name: duration
+                              value: "idk"
+                            - name: success
+                              value: "maybe"
+                        dependencies: [promote-v2]
