@@ -22,4 +22,8 @@ spec:
           value: "{{inputs.parameters.project}}"
         - name: ORGANIZATION
           value: "{{inputs.parameters.organization}}"
+        - name: KAFKA_HOST
+          value: kafka-3.kafka.svc.cluster.local
+        - name: TOPIC_DEV_CHAT
+          value: discord-messages
 
