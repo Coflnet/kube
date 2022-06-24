@@ -12,7 +12,7 @@ spec:
       - name: project
       - name: organization
     container:
-      image: harbor.flou.dev/coflnet/promoter:latest
+      image: harbor.flou.dev/coflnet/ci-notifications:latest
       resources:
         requests:
           memory: 50Mi
