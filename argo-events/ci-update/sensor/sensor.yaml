@@ -164,17 +164,18 @@ spec:
                         value: "https://github.com/Coflnet/kube"
                     dependencies: [build]
 
-              - name: ci-notification
-                templateRef:
-                  name: ci-notification
-                  template: ci-notification
-                arguments:
-                  parameters:
-                    - name: project
-                      value: ""
-                    - name: organization
-                      value: ""
-                    - name: duration
-                      value: "{{workflow.status}}"
-                    - name: success
-                      value: "{{workflow.duration}}"
+                  - name: ci-notification
+                    templateRef:
+                      name: ci-notification
+                      template: ci-notification
+                    arguments:
+                      parameters:
+                        - name: project
+                          value: ""
+                        - name: organization
+                          value: ""
+                        - name: duration
+                          value: "{{workflow.status}}"
+                        - name: success
+                          value: "{{workflow.duration}}"
+                    dependencies: [promote-v2]
