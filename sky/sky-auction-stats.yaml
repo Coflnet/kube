@@ -18,7 +18,7 @@ spec:
         - name: harbor
       containers:
       - name: auction-stats
-        image: harbor.flou.dev/coflnet/sky-auction-stats:e8ac63e5-5173-4c03-b56a-e103847e1f95
+        image: harbor.flou.dev/coflnet/sky-auction-stats:565be12f-6e1c-4243-b2f9-2d561e4b800c
         ports:
         - name: metrics
           containerPort: 2112
