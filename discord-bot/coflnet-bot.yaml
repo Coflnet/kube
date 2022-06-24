@@ -124,9 +124,12 @@ spec:
           value: kafka-3.kafka:9092
 
         resources:
+          requests:
+            cpu: "10m"
+            memory: "20Mi"
           limits:
             memory: "50Mi"
-            cpu: "10m"
+            cpu: "50m"
 ---
 apiVersion: v1
 kind: Service
