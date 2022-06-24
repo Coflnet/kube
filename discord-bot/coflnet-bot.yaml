@@ -118,8 +118,11 @@ spec:
           value: transactions
         - name: TOPIC_VERIFICATION
           value: sky-verified
+        - name: TOPIC_DEV_CHAT
+          value: discord-messages
         - name: KAFKA_HOST
           value: kafka-3.kafka:9092
+
         resources:
           limits:
             memory: "50Mi"
