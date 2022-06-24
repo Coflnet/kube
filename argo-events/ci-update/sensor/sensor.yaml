@@ -163,14 +163,14 @@ spec:
                         value: "https://github.com/Coflnet/kube"
                     dependencies: [build]
 
-                  - name: promote-v2
+                  - name: ci-notification
                     templateRef:
-                      name: promote-v2
-                      template: promote-v2
+                      name: ci-notification
+                      template: ci-notification
                     arguments:
                       parameters:
                         - name: project
-                          value: "harbor.flou.dev/"
+                          value: ""
                         - name: organization
                           value: ""
                     dependencies: [promote-v2]
