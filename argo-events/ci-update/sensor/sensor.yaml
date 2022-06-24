@@ -84,7 +84,6 @@ spec:
             spec:
               entrypoint: build
               serviceAccountName: argo
-              onExit: ci-notification
               retryStrategy:
                     limit: 3
                     retryPolicy: "Always"
