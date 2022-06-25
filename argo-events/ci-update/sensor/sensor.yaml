@@ -62,7 +62,7 @@ spec:
             dest: metadata.generateName
             operation: append
 
-          # ci notification
+          # ci notification success
           - src:
               dependencyName: ci-update
               dataKey: body.repository.name
@@ -71,6 +71,16 @@ spec:
               dependencyName: ci-update
               dataKey: body.repository.owner.name
             dest: spec.templates.0.dag.tasks.2.arguments.parameters.1.value
+
+          # ci notification fail
+          - src:
+              dependencyName: ci-update
+              dataKey: body.repository.name
+            dest: spec.templates.0.dag.tasks.3.arguments.parameters.0.value
+          - src:
+              dependencyName: ci-update
+              dataKey: body.repository.owner.name
+            dest: spec.templates.0.dag.tasks.3.arguments.parameters.1.value
 
         source:
           resource:
@@ -161,9 +171,9 @@ spec:
                               value: password
                             - name: repo_url
                               value: "https://github.com/Coflnet/kube"
-                        dependencies: [build]
+                        depends: "build"
 
-                      - name: ci-notification
+                      - name: ci-notification-success
                         templateRef:
                           name: ci-notification
                           template: ci-notification
@@ -173,8 +183,20 @@ spec:
                               value: ""
                             - name: organization
                               value: ""
-                            - name: duration
-                              value: "idk"
                             - name: success
-                              value: "maybe"
-                        dependencies: [promote-v2]
+                              value: "true"
+                        depends: "build.Succeeded"
+
+                      - name: ci-notification-fail
+                        templateRef:
+                          name: ci-notification
+                          template: ci-notification
+                        arguments:
+                          parameters:
+                            - name: project
+                              value: ""
+                            - name: organization
+                              value: ""
+                            - name: success
+                              value: "false"
+                        depends: "build.Failed"
