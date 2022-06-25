@@ -102,6 +102,11 @@ spec:
             secretKeyRef:
               key: dev_chat_discord_webhook
               name: secret
+        - name: DEV_SPAM_WEBHOOK
+          valueFrom:
+            secretKeyRef:
+              key: dev_spam_chat_discord_webhook
+              name: secret
 
         - name: DISCORD_FLIPPER_ROLE
           valueFrom:
