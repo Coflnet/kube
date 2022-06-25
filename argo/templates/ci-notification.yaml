@@ -29,4 +29,6 @@ spec:
           value: kafka-3.kafka.svc.cluster.local
         - name: TOPIC_DEV_CHAT
           value: discord-messages
+        - name: TOPIC_DEV_SPAM_CHAT
+          value: discord-messages
 
