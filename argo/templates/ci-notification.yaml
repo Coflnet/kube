@@ -11,7 +11,6 @@ spec:
       parameters:
       - name: project
       - name: organization
-      - name: duration
       - name: success
     container:
       image: harbor.flou.dev/coflnet/ci-notifications:latest
@@ -26,8 +25,6 @@ spec:
           value: "{{inputs.parameters.organization}}"
         - name: SUCCESS
           value: "{{inputs.parameters.success}}"
-        - name: DURATION
-          value: "{{inputs.parameters.duration}}"
         - name: KAFKA_HOST
           value: kafka-3.kafka.svc.cluster.local
         - name: TOPIC_DEV_CHAT
