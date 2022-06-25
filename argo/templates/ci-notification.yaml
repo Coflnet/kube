@@ -30,5 +30,5 @@ spec:
         - name: TOPIC_DEV_CHAT
           value: discord-messages
         - name: TOPIC_DEV_SPAM_CHAT
-          value: discord-messages
+          value: discord-spam-messages
 
