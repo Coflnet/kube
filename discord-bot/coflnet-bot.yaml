@@ -120,6 +120,8 @@ spec:
           value: sky-verified
         - name: TOPIC_DEV_CHAT
           value: discord-messages
+        - name: TOPIC_DEV_SPAM_CHAT
+          value: discord-spam-messages
         - name: KAFKA_HOST
           value: kafka-3.kafka:9092
 
