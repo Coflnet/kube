@@ -35,23 +35,6 @@ spec:
   - host: argo-events.flou.dev
     http:
       paths:
-      - path: /sportdings
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: sportdings-eventsource-eventsource-svc
-            port:
-              number: 12000
-      - path: /sportdings-frontend
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: sportdings-frontend-eventsource-eventsource-svc
-            port:
-              number: 12000
-  - host: argo-events.flou.dev
-    http:
-      paths:
       - path: /discord-bot-node
         pathType: ImplementationSpecific
         backend:
