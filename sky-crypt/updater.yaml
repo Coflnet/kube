@@ -45,7 +45,7 @@ spec:
                   secretKeyRef:
                     name: secret
                     key: minio_access_key
-              - name: PROMEHTEUS_HOST
+              - name: PROMETHEUS_HOST
                 value: http://prometheus-prometheus.prometheus:9090
             resources:
               requests:
