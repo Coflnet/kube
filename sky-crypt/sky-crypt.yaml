@@ -55,22 +55,13 @@ spec:
           timeoutSeconds: 1
           failureThreshold: 10
           successThreshold: 1
-        readinessProbe:
-          httpGet:
-            path: /stats/Flou21/Zucchini
-            port: 32464
-          initialDelaySeconds: 20
-          periodSeconds: 5
-          timeoutSeconds: 1
-          failureThreshold: 1
-          successThreshold: 5
         livenessProbe:
           httpGet:
               path: /stats/Flou21/Zucchini
               port: 32464
           initialDelaySeconds: 20
           periodSeconds: 5
-          timeoutSeconds: 1
+          timeoutSeconds: 3
           failureThreshold: 3
 ---
 apiVersion: v1
