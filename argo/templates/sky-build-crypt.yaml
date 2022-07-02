@@ -15,7 +15,8 @@ spec:
     container:
       image: gcr.io/kaniko-project/executor:debug
       args:
-      - --context=--context=s3://sky-crypt-artifacts/skycrypt.tar.gz
+      - --context=s3://sky-crypt-artifacts/skycrypt.tar.gz
+      - --context-sub-path=skycrypt
       - --dockerfile=Dockerfile
       - --destination=harbor.flou.dev/private/sky-crypt-private:{{inputs.parameters.container_tag}}
       command: ["/kaniko/executor"] 
