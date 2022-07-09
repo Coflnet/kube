@@ -81,7 +81,7 @@ spec:
                 name: secret
                 key: hcloud_token
           - name: HETZNER_PRIVATE_KEY_PATH
-            value: "/hetzner_ssh"
+            value: "/hetzner/hetzner_ssh"
 
           - name: SNIPER_DATA_DOWNLOAD_USERNAME
             valueFrom:
@@ -111,7 +111,7 @@ spec:
             cpu: 200m
             memory: 100Mi
         volumeMounts:
-          - mountPath: /
+          - mountPath: /hetzner
             name: hetzner-private-key
       volumes:
         - name: hetzner-private-key
