@@ -70,5 +70,7 @@ data:
   topic_auction_checked: sky-auction-checked
   topic_verified: sky-verified
 
+  topic_server_state: server-states
+
   mariadb_version: "10.5.5"
 
