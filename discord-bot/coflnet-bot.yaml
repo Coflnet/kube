@@ -118,6 +118,9 @@ spec:
             configMapKeyRef:
               key: discord_guild
               name: config
+
+        - name: DISCORD_MUTE_ROLE
+          value: "869942341442600990"
         
         - name: TOPIC_TRANSACTION
           value: transactions
