@@ -112,9 +112,9 @@ spec:
             memory: 100Mi
         volumeMounts:
           - mountPath: /app
-            name: hetzner_private_key
+            name: hetzner-private-key
       volumes:
-        - name: hetzner_private_key
+        - name: hetzner-private-key
           secret:
             secretName: secret
             items:
