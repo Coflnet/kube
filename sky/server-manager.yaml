@@ -113,9 +113,6 @@ spec:
           requests:
             cpu: 20m
             memory: 50Mi
-          limits:
-            cpu: 200m
-            memory: 100Mi
         volumeMounts:
           - mountPath: /hetzner
             name: hetzner-private-key
