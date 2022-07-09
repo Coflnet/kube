@@ -25,7 +25,9 @@ spec:
           name: api
         - containerPort: 3001
           name: metrics
-        env: 
+        env:
+          - name: GIN_MODE
+            value: release
           - name: MONGO_HOST
             valueFrom:
               secretKeyRef:
