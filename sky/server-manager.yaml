@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: server-manager
   namespace: sky
+  annotations:
+    linkerd.io/inject: disabled
   labels:
     app: server-manager
 spec:
