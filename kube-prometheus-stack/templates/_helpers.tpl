@@ -39,6 +39,11 @@ The longest name that gets created adds and extra 37 characters, so truncation s
 {{- printf "%s-alertmanager" (include "kube-prometheus-stack.fullname" .) -}}
 {{- end }}
 
+{{/* Fullname suffixed with thanos-ruler */}}
+{{- define "kube-prometheus-stack.thanosRuler.fullname" -}}
+{{- printf "%s-thanos-ruler" (include "kube-prometheus-stack.fullname" .) -}}
+{{- end }}
+
 {{/* Create chart name and version as used by the chart label. */}}
 {{- define "kube-prometheus-stack.chartref" -}}
 {{- replace "+" "_" .Chart.Version | printf "%s-%s" .Chart.Name -}}
@@ -48,7 +53,7 @@ The longest name that gets created adds and extra 37 characters, so truncation s
 {{- define "kube-prometheus-stack.labels" }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 app.kubernetes.io/instance: {{ .Release.Name }}
-app.kubernetes.io/version: "{{ .Chart.Version }}"
+app.kubernetes.io/version: "{{ replace "+" "_" .Chart.Version }}"
 app.kubernetes.io/part-of: {{ template "kube-prometheus-stack.name" . }}
 chart: {{ template "kube-prometheus-stack.chartref" . }}
 release: {{ $.Release.Name | quote }}
@@ -85,12 +90,54 @@ heritage: {{ $.Release.Service | quote }}
 {{- end -}}
 {{- end -}}
 
+{{/* Create the name of thanosRuler service account to use */}}
+{{- define "kube-prometheus-stack.thanosRuler.serviceAccountName" -}}
+{{- if .Values.thanosRuler.serviceAccount.create -}}
+    {{ default (include "kube-prometheus-stack.thanosRuler.fullname" .) .Values.thanosRuler.serviceAccount.name }}
+{{- else -}}
+    {{ default "default" .Values.thanosRuler.serviceAccount.name }}
+{{- end -}}
+{{- end -}}
+
 {{/*
 Allow the release namespace to be overridden for multi-namespace deployments in combined charts
 */}}
 {{- define "kube-prometheus-stack.namespace" -}}
   {{- if .Values.namespaceOverride -}}
     {{- .Values.namespaceOverride -}}
+  {{- else -}}
+    {{- .Release.Namespace -}}
+  {{- end -}}
+{{- end -}}
+
+{{/*
+Use the grafana namespace override for multi-namespace deployments in combined charts
+*/}}
+{{- define "kube-prometheus-stack-grafana.namespace" -}}
+  {{- if .Values.grafana.namespaceOverride -}}
+    {{- .Values.grafana.namespaceOverride -}}
+  {{- else -}}
+    {{- .Release.Namespace -}}
+  {{- end -}}
+{{- end -}}
+
+{{/*
+Use the kube-state-metrics namespace override for multi-namespace deployments in combined charts
+*/}}
+{{- define "kube-prometheus-stack-kube-state-metrics.namespace" -}}
+  {{- if index .Values "kube-state-metrics" "namespaceOverride" -}}
+    {{- index .Values "kube-state-metrics" "namespaceOverride" -}}
+  {{- else -}}
+    {{- .Release.Namespace -}}
+  {{- end -}}
+{{- end -}}
+
+{{/*
+Use the prometheus-node-exporter namespace override for multi-namespace deployments in combined charts
+*/}}
+{{- define "kube-prometheus-stack-prometheus-node-exporter.namespace" -}}
+  {{- if index .Values "prometheus-node-exporter" "namespaceOverride" -}}
+    {{- index .Values "prometheus-node-exporter" "namespaceOverride" -}}
   {{- else -}}
     {{- .Release.Namespace -}}
   {{- end -}}
@@ -130,4 +177,65 @@ Allow the release namespace to be overridden for multi-namespace deployments in 
   {{- else -}}
     {{- print "policy/v1beta1" -}}
   {{- end -}}
+  {{- end -}}
+
+{{/* Get value based on current Kubernetes version */}}
+{{- define "kube-prometheus-stack.kubeVersionDefaultValue" -}}
+  {{- $values := index . 0 -}}
+  {{- $kubeVersion := index . 1 -}}
+  {{- $old := index . 2 -}}
+  {{- $new := index . 3 -}}
+  {{- $default := index . 4 -}}
+  {{- if kindIs "invalid" $default -}}
+    {{- if semverCompare $kubeVersion (include "kube-prometheus-stack.kubeVersion" $values) -}}
+      {{- print $new -}}
+    {{- else -}}
+      {{- print $old -}}
+    {{- end -}}
+  {{- else -}}
+    {{- print $default }}
+  {{- end -}}
+{{- end -}}
+
+{{/* Get value for kube-controller-manager depending on insecure scraping availability */}}
+{{- define "kube-prometheus-stack.kubeControllerManager.insecureScrape" -}}
+  {{- $values := index . 0 -}}
+  {{- $insecure := index . 1 -}}
+  {{- $secure := index . 2 -}}
+  {{- $userValue := index . 3 -}}
+  {{- include "kube-prometheus-stack.kubeVersionDefaultValue" (list $values ">= 1.22-0" $insecure $secure $userValue) -}}
+{{- end -}}
+
+{{/* Get value for kube-scheduler depending on insecure scraping availability */}}
+{{- define "kube-prometheus-stack.kubeScheduler.insecureScrape" -}}
+  {{- $values := index . 0 -}}
+  {{- $insecure := index . 1 -}}
+  {{- $secure := index . 2 -}}
+  {{- $userValue := index . 3 -}}
+  {{- include "kube-prometheus-stack.kubeVersionDefaultValue" (list $values ">= 1.23-0" $insecure $secure $userValue) -}}
+{{- end -}}
+
+{{/*
+To help compatibility with other charts which use global.imagePullSecrets.
+Allow either an array of {name: pullSecret} maps (k8s-style), or an array of strings (more common helm-style).
+global:
+  imagePullSecrets:
+  - name: pullSecret1
+  - name: pullSecret2
+
+or
+
+global:
+  imagePullSecrets:
+  - pullSecret1
+  - pullSecret2
+*/}}
+{{- define "kube-prometheus-stack.imagePullSecrets" -}}
+{{- range .Values.global.imagePullSecrets }}
+  {{- if eq (typeOf .) "map[string]interface {}" }} 
+- {{ toYaml . | trim }}
+  {{- else }}
+- name: {{ . }}
+  {{- end }}
+{{- end }}
 {{- end -}}
