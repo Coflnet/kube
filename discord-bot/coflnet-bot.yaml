@@ -121,7 +121,13 @@ spec:
 
         - name: DISCORD_MUTE_ROLE
           value: "869942341442600990"
-        
+
+        - name: AUCTION_STATS_URL
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: auction_stats_url
+
         - name: TOPIC_TRANSACTION
           value: transactions
         - name: TOPIC_VERIFICATION
