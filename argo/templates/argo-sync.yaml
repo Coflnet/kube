@@ -15,8 +15,7 @@ spec:
       - name: argo_auth_token_secret_name
       - name: argo_auth_token_secret_key
     container:
-      image: harbor.flou.dev/coflnet/argocd-sync
-      command: ["argocd-sync", "--app", "{{inputs.parameters.app_name}}"]
+      image: harbor.flou.dev/flou21/argocd-sync:latest
       env:
         - name: ARGOCD_SERVER
           valueFrom:
@@ -28,6 +27,5 @@ spec:
             secretKeyRef:
               name: "{{inputs.parameters.argo_auth_token_secret_name}}"
               key: "{{inputs.parameters.argo_auth_token_secret_key}}"
-      volumeMounts:
-        - name: kaniko-secret
-          mountPath: /kaniko/.docker/
+        - name: APP_NAME
+          value: "{{inputs.parameters.app_name}}"
