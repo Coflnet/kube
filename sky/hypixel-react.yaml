@@ -20,7 +20,7 @@ spec:
         - name: harbor
       containers:
         - name: frontend
-          image: harbor.flou.dev/coflnet/hypixel-react:1f19909f-cf62-48aa-b793-8cd167e772a5
+          image: harbor.flou.dev/coflnet/hypixel-react:82a2f8c4-7c89-469c-8319-6e7e0da64290
           imagePullPolicy: IfNotPresent
           env:
             - name: COMMAND_ENDPOINT
