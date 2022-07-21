@@ -26,6 +26,13 @@ spec:
   - host: sky.coflnet.com
     http:
       paths:
+      - path: /api/tem
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: tem-backend
+            port:
+              number: 8080
       - path: /api/profile
         pathType: ImplementationSpecific
         backend:
