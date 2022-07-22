@@ -43,6 +43,8 @@ spec:
           value: sky-low-priced
         - name: TOPICS__FLIP_EVENT
           value: sky-flip-event
+        - name: API_BASE_URL
+          value: http://sky-api-main-service
         resources:
           requests:
             cpu: 100m
