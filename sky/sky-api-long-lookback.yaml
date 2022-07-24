@@ -1,0 +1,208 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-long-lookback
+  namespace: sky
+  labels:
+    app: api-long-lookback
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-long-lookback
+  template:
+    metadata:
+      annotations:
+        config.linkerd.io/skip-outbound-ports: "3307"
+      labels:
+        app: api-long-lookback
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - api
+              topologyKey: kubernetes.io/hostname
+      imagePullSecrets:
+        - name: harbor
+      containers:
+      - name: api
+        image: harbor.flou.dev/coflnet/skyapi:241406af-1a3f-4dcb-b4f0-c26d912603f2
+        ports:
+          - containerPort: 8008
+          - containerPort: 8000
+        env:
+          - name: API_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: http_api_host
+          - name: SETTINGS_REDIS_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: redis_settings_host
+          - name: SETTINGS_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: settings_base_url
+          - name: FRONTEND_PROD
+            value: stage-frontend
+          - name: FRONTEND_STAGING
+            value: stage-frontend 
+          - name: UPDATER_HOST
+            value: updater
+          - name: MCCONNECT_HOST
+            value: mc-connect
+          - name: FLIPTRACKER_HOST
+            value: tracker
+          - name: CRAFTS_HOST
+            value: sky-craft-service
+          - name: PROFILE_HOST
+            value: player
+          - name: TOPICS__LOW_PRICED
+            value: sky-low-priced
+          - name: COMPlus_ThreadPool_ForceMinWorkerThreads
+            value: "450"
+          - name: REDIS_HOST
+            valueFrom: 
+              configMapKeyRef:
+                key: redis_api_host
+                name: config
+          - name: PAYMENTS_HOST
+            valueFrom: 
+              configMapKeyRef:
+                key: payment_host
+                name: config
+          - name: DBConnection
+            valueFrom:
+              secretKeyRef:
+                key: connection_read_api
+                name: secret
+          - name: MODES
+            value: api
+          - name: JAEGER_AGENT_HOST
+            valueFrom: 
+              configMapKeyRef:
+                name: config
+                key: jaeger_agent_host
+          - name: OTEL_EXPORTER_JAEGER_AGENT_HOST
+            valueFrom: 
+              configMapKeyRef:
+                name: config
+                key: jaeger_agent_host
+ 
+          - name: TOPICS__MISSING_AUCTION
+            valueFrom: 
+              configMapKeyRef:
+                name: config
+                key: topic_missing_auction
+          - name: TOPICS__SOLD_AUCTION
+            valueFrom: 
+              configMapKeyRef:
+                name: config
+                key: topic_sold_auction
+          - name: TOPICS__AUCTION_ENDED
+            valueFrom: 
+              configMapKeyRef:
+                name: config
+                key: topic_auction_ended
+          - name: TOPICS__FLIP
+            valueFrom: 
+              configMapKeyRef:
+                name: config
+                key: topic_flip
+          - name: TOPICS__FLIP_EVENT
+            value: sky-flip-event
+          - name: KAFKA_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: kafka_host
+          - name: RATE_LIMITER_REDIS_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: redis_host_sky
+          - name: SUBSCRIPTION_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: subscriptions_host
+          - name: INDEXER_HOST
+            value: sky-indexer-service
+          - name: PLAYERNAME_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: sky_player_name_url
+          - name: SKYCOMMANDS_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: commands_host
+          - name: SKYFLIPPER_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: flipper_host
+          - name: BAZAAR_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                key: bazaar_base_url
+                name: config
+          - name: ITEMS_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: items_base_url
+          - name: SNIPER_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: sniper_base_url
+          - name: REFERRAL_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: referral_base_url
+          - name: MAX_SELL_LOOKBACK_ENDPOINT_DAYS
+            value: "60"
+        readinessProbe:
+          httpGet:
+            path: /metrics
+            port: 8000
+          initialDelaySeconds: 20
+          periodSeconds: 3
+        resources:
+          limits:
+            memory: "1500Mi"
+            cpu: "800m"
+          requests:
+            memory: "1500Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-long-lookback
+  namespace: sky
+  labels:
+    app: api-long-lookback
+spec:
+  selector:
+    app: api-long-lookback
+  ports:
+  - port: 80
+    targetPort: 8000
+    name: api
+  - port: 8008
+    targetPort: 8008
+    name: websocket
