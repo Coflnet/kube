@@ -192,8 +192,7 @@ controller:
 
   # -- Annotations to be added to the controller Deployment or DaemonSet
   ##
-  annotations:
-    linkerd.io/inject: enabled
+  annotations: {}
   #  keel.sh/pollSchedule: "@every 60m"
 
   # -- Labels to be added to the controller Deployment or DaemonSet and other resources that do not have option to specify labels
@@ -344,7 +343,8 @@ controller:
 
   # -- Annotations to be added to controller pods
   ##
-  podAnnotations: {}
+  podAnnotations:
+    linkerd.io/inject: enabled
 
   replicaCount: 1
 
