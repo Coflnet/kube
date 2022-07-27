@@ -192,7 +192,8 @@ controller:
 
   # -- Annotations to be added to the controller Deployment or DaemonSet
   ##
-  annotations: {}
+  annotations:
+    linkerd.io/inject: enabled
   #  keel.sh/pollSchedule: "@every 60m"
 
   # -- Labels to be added to the controller Deployment or DaemonSet and other resources that do not have option to specify labels
@@ -211,7 +212,7 @@ controller:
 
   # -- `minReadySeconds` to avoid killing pods before we are ready
   ##
-  minReadySeconds: 0
+  minReadySeconds: 60
 
 
   # -- Node tolerations for server scheduling to nodes with taints
@@ -314,11 +315,11 @@ controller:
       path: "/healthz"
       port: 10254
       scheme: HTTP
-    initialDelaySeconds: 10
-    periodSeconds: 10
-    timeoutSeconds: 1
+    initialDelaySeconds: 30
+    periodSeconds: 20
+    timeoutSeconds: 3
     successThreshold: 1
-    failureThreshold: 5
+    failureThreshold: 10
   readinessProbe:
     httpGet:
       # should match container.healthCheckPath
@@ -347,19 +348,19 @@ controller:
 
   replicaCount: 1
 
-  minAvailable: 1
+  minAvailable: 2
 
   ## Define requests resources to avoid probe issues due to CPU utilization in busy nodes
   ## ref: https://github.com/kubernetes/ingress-nginx/issues/4735#issuecomment-551204903
   ## Ideally, there should be no limits.
   ## https://engineering.indeedblog.com/blog/2019/12/cpu-throttling-regression-fix/
   resources:
-  ##  limits:
-  ##    cpu: 100m
-  ##    memory: 90Mi
     requests:
-      cpu: 100m
-      memory: 90Mi
+      cpu: 300m
+      memory: 1Gi
+    limits:
+      cpu: 300m
+      memory: 1Gi
 
   # Mutually exclusive with keda autoscaling
   autoscaling:
