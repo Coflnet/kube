@@ -32,7 +32,7 @@ spec:
         - name: harbor
       containers:
       - name: flipper
-        image: harbor.flou.dev/coflnet/skyflipper:9ee86c5a-1407-4395-9ffc-4a22a4746a0d
+        image: harbor.flou.dev/coflnet/skyflipper:3a4efe3d-3036-44e2-bbc5-40aa245f9450
         ports:
         - containerPort: 80
           name: web
