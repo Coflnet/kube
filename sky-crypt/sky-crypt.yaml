@@ -32,7 +32,7 @@ spec:
         - name: harbor
       containers:
       - name: sky-crypt
-        image: harbor.flou.dev/private/sky-crypt-private:b3f4187d-029f-45b2-bdd6-cd735dd12018
+        image: harbor.flou.dev/private/sky-crypt-private:fa5168e4-0f51-4f07-8e76-b9b63a150c05
         ports:
         - containerPort: 32464
           name: web
