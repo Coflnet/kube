@@ -131,6 +131,8 @@ spec:
           value: "1002876203717369937"
         - name: TOPIC_FLIPSUMMARY
           value: "flip-summary-processed"
+        - name: HELPER_ROLE
+          value: "933807456151285770"
 
         - name: TOPIC_TRANSACTION
           value: transactions
