@@ -133,6 +133,10 @@ spec:
           value: "flip-summary-processed"
         - name: HELPER_ROLE
           value: "933807456151285770"
+        - name: MOD_ROLE
+          value: "869942341442600990"
+        - name: DEV_ROLE
+          value: "669258959495888907"
 
         - name: TOPIC_TRANSACTION
           value: transactions
