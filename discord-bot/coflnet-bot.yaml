@@ -128,7 +128,9 @@ spec:
               name: config
               key: auction_stats_url
         - name: FLIPS_CHANNEL
-          value: "1002874217404039248"
+          value: "1002876203717369937"
+        - name: TOPIC_FLIPSUMMARY
+          value: "flip-summary-processed"
 
         - name: TOPIC_TRANSACTION
           value: transactions
