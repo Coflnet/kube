@@ -127,6 +127,8 @@ spec:
             configMapKeyRef:
               name: config
               key: auction_stats_url
+        - name: FLIPS_CHANNEL
+          value: "1002874217404039248"
 
         - name: TOPIC_TRANSACTION
           value: transactions
