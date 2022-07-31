@@ -50,10 +50,10 @@ spec:
           httpGet:
               path: /stats/Flou21/Zucchini
               port: 32464
-          initialDelaySeconds: 90
+          initialDelaySeconds: 300
           periodSeconds: 15
           timeoutSeconds: 1
-          failureThreshold: 10
+          failureThreshold: 20
           successThreshold: 1
         livenessProbe:
           httpGet:
