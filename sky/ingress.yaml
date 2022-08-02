@@ -36,7 +36,7 @@ spec:
             port:
               number: 8080
       # sniper state transfer
-      - path: /api/lookup
+      - path: /api/Sniper/lookup
         pathType: ImplementationSpecific
         backend:
           service:
