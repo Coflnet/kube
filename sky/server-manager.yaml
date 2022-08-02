@@ -99,6 +99,11 @@ spec:
               secretKeyRef:
                 name: secret
                 key: sniper_data_password
+          - name: SNIPER_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                key: sniper_base_url
+                name: config
 
         livenessProbe:
           httpGet:
