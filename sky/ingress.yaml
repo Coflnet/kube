@@ -35,6 +35,14 @@ spec:
             name: tem-backend
             port:
               number: 8080
+      # sniper state transfer
+      - path: /api/lookup
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: sniper
+            port:
+              number: 8000
       - path: /api/profile
         pathType: ImplementationSpecific
         backend:
