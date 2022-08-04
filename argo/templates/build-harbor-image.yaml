@@ -25,7 +25,8 @@ spec:
       - --context={{inputs.parameters.app_repo}}#refs/heads/{{inputs.parameters.branch}}
       - --context-sub-path={{inputs.parameters.sub_path}}
       - --destination=harbor.flou.dev/{{inputs.parameters.container_image}}:{{inputs.parameters.container_tag}}
-      command: ["/kaniko/executor"] 
+      - --destination=harbor.flou.dev/{{inputs.parameters.container_image}}:latest
+      command: ["/kaniko/executor"]
       resources:
         limits:
           memory: 5000Mi
