@@ -137,6 +137,8 @@ spec:
           value: "869942341442600990"
         - name: DEV_ROLE
           value: "669258959495888907"
+        - name: WARNED_ROLE
+          value: "936726999106478160"
 
         - name: TOPIC_TRANSACTION
           value: transactions
