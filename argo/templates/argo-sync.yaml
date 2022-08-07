@@ -25,7 +25,7 @@ spec:
         - name: ARGOCD_AUTH_TOKEN
           valueFrom:
             secretKeyRef:
-              name: "{{inputs.parameters.argo_auth_token_secret_name}}"
-              key: "{{inputs.parameters.argo_auth_token_secret_key}}"
+              name: argocd-token
+              key: argocd_token
         - name: APP_NAME
           value: "{{inputs.parameters.app_name}}"
