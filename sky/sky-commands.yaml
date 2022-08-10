@@ -165,6 +165,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: items_base_url
+          - name: EVENTS_REDIS_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: redis_event_broker
         readinessProbe:
           httpGet:
             path: /metrics
