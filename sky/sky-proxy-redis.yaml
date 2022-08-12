@@ -1,4 +1,4 @@
-sky-proxyVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sky-proxy-redis
@@ -28,7 +28,7 @@ spec:
             memory: "100Mi"
             cpu: "50m"
 ---
-sky-proxyVersion: v1
+apiVersion: v1
 kind: Service
 metadata:
   name: sky-proxy-redis-service
