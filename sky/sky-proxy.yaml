@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: sky-proxy
+  namespace: sky
+  labels:
+    app: sky-proxy
+spec:
+  selector:
+    matchLabels:
+      name: sky-proxy
+  template:
+    metadata:
+      labels:
+        name: sky-proxy
+    spec:
+      nodeSelector:
+        sky-proxy: "true"
+      containers:
+        - name: sky-proxy
+          image: harbor.flou.dev/coflnet/sky-proxy:latest
+          resources:
+            limits:
+              memory: 300Mi
+              cpu: 200m
+            requests:
+              cpu: 100m
+              memory: 200Mi
