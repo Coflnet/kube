@@ -20,7 +20,7 @@ spec:
         - name: harbor
       containers:
         - name: sky-proxy
-          image: harbor.flou.dev/coflnet/skyproxy:b22c2c82-72c6-407a-9ca0-abcc4d9b5e4e
+          image: harbor.flou.dev/coflnet/skyproxy:c0ce5466-0b6d-4ebc-98ce-8a6f13ffd0de
           env:
             - name: DB_CONNECTION
               valueFrom:
