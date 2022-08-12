@@ -16,6 +16,8 @@ spec:
     spec:
       nodeSelector:
         sky-proxy: "true"
+      imagePullSecrets:
+        - name: harbor
       containers:
         - name: sky-proxy
           image: harbor.flou.dev/coflnet/sky-proxy:latest
