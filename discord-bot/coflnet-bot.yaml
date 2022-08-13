@@ -150,6 +150,8 @@ spec:
           value: discord-spam-messages
         - name: KAFKA_HOST
           value: kafka-3.kafka:9092
+        - name: PLAYER_NAME_HOST
+          value: "http://player-name-service:8000"
 
         resources:
           requests:
