@@ -21,6 +21,14 @@ data:
             "type": 5
         },
         {
+            "slug": "premium-derpy",
+            "title": "Premium (Derpy time)",
+            "description": "Premium time to compensate for derpy",
+            "cost": 400,
+            "ownershipSeconds": 432000,
+            "type": 5
+        },
+        {
             "slug": "premium_plus",
             "title": "Premium+",
             "description": "Premium Plus plan granting top tier perks",
