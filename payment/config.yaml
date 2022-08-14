@@ -21,6 +21,38 @@ data:
             "type": 5
         },
         {
+            "slug": "premium_plus",
+            "title": "Premium+",
+            "description": "Premium Plus plan granting top tier perks",
+            "cost": 1800,
+            "ownershipSeconds": 604800,
+            "type": 5
+        },
+        {
+            "slug": "starter_premium",
+            "title": "Basic plan",
+            "description": "Access to basic perks",
+            "cost": 1800,
+            "ownershipSeconds": 3628800,
+            "type": 5
+        },
+        {
+            "slug": "starter_premium-day",
+            "title": "Basic plan (day)",
+            "description": "Access to basic perks for 24 hours",
+            "cost": 24,
+            "ownershipSeconds": 86400,
+            "type": 5
+        },
+        {
+            "slug": "starter_premium-week",
+            "title": "Basic plan (week)",
+            "description": "Access to basic perks for one week",
+            "cost": 120,
+            "ownershipSeconds": 604800,
+            "type": 5
+        },
+        {
             "slug": "test-premium",
             "title": "Test Premium for invited user",
             "cost": 100,
@@ -121,5 +153,26 @@ data:
             "cost": 4320,
             "ProviderSlug": "custom",
             "type": 36
+        }
+    ],
+    "groups": {
+        "premium": [
+            "premium_plus"
+        ],
+        "starter_premium": [
+            "premium",
+            "premium_plus",
+            "starter_premium-day",
+            "starter_premium-week"
+        ]
+    },
+    "rules": [
+        {
+            "slug": "starter-premium-discount",
+            "priority": 5,
+            "requiresGroup": "starter_premium",
+            "targetsGroup": "starter_premium-week",
+            "flags": "DISCOUNT, PERCENT",
+            "amount": 10
         }
     ]}
