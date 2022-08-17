@@ -18,7 +18,7 @@ data:
             "description": "Premium plan granting various perks",
             "cost": 1800,
             "ownershipSeconds": 2592000,
-            "type": 5
+            "type": "SERVICE"
         },
         {
             "slug": "premium-derpy",
@@ -26,7 +26,7 @@ data:
             "description": "Premium time to compensate for derpy",
             "cost": 400,
             "ownershipSeconds": 432000,
-            "type": 5
+            "type": "SERVICE"
         },
         {
             "slug": "premium_plus",
@@ -34,7 +34,7 @@ data:
             "description": "Premium Plus plan granting top tier perks",
             "cost": 1800,
             "ownershipSeconds": 604800,
-            "type": 5
+            "type": "SERVICE"
         },
         {
             "slug": "starter_premium",
@@ -42,7 +42,7 @@ data:
             "description": "Access to basic perks",
             "cost": 1800,
             "ownershipSeconds": 15552000,
-            "type": 5
+            "type": "SERVICE"
         },
         {
             "slug": "starter_premium-day",
@@ -50,7 +50,7 @@ data:
             "description": "Access to basic perks for 24 hours",
             "cost": 24,
             "ownershipSeconds": 86400,
-            "type": 5
+            "type": "SERVICE"
         },
         {
             "slug": "starter_premium-week",
@@ -58,13 +58,13 @@ data:
             "description": "Access to basic perks for one week",
             "cost": 120,
             "ownershipSeconds": 604800,
-            "type": 5
+            "type": "SERVICE"
         },
         {
             "slug": "test-premium",
             "title": "Test Premium for invited user",
             "cost": 100,
-            "type": 5,
+            "type": "SERVICE",
             "ownershipSeconds": 86400
         }
     ],
