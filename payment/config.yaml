@@ -41,7 +41,7 @@ data:
             "title": "Basic plan",
             "description": "Access to basic perks",
             "cost": 1800,
-            "ownershipSeconds": 3628800,
+            "ownershipSeconds": 155520000,
             "type": 5
         },
         {
