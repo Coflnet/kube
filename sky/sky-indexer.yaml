@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: sky-indexer
-        image: harbor.flou.dev/coflnet/skyindexer:38f3e5a8-a3fd-4b9f-8da2-079cca3dd113
+        image: harbor.flou.dev/coflnet/skyindexer:da607d2c-c803-443a-856e-9ae93f81c1f1
         ports:
           - containerPort: 8000
         env:
