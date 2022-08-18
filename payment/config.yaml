@@ -165,7 +165,8 @@ data:
     ],
     "groups": {
         "premium": [
-            "premium_plus"
+            "premium_plus",
+            "premium-derpy"
         ],
         "starter_premium": [
             "premium",
