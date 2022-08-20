@@ -151,7 +151,7 @@ spec:
         - name: KAFKA_HOST
           value: kafka-3.kafka:9092
         - name: PLAYER_NAME_HOST
-          value: "http://player-name-service.sky:8000"
+          value: "http://player-name.sky:8000"
 
         resources:
           requests:
