@@ -146,13 +146,38 @@ spec:
           value: sky-verified
         - name: TOPIC_DEV_CHAT
           value: discord-messages
-        - name: TOPIC_DEV_SPAM_CHAT
-          value: discord-spam-messages
         - name: KAFKA_HOST
           value: kafka-3.kafka:9092
         - name: PLAYER_NAME_HOST
           value: "http://player-name.sky:8000"
 
+
+        # webhooks
+        - name: DISCORD_MUTES_WEBHOOK
+          valueFrom:
+            secretKeyRef:
+              key: discord_mutes_webhook
+              name: secret
+        - name: DISCORD_WARNINGS_WEBHOOK
+          valueFrom:
+            secretKeyRef:
+              key: discord_warnings_webhook
+              name: secret
+        - name: DISCORD_CI_SUCCESS_WEBHOOK
+          valueFrom:
+            secretKeyRef:
+              key: discord_ci_success_webhook
+              name: secret
+        - name: DISCORD_CI_FAILURE_WEBHOOK
+          valueFrom:
+            secretKeyRef:
+              key: discord_ci_failure_webhook
+              name: secret
+        - name: DISCORD_FLIPPER_ROLE_WEBHOOK
+          valueFrom:
+            secretKeyRef:
+              key: discord_flipper_role_webhook
+              name: secret
         resources:
           requests:
             cpu: "10m"
