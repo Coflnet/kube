@@ -180,11 +180,11 @@ spec:
               name: secret
         resources:
           requests:
-            cpu: "10m"
-            memory: "20Mi"
-          limits:
-            memory: "50Mi"
             cpu: "50m"
+            memory: "256Mi"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
 ---
 apiVersion: v1
 kind: Service
