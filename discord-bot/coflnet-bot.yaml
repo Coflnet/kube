@@ -120,7 +120,7 @@ spec:
               name: config
 
         - name: DISCORD_MUTE_ROLE
-          value: "869942341442600990"
+          value: "869942341442600990,933807456151285770"
 
         - name: AUCTION_STATS_URL
           valueFrom:
