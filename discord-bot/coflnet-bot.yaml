@@ -16,7 +16,7 @@ spec:
         - name: harbor
       containers:
       - name: coflnet-bot
-        image: harbor.flou.dev/coflnet/coflnet-bot:b8418364-d92c-4b37-9c44-302724c3b09f
+        image: harbor.flou.dev/coflnet/coflnet-bot:ee0d2c21-1259-4748-a328-70f4c2e28235
         ports:
           - containerPort: 8080
             name: api
