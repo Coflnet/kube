@@ -146,6 +146,8 @@ spec:
           value: sky-verified
         - name: TOPIC_DEV_CHAT
           value: discord-messages
+        - name: TOPIC_MC_VERIFY
+          value: sky-verified
         - name: KAFKA_HOST
           value: kafka-3.kafka:9092
         - name: PLAYER_NAME_HOST
