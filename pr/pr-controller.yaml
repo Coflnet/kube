@@ -33,6 +33,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: build_webhook
+          - name: DISCORD_WEBHOOK
+            valueFrom:
+              secretKeyRef:
+                name: secret
+                key: discord_notification_webhook
         resources:
           requests:
             memory: "64Mi"
