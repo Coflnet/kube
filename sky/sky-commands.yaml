@@ -170,6 +170,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: redis_event_broker
+          - name: IMGPROXY_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                key: imgproxy_base_url
+                name: config
         readinessProbe:
           httpGet:
             path: /metrics
