@@ -165,6 +165,7 @@ data:
     ],
     "groups": {
         "premium": [
+            "test-premium",
             "premium_plus",
             "premium-derpy"
         ],
