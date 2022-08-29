@@ -6,7 +6,7 @@ metadata:
   labels:
     app: frontend
 spec:
-  replicas: 7
+  replicas: 4
   revisionHistoryLimit: 5
   selector:
     matchLabels:
@@ -20,7 +20,7 @@ spec:
         - name: harbor
       containers:
         - name: frontend
-          image: harbor.flou.dev/coflnet/hypixel-react:b84b6e89-4b25-4738-a8b2-6b973842ca61
+          image: harbor.flou.dev/coflnet/hypixel-react:manual-fix-3
           imagePullPolicy: IfNotPresent
           env:
             - name: COMMAND_ENDPOINT
