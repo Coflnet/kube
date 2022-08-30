@@ -12,6 +12,10 @@ metadata:
             deny all;
             return 403;
           }
+        location ~* /crafts {
+            deny all;
+            return 403;
+          }
 spec:
   defaultBackend:
     service: 
@@ -30,6 +34,8 @@ spec:
             name: frontend
             port:
               number: 80
+
+
   - host: sky.coflnet.com
     http:
       paths:
