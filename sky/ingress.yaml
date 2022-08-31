@@ -7,15 +7,6 @@ metadata:
       kubernetes.io/ingress.class: "nginx"
       nginx.ingress.kubernetes.io/service-upstream: "true"
       nginx.ingress.kubernetes.io/client-body-buffer-size: 1M
-      nginx.ingress.kubernetes.io/server-snippet: |
-        location ~* /kat {
-            deny all;
-            return 403;
-          }
-        location ~* /crafts {
-            deny all;
-            return 403;
-          }
 spec:
   defaultBackend:
     service: 
