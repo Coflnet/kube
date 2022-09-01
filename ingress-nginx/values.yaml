@@ -356,11 +356,11 @@ controller:
   ## https://engineering.indeedblog.com/blog/2019/12/cpu-throttling-regression-fix/
   resources:
     requests:
-      cpu: 300m
+      cpu: 500m
       memory: 1Gi
     limits:
-      cpu: 300m
-      memory: 1Gi
+      cpu: 1000m
+      memory: 2Gi
 
   # Mutually exclusive with keda autoscaling
   autoscaling:
