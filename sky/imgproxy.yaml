@@ -22,11 +22,16 @@ spec:
         image: darthsim/imgproxy:latest
         ports:
           - containerPort: 8080
+            name: http
+          - containerPort: 9000
+            name: metrics
         env:
           - name: IMGPROXY_ALLOWED_SOURCES
             value: "https://sky.shiiyu.moe/,https://skycrypt.coflnet.com,https://mc-heads.net/,https://crafatar.com/,https://static.coflnet.com/"
           - name: IMGPROXY_MAX_ANIMATION_FRAMES
             value: "140"
+          - name: IMGPROXY_PROMETHEUS_BIND
+            value: ":9000"
         resources:
           limits:
             memory: "300Mi"
@@ -46,3 +51,23 @@ spec:
   ports:
     - port: 80
       targetPort: 8080
+      name: http
+    - port: 9000
+      targetPort: 9000
+      name: metrics
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: imgproxy-servicemonitor
+  namespace: sky
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: imgproxy-service
+  endpoints:
+    - port: metrics
+      interval: 60s
+      path: /metrics
