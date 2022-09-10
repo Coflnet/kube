@@ -172,7 +172,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: events_base_url
-
+          - name: TOPICS__NEW_AUCTION
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: topic_new_auction
         readinessProbe:
           httpGet:
             path: /status

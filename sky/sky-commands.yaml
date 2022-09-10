@@ -175,6 +175,11 @@ spec:
               configMapKeyRef:
                 key: imgproxy_base_url
                 name: config
+          - name: TOPICS__NEW_AUCTION
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: topic_new_auction
         readinessProbe:
           httpGet:
             path: /metrics
