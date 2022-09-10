@@ -17,22 +17,6 @@ spec:
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: sky-indexer-metrics-servicemonitor
-  namespace: sky 
-  labels:
-    release: prometheus
-spec:
-  selector:
-    matchLabels:
-      app: indexer-metrics-service
-  endpoints:
-  - port: metrics
-    interval: 25s
-    path: /metrics
----
-apiVersion: monitoring.coreos.com/v1
-kind: ServiceMonitor
-metadata:
   name: updater-metrics-servicemonitor
   namespace: sky 
   labels:
