@@ -5,6 +5,8 @@ metadata:
   namespace: sky
   labels:
     app: imgproxy
+  annotations:
+    linkerd.io/inject: disabled
 spec:
   replicas: 1
   selector:
