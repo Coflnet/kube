@@ -66,8 +66,8 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: imgproxy-service
+      app: imgproxy
   endpoints:
     - port: metrics
       interval: 60s
-      path: /metrics
+      path: /
