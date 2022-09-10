@@ -45,6 +45,8 @@ kind: Service
 metadata:
   name: imgproxy
   namespace: sky
+  labels:
+    app: imgproxy
 spec:
   selector:
     app: imgproxy
