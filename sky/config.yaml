@@ -39,6 +39,7 @@ data:
   referral_base_url: http://referral:8000
   events_base_url: http://event-broker:8000
   imgproxy_base_url: http://imgproxy:8080
+  mayor_base_url: http://mayor:8080
 
   frontend_api_endpoint: http://api-service/api
   frontend_command_endpoint: http://sky-commands:8008/command
