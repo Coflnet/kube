@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: mayor
-        image: harbor.flou.dev/coflnet/sky-mayor:c09a5f26-f8f1-4c77-81f4-4ae49dfcef7c
+        image: harbor.flou.dev/coflnet/sky-mayor:c5071df1-2bc9-4b59-b1d9-fce6861f12a7
         ports:
         - name: web
           containerPort: 8080
