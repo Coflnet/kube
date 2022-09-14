@@ -181,6 +181,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: referral_base_url
+          - name: MAYOR_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: mayor_base_url
         readinessProbe:
           httpGet:
             path: /metrics
