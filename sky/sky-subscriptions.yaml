@@ -29,6 +29,11 @@ spec:
             secretKeyRef:
               name: secret 
               key: connection_micro_subscriptions
+        - name: DBConnection
+          valueFrom:
+            secretKeyRef:
+              name: secret 
+              key: connection_read_secondary
         - name: MARIADB_VERSION
           valueFrom:
             configMapKeyRef:
