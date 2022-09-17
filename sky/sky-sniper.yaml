@@ -102,9 +102,28 @@ kind: Service
 metadata:
   name: sniper
   namespace: sky
+  labels:
+    app: sniper
 spec:
   selector:
     app: sniper
   ports:
   - port: 8000
     targetPort: 8000
+    name: metrics
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: sniper-monitor
+  namespace: sky
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: sniper
+  endpoints:
+    - port: metrics
+      interval: 25s
+      path: /metrics
