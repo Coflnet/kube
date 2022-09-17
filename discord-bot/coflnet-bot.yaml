@@ -180,6 +180,11 @@ spec:
             secretKeyRef:
               key: discord_flipper_role_webhook
               name: secret
+        - name: DISCORD_FEEDBACK_WEBHOOK
+          valueFrom:
+            secretKeyRef:
+              key: discord_feedback_webhook
+              name: secret
         resources:
           requests:
             cpu: "10m"
