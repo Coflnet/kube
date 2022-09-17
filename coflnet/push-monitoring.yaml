@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: push-monitoring
+  namespace: coflnet
+spec:
+  selector:
+    matchLabels:
+      app: push-monitoring
+  template:
+    metadata:
+      labels:
+        app: push-monitoring
+    spec:
+      imagePullSecrets:
+        - name: harbor
+      containers:
+      - name: push-monitoring
+        image: harbor.flou.dev/coflnet/push-monitoring:1661d16f-bcb6-4da1-841b-2bff4c9545ba
+        ports:
+          - containerPort: 2112
+            name: metrics
+        resources:
+          requests:
+            cpu: "10m"
+            memory: "20Mi"
+          limits:
+            memory: "50Mi"
+            cpu: "50m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: push-monitoring
+  namespace: coflnet
+  labels:
+    app: push-monitoring
+spec:
+  selector:
+    app: push-monitoring
+  ports:
+  - name: metrics
+    port: 2112
+    targetPort: 2112
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: push-monitoring
+  namespace: coflnet
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: push-monitoring
+  endpoints:
+  - port: metrics
+    interval: 30s
+    path: /metrics
+
