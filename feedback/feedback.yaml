@@ -35,7 +35,7 @@ spec:
               name: config
               key: kafka_host
         - name: DISCORD_MESSAGES_TOPIC
-          value: feedback
+          value: discord-messages
         resources:
           requests:
             memory: "50Mi"
