@@ -34,6 +34,8 @@ spec:
             configMapKeyRef:
               name: config
               key: kafka_host
+        - name: DISCORD_MESSAGES_TOPIC
+          value: feedback
         resources:
           requests:
             memory: "50Mi"
