@@ -33,7 +33,7 @@ spec:
         - name: JAEGER_AGENT_HOST
           valueFrom:
             configMapKeyRef:
-              key: jaeger_agent_host
+              key: jaeger_agent_url
               name: config
         resources:
           requests:
