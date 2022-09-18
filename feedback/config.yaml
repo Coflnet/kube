@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config
+  namespace: feedback
+data:
+  kafka_host: kafka-3.kafka.svc.cluster.local

@@ -29,6 +29,11 @@ spec:
             secretKeyRef:
               name: secret
               key: mongo_host
+        - name: KAFKA_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: kafka_host
         resources:
           requests:
             memory: "50Mi"
