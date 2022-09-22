@@ -18,7 +18,7 @@ spec:
         - name: harbor
       containers:
       - name: tem-backend
-        image: harbor.flou.dev/coflnet/tem-backend:74d41e53-620d-4994-b572-b424dc772545
+        image: harbor.flou.dev/coflnet/tem-backend:99436d72-0043-48e9-83db-3c50cc7d74d9
         ports:
         - name: api
           containerPort: 8080
