@@ -1,8 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
-kind: AnalysisTemplate
+kind: ClusterAnalysisTemplate
 metadata:
   name: sky-mod-commands-analysis
-  namespace: sky
 spec:
   args:
   - name: service-name

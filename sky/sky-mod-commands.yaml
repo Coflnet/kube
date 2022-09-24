@@ -200,6 +200,7 @@ spec:
       - analysis:
           templates:
           - templateName: sky-mod-commands-analysis
+            clusterScope: true
           args:
           - name: service-name
             value: sky-mod
