@@ -18,11 +18,6 @@ spec:
       labels:
         app: updater
     spec:
-      tolerations:
-      - key: "us"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:

@@ -18,11 +18,6 @@ spec:
       labels:
         app: mod
     spec:
-      tolerations:
-      - key: "us"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
