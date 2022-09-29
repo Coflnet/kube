@@ -34,7 +34,7 @@ spec:
         - name: harbor
       containers:
       - name: updater
-        image: harbor.flou.dev/coflnet/skyupdater:5ed8ec9a-2853-492c-adba-28badd5384ff
+        image: harbor.flou.dev/coflnet/skyupdater:27cf10f3-57d8-4cfc-aba5-fd80c6541536
         env:
         - name: SLOWDOWN_MS
           value: "100"
