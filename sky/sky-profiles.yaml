@@ -32,6 +32,11 @@ spec:
               configMapKeyRef:
                 name: config
                 key: jaeger_agent_host
+          - name: SKYCRYPT_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                key: skycrypt_base_url
+                name: config
         resources:
           requests:
             cpu: "10m"
