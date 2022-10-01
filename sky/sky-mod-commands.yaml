@@ -190,7 +190,7 @@ spec:
             cpu: "1500m"
           requests:
             memory: "600Mi"
-            cpu: "700m"
+            cpu: "500m"
   strategy:
     canary: 
       steps:
