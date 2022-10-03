@@ -1,22 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis
+  name: redis-us
   namespace: sky
   labels:
-    app: redis
+    app: redis-us
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: redis
+      app: redis-us
   template:
     metadata:
       labels:
-        app: redis
+        app: redis-us
     spec:
+      tolerations:
+        - key: "us"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
+      nodeSelector:
+        us: "true"
       containers:
-      - name: redis
+      - name: redis-us
         image: redis:6.2.4-alpine
         ports:
         - containerPort: 6379
@@ -28,11 +35,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: redis-service
+  name: redis-us
   namespace: sky
 spec:
   selector:
-    app: redis
+    app: redis-us
   ports:
     - protocol: TCP
       port: 6379
