@@ -14,9 +14,9 @@ data:
   craft_host: sky-craft-service.sky.svc.cluster.local
   commands_host: sky-commands.sky.svc.cluster.local
   flipper_host: flipper
-  http_api_host: http://api-service.sky.svc.cluster.local:8000
   mc_connect_host: mc-connect.sky.svc.cluster.local
   payment_host: payment.payment.svc.cluster.local
+  profile_host: player.sky.svc.cluster.local
   subscriptions_host: subscriptions
   tracker_host: tracker.sky.svc.cluster.local
   updater_host: updater.sky.svc.cluster.local
@@ -27,6 +27,7 @@ data:
   events_base_url: http://event-broker:8000
   frontend_api_endpoint: http://api-service/api
   frontend_command_endpoint: http://sky-commands:8008/command
+  http_api_host: http://api-service.sky.svc.cluster.local:8000
   imgproxy_base_url: http://imgproxy:8080
   items_base_url: http://items:8000
   mayor_base_url: http://mayor:8080
@@ -57,6 +58,7 @@ data:
   redis_host_sky: redis-service
   redis_event_broker: event-broker-redis,syncTimeout=200
   redis_settings_host: settings-redis-service
+  redis-us: redis-us,syncTimeout=200
   sky_bfcs_redis: redis-bfcs
 
   # jaeger
@@ -76,6 +78,7 @@ data:
   topic_bazaar: sky-bazaar
   topic_bazaar-raw: sky-bazaar-raw
   topic_flip: sky-topic-flip
+  topic_flip_event: sky-flip-event
   topic_low_priced: sky-low-priced
   topic_missing_auction-raw: sky-canceledauction-raw
   topic_new_auction: sky-newauction
@@ -85,6 +88,7 @@ data:
   topic_sold_auction: sky-soldauction
   topic_sold_auction-raw: sky-soldauction-raw
   topic_server_state: server-states
+  topic_state_update: sky-state-update
   topic_transaction: transactions
   topic_update_settings: sky-update-settings
   topic_verified: sky-verified
