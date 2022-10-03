@@ -51,6 +51,8 @@ spec:
             value: sky-low-priced
           - name: INDEXER_HOST
             value: sky-indexer-service
+          - name: CRAFTS_HOST
+            value: sky-craft-service
           - name: API_BASE_URL
             valueFrom:
               configMapKeyRef:
