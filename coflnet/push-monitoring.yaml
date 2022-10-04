@@ -22,10 +22,8 @@ spec:
             name: metrics
         env:
           - name: MODSOCKET_INTERNAL_URL
-            valueFrom:
-              configMapKeyRef:
-                key: mod_commands_host
-                name: config
+            value: sky-mod.sky.svc.cluster.local
+
         resources:
           requests:
             cpu: "10m"
