@@ -20,6 +20,12 @@ spec:
         ports:
           - containerPort: 2112
             name: metrics
+        env:
+          - name: MODSOCKET_INTERNAL_URL
+            valueFrom:
+              configMapKeyRef:
+                key: mod_commands_host
+                name: config
         resources:
           requests:
             cpu: "10m"
