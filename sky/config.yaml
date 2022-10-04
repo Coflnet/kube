@@ -15,7 +15,6 @@ data:
   commands_host: sky-commands.sky.svc.cluster.local
   flipper_host: flipper
   mc_connect_host: mc-connect.sky.svc.cluster.local
-  mod_commands_host: sky-mod.sky.svc.cluster.local
   payment_host: payment.payment.svc.cluster.local
   profile_host: player.sky.svc.cluster.local
   subscriptions_host: subscriptions
