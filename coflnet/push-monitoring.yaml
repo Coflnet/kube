@@ -16,7 +16,7 @@ spec:
         - name: harbor
       containers:
       - name: push-monitoring
-        image: harbor.flou.dev/coflnet/push-monitoring:8760aef7-da65-4e4e-977e-fc87c532ca49
+        image: harbor.flou.dev/coflnet/push-monitoring:571ab585-040e-41f4-81c3-0213c25d7507
         ports:
           - containerPort: 2112
             name: metrics
