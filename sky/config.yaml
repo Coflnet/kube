@@ -82,6 +82,7 @@ data:
   topic_low_priced: sky-low-priced
   topic_missing_auction-raw: sky-canceledauction-raw
   topic_new_auction: sky-newauction
+  topic_new_auction-raw: sky-newauction-raw
   topic_new_bid: sky-newbid
   topic_new_bid-raw: sky-newbid-raw
   topic_missing_auction: sky-canceledauction
