@@ -344,7 +344,7 @@ controller:
   # -- Annotations to be added to controller pods
   ##
   podAnnotations:
-    linkerd.io/inject: disabled
+    linkerd.io/inject: enabled
 
   replicaCount: 1
 
