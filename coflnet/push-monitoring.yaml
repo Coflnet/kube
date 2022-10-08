@@ -22,7 +22,7 @@ spec:
             name: metrics
         env:
           - name: MODSOCKET_INTERNAL_URL
-            value: sky-mod.sky.svc.cluster.local
+            value: sky-mod.sky.svc.cluster.local:8008
 
         resources:
           requests:
