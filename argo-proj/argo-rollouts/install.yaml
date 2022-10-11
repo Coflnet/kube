@@ -14819,6 +14819,8 @@ spec:
           successThreshold: 1
           timeoutSeconds: 10
         name: argo-rollouts
+        args:
+          - --traffic-split-api-version=v1alpha3
         ports:
         - containerPort: 8090
           name: metrics
