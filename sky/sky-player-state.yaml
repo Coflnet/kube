@@ -40,6 +40,31 @@ spec:
                 name: secret
                 key: mongo_url
 
+          # cassandra
+          - name: CASSANDRA__HOSTS
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: cassandra_host
+          - name: CASSANDRA__USER
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: cassandra_user
+          - name: CASSANDRA__PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: secret
+                key: cassandra_password
+          - name: CASSANDRA__KEYSPACE
+            value: sky_item_movement
+          - name: CASSANDRA__REPLICATION_FACTOR
+            value: NetworkTopologyStrategy
+          - name: CASSANDRA__REPLICATION_FACTOR
+            value: "3"
+          - name: CASSANDRA__SSL_ENABLED
+            value: "true"
+
           # jaeger
           - name: JAEGER_AGENT_HOST
             valueFrom:
