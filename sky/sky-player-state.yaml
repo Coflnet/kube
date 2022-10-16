@@ -64,6 +64,8 @@ spec:
             value: "3"
           - name: CASSANDRA__SSL_ENABLED
             value: "true"
+          - name: X509Certificate_PATH
+            value: /tmp/cassandra/certs/duke.cer
 
           # jaeger
           - name: JAEGER_AGENT_HOST
@@ -105,6 +107,13 @@ spec:
             port: 8000
           initialDelaySeconds: 20
           periodSeconds: 3
+        volumeMounts:
+          - mountPath: /tmp/cassandra/certs
+            name: cassandra-cert
+      volumes:
+        - name: cassandra-cert
+          secret:
+            secretName: cassandra-cert
   strategy:
     canary: 
       steps:
