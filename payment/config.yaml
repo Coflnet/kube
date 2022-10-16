@@ -37,6 +37,22 @@ data:
             "type": "SERVICE"
         },
         {
+            "slug": "premium_plus-day",
+            "title": "Premium+ (day)",
+            "description": "Premium Plus plan granting top tier perks for a day",
+            "cost": 600,
+            "ownershipSeconds": 86400,
+            "type": "SERVICE"
+        },
+        {
+            "slug": "premium_plus-hour",
+            "title": "Premium+ (hour)",
+            "description": "Premium Plus plan granting top tier perks for an hour",
+            "cost": 200,
+            "ownershipSeconds": 3600,
+            "type": "SERVICE"
+        },
+        {
             "slug": "starter_premium",
             "title": "Basic plan",
             "description": "Access to basic perks",
@@ -167,13 +183,21 @@ data:
         "premium": [
             "test-premium",
             "premium_plus",
+            "premium_plus-day",
+            "premium_plus-hour",
             "premium-derpy"
         ],
         "starter_premium": [
             "premium",
             "premium_plus",
+            "premium_plus-day",
+            "premium_plus-hour",
             "starter_premium-day",
             "starter_premium-week"
+        ],
+        "premium_plus": [
+            "premium_plus-day",
+            "premium_plus-hour"
         ]
     },
     "rules": [

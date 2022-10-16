@@ -21,7 +21,7 @@ spec:
         - name: harbor
       containers:
       - name: player-state
-        image: harbor.flou.dev/coflnet/skyplayerstate:65ca7b2f-c0b5-4f0f-a35d-05f9e8205441
+        image: harbor.flou.dev/coflnet/skyplayerstate:1ce26d75-c5c1-4fef-a3ad-e090a39c6779
         ports:
           - containerPort: 8000
             name: metrics
@@ -32,6 +32,11 @@ spec:
               configMapKeyRef:
                   name: config
                   key: events_base_url
+          - name: PLAYERNAME_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: sky_player_name_url
 
           # mongo
           - name: Mongo__ConnectionString
