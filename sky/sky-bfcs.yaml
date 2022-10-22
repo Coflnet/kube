@@ -30,7 +30,7 @@ spec:
         - name: harbor
       containers:
       - name: sky-bfcs
-        image: harbor.flou.dev/coflnet/skybfcs:890a3d76-c033-41aa-8e6b-7e575fc6892a
+        image: harbor.flou.dev/coflnet/skybfcs:fe673d98-3328-48cb-8e28-a9a854da9707
         ports:
         - containerPort: 8000
           name: web

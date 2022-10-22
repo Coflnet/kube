@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: backend
-        image: harbor.flou.dev/coflnet/songvoter:c318d502-e562-4e0b-bdf7-b3bff5a37cef
+        image: harbor.flou.dev/coflnet/songvoter:d72af6c2-e687-4614-b2ac-fe42c1fba4fe
         ports:
           - containerPort: 4200
         env:
