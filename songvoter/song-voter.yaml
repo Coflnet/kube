@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: songvoter
-        image: harbor.flou.dev/coflnet/songvoter:d72af6c2-e687-4614-b2ac-fe42c1fba4fe
+        image: harbor.flou.dev/coflnet/songvoter:b4ded326-82ab-4e31-82ee-b09bae7e7bb8
         ports:
           - containerPort: 4200
         envFrom:
