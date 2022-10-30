@@ -21,7 +21,7 @@ spec:
         - name: harbor
       containers:
       - name: player-state
-        image: harbor.flou.dev/coflnet/skyplayerstate:46e6a420-d906-4d06-882a-535802d5c572
+        image: harbor.flou.dev/coflnet/skyplayerstate:37f40423-f22b-475d-828c-d7c6cfbec232
         ports:
           - containerPort: 8000
             name: metrics
