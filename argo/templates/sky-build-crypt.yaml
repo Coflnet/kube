@@ -38,7 +38,7 @@ spec:
         - name: AWS_REGION
           value: us-east-1
         - name: S3_ENDPOINT
-          value: http://s3-minio.s3:9000
+          value: http://minio.minio:9000
         - name: S3_FORCE_PATH_STYLE
           value: "true"
       volumeMounts:
