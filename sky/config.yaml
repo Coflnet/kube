@@ -33,7 +33,7 @@ data:
   mayor_base_url: http://mayor:8080
   payment_base_url: http://payment.payment
   referral_base_url: http://referral:8000
-  skycrypt_base_url: http://sky-crypt.sky-crypt
+  skycrypt_base_url: https://sky.shiiyu.moe
   sky_player_name_url: http://player-name:8000/
   settings_base_url: http://settings:8000/
   sniper_base_url: http://sniper:8000/
