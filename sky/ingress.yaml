@@ -255,27 +255,3 @@ spec:
             port:
               number: 8008
 
-  - host: songvoter.party
-    http:
-      paths:
-      - path: /
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: sky-commands
-            port:
-              number: 8008
-      - path: /api
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: sky-commands
-            port:
-              number: 80
-      - path: /modsocket
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: sky-mod-canary-service
-            port:
-              number: 8008
