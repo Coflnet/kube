@@ -21,6 +21,14 @@ data:
             "type": "SERVICE"
         },
         {
+            "slug": "premium-day",
+            "title": "Premium (day)",
+            "description": "Premium plan granting various perks for one day",
+            "cost": 300,
+            "ownershipSeconds": 86400,
+            "type": "SERVICE"
+        },
+        {
             "slug": "premium-derpy",
             "title": "Premium (Derpy time)",
             "description": "Premium time to compensate for derpy",
