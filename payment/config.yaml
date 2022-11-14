@@ -190,6 +190,7 @@ data:
     "groups": {
         "premium": [
             "test-premium",
+            "premium-day",
             "premium_plus",
             "premium_plus-day",
             "premium_plus-hour",
@@ -197,6 +198,7 @@ data:
         ],
         "starter_premium": [
             "premium",
+            "premium-day",
             "premium_plus",
             "premium_plus-day",
             "premium_plus-hour",
