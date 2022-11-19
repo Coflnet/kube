@@ -44,6 +44,11 @@ spec:
             configMapKeyRef:
               name: config
               key: redis_host
+        - name: KAFKA_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: kafka_host
         resources:
           requests:
             cpu: 100m
