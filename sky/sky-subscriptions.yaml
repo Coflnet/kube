@@ -20,7 +20,7 @@ spec:
         - name: harbor
       containers:
       - name: subscriptions
-        image: harbor.flou.dev/coflnet/skysubscriptions:6ccf8933-03fd-4a2b-a6ee-4b079b264c1e
+        image: harbor.flou.dev/coflnet/skysubscriptions:ea81d3f9-06f4-447c-bd8d-80dc40ec747e
         ports:
         - containerPort: 8000
         env: 
