@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: payment
-        image: harbor.flou.dev/coflnet/payments:1264a38f-0d4a-4cd3-99a1-fb234c27d736
+        image: harbor.flou.dev/coflnet/payments:4ce8beb7-ade3-49df-b630-419127ca4c90
         ports:
         - containerPort: 8000
           name: web
