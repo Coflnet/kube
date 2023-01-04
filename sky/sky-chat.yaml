@@ -19,7 +19,7 @@ spec:
         - name: harbor
       containers:
       - name: chat
-        image: harbor.flou.dev/coflnet/skychat:c386de5a-e5cc-4cb0-9ace-558293b55b32
+        image: harbor.flou.dev/coflnet/skychat:aaf9c8db-4abf-4ff1-a171-b72e25dc80fb
         ports:
         - containerPort: 8000
           name: api
